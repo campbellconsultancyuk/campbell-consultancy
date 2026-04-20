@@ -3,1306 +3,1679 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Campbell Consultancy — Operational AI &amp; Automation</title>
-<meta name="description" content="Campbell Consultancy — boutique operational consultancy for UK businesses. AI and automation for HR, CRM, sales ops and client reporting. Real systems, shipped.">
-<meta property="og:title" content="Campbell Consultancy — Operational AI &amp; Automation">
-<meta property="og:description" content="Boutique operational consultancy. Real systems, shipped.">
-<meta property="og:type" content="website">
+<title>Campbell Consultancy — Operational AI & Automation</title>
+<meta name="description" content="A boutique UK consultancy using AI and automation to solve repetitive operational problems in HR, sales ops, client reporting and multi-system data sprawl. Real systems, shipped, running in production.">
+<meta name="author" content="Ben Harrison, Campbell Consultancy">
 
+<!-- Open Graph -->
+<meta property="og:title" content="Campbell Consultancy — Operational AI & Automation">
+<meta property="og:description" content="Stop firefighting admin. Start running the business. Boutique practice for UK business owners.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://campbellconsultancyuk.github.io/campbell-consultancy/">
+
+<!-- Inline SVG favicon (brand gradient mark) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 510'><defs><linearGradient id='g' x1='0' y1='.5' x2='1' y2='.5'><stop offset='0%25' stop-color='%23081F4C'/><stop offset='100%25' stop-color='%2352B7A0'/></linearGradient></defs><g fill='url(%23g)'><g transform='translate(0,510) scale(.1,-.1)'><path d='M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180 -1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518 818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203 283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0 -198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23 -38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17 c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285 -26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173 280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308 -88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534 -531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940 939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70 -64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308 -494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61 -78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162 1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z'/></g></g></svg>">
+
+<!-- Google Fonts: Inter (sans with italic for emphasis) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:wght@300..600&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Inline favicon built from the Campbell mark -->
-<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 50,48 12,48' fill='%23082E43'/><polygon points='50,10 88,48 50,48' fill='%23679CAC'/><polygon points='12,52 50,52 50,90' fill='%239B9B9B'/><polygon points='50,52 88,52 50,90' fill='%23082E43'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 <style>
-/* ================ DESIGN TOKENS ================ */
+/* ===================================================================
+   BRAND TOKENS
+   =================================================================== */
 :root {
-  --navy: #082E43;
-  --navy-deep: #051F2E;
-  --slate: #679CAC;
-  --slate-soft: #A8C3CE;
-  --grey: #9B9B9B;
-  --grey-pale: #D4D4D4;
-  --ink: #0A1520;
-  --ink-soft: #3D4A57;
-  --ink-faint: #7A8591;
-  --paper: #F8F7F4;
-  --paper-warm: #EFEDE6;
-  --rule: #D9D6CE;
-  --rule-soft: #E8E5DD;
-
-  --display: 'Instrument Sans', 'Helvetica Neue', -apple-system, sans-serif;
-  --sans: 'Inter', 'Helvetica Neue', -apple-system, sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, monospace;
-  --brand: 'Montserrat', 'Helvetica Neue', -apple-system, sans-serif;
-
-  --max: 1280px;
-  --gutter: clamp(1.25rem, 4vw, 3rem);
-
-  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Core palette */
+  --navy:         #132450;
+  --navy-deep:    #081F4C;
+  --navy-ink:     #0A1638;   /* for body copy */
+  --teal:         #52B7A0;
+  --teal-deep:    #2E8B7E;
+  --teal-light:   #7DD1BD;
+  
+  /* Paper & surfaces */
+  --paper:        #FAFBFC;
+  --paper-warm:   #F4F6F9;
+  --surface:      #FFFFFF;
+  --rule:         rgba(19, 36, 80, 0.12);
+  --rule-strong:  rgba(19, 36, 80, 0.24);
+  
+  /* Text */
+  --ink:          #0A1638;
+  --ink-soft:     #3A4970;
+  --ink-muted:    #6B7A98;
+  --ink-faint:    #9BA5BC;
+  
+  /* Gradient */
+  --brand-grad:        linear-gradient(90deg, #081F4C 0%, #52B7A0 100%);
+  --brand-grad-soft:   linear-gradient(90deg, rgba(8,31,76,0.92) 0%, rgba(82,183,160,0.92) 100%);
+  --brand-grad-v:      linear-gradient(180deg, #081F4C 0%, #52B7A0 100%);
+  
+  /* Type */
+  --serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ================ RESET ================ */
+/* ===================================================================
+   RESET & BASE
+   =================================================================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
 body {
   font-family: var(--sans);
+  font-weight: 400;
   font-size: 17px;
-  line-height: 1.55;
+  line-height: 1.65;
   color: var(--ink);
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
-::selection { background: var(--navy); color: var(--paper); }
-img, svg { max-width: 100%; display: block; }
-a { color: inherit; }
 
-.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+img, svg { max-width: 100%; height: auto; display: block; }
 
-/* ================ TOP NAV ================ */
-.topbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 1.1rem var(--gutter);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(248, 247, 244, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s ease;
-}
-.topbar.scrolled { border-bottom-color: var(--rule); }
+a { color: inherit; text-decoration: none; }
 
-.brand-lockup { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
-.brand-mark { width: 32px; height: 32px; flex: 0 0 32px; }
-.brand-text {
-  font-family: var(--brand);
-  color: var(--navy);
-  line-height: 1;
-  display: flex; flex-direction: column;
-  gap: 3px;
+::selection { background: var(--teal); color: white; }
+
+/* ===================================================================
+   LAYOUT PRIMITIVES
+   =================================================================== */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
-.brand-text .line1 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
-.brand-text .line2 {
-  font-family: var(--brand);
-  font-size: 0.62rem;
-  font-weight: 500;
+
+section {
+  padding: 120px 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  section { padding: 80px 0; }
+  .container, .container-narrow { padding: 0 24px; }
+  body { font-size: 16px; }
+}
+
+/* ===================================================================
+   TYPOGRAPHY
+   =================================================================== */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--teal-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.nav { display: flex; gap: 2.25rem; font-size: 0.85rem; }
-.nav a {
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--teal-deep);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  color: var(--navy);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: var(--sans);
+  letter-spacing: -0.01em;
+}
+
+em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--teal-deep);
+}
+
+/* In headlines, em gets the brand gradient treatment */
+h1 em, h2 em {
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.55;
   color: var(--ink-soft);
-  text-decoration: none;
   font-weight: 400;
-  transition: color 0.2s;
+}
+
+/* ===================================================================
+   HEADER / NAV
+   =================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 251, 252, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.header.scrolled {
+  border-bottom-color: var(--rule);
+  background: rgba(250, 251, 252, 0.95);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.nav-brand .nav-lockup {
+  height: 44px;
+  width: auto;
+  flex-shrink: 0;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.2s var(--ease);
   position: relative;
 }
-.nav a::after {
+
+.nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 1px;
-  background: var(--navy);
-  transition: width 0.3s var(--ease);
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: var(--teal-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
 }
-.nav a:hover { color: var(--navy); }
-.nav a:hover::after { width: 100%; }
-@media (max-width: 720px) { .nav { display: none; } }
 
-/* ================ HERO ================ */
+.nav-links a:hover { color: var(--navy); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* ===================================================================
+   HERO
+   =================================================================== */
 .hero {
-  padding: 9rem 0 5rem;
   position: relative;
+  padding: 140px 0 120px;
   overflow: hidden;
 }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(ellipse at 70% 30%, rgba(82, 183, 160, 0.1) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .hero-eyebrow {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--slate);
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  animation: fadeIn 0.8s ease-out;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 2.5rem;
-  height: 1px;
-  background: var(--slate);
+  margin-bottom: 32px;
+  animation: fadeUp 0.7s var(--ease-out) both;
 }
 
 .hero h1 {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(2.4rem, 6.8vw, 5.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.035em;
-  color: var(--navy);
-  max-width: 20ch;
-  animation: fadeUp 1s var(--ease) 0.1s backwards;
+  max-width: 14ch;
+  margin-bottom: 36px;
+  animation: fadeUp 0.8s 0.1s var(--ease-out) both;
 }
+
 .hero h1 em {
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-style: italic;
-  font-weight: 500;
-  color: var(--slate);
+  font-weight: 700;
 }
 
-.hero-sub {
-  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-  color: var(--ink-soft);
-  max-width: 56ch;
-  margin-top: 2rem;
-  line-height: 1.6;
-  font-weight: 400;
-  animation: fadeUp 1s var(--ease) 0.25s backwards;
+.hero .lead {
+  max-width: 58ch;
+  margin-bottom: 48px;
+  animation: fadeUp 0.8s 0.2s var(--ease-out) both;
 }
 
-.hero-cta-row {
-  margin-top: 3rem;
+.hero-actions {
   display: flex;
-  gap: 1.25rem;
-  align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
-  animation: fadeUp 1s var(--ease) 0.4s backwards;
+  animation: fadeUp 0.8s 0.3s var(--ease-out) both;
 }
 
-.hero-decoration {
-  position: absolute;
-  top: 20rem;
-  right: 2rem;
-  width: 260px;
-  height: 260px;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: -1;
-  animation: fadeIn 1.5s ease-out 0.6s backwards;
-}
-@media (max-width: 1200px) {
-  .hero-decoration { display: none; }
-}
-
-/* ================ BUTTONS ================ */
+/* ===================================================================
+   BUTTONS
+   =================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.95rem 1.85rem;
+  gap: 10px;
+  padding: 15px 28px;
   font-family: var(--sans);
+  font-size: 0.9375rem;
   font-weight: 500;
-  font-size: 0.92rem;
-  text-decoration: none;
   letter-spacing: 0.01em;
   border-radius: 2px;
-  cursor: pointer;
   border: 1px solid transparent;
-  transition: transform 0.18s var(--ease), background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
 }
+
 .btn-primary {
   background: var(--navy);
-  color: var(--paper);
+  color: white;
+  border-color: var(--navy);
 }
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--brand-grad);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+}
+
+.btn-primary span { position: relative; z-index: 1; }
+
 .btn-primary:hover {
-  background: var(--slate);
   transform: translateY(-1px);
+  box-shadow: 0 10px 30px -8px rgba(19, 36, 80, 0.4);
 }
+
+.btn-primary:hover::before { opacity: 1; }
+
 .btn-ghost {
   background: transparent;
   color: var(--navy);
-  border-color: var(--rule);
+  border-color: var(--rule-strong);
 }
+
 .btn-ghost:hover {
   border-color: var(--navy);
-  background: var(--paper-warm);
+  background: var(--navy);
+  color: white;
 }
+
 .btn .arrow {
+  transition: transform 0.3s var(--ease);
   display: inline-block;
-  transition: transform 0.2s var(--ease);
-}
-.btn:hover .arrow { transform: translateX(4px); }
-
-/* ================ ANIMATIONS ================ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.btn:hover .arrow {
+  transform: translateX(4px);
 }
 
-/* ================ STATS STRIP ================ */
+/* ===================================================================
+   STATS BAR
+   =================================================================== */
 .stats {
-  margin-top: 5rem;
+  padding: 64px 0;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  padding: 3rem 0;
+  background: var(--paper-warm);
+}
+
+.stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-}
-@media (max-width: 900px) {
-  .stats { grid-template-columns: repeat(2, 1fr); gap: 2rem 0; }
-}
-.stat {
-  padding: 0 2rem;
-  border-left: 1px solid var(--rule);
-}
-.stat:first-child { border-left: none; padding-left: 0; }
-@media (max-width: 900px) {
-  .stat:nth-child(3) { border-left: none; padding-left: 2rem; }
-  .stat:nth-child(1) { padding-left: 2rem; }
-  .stat:nth-child(3) { padding-left: 0; }
-  .stat:nth-child(1) { padding-left: 0; }
-}
-.stat-n {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--navy);
-}
-.stat-n .unit {
-  font-size: 0.5em;
-  color: var(--slate);
-  font-style: italic;
-  font-weight: 400;
-  margin-left: 0.2em;
-  white-space: nowrap;
-}
-.stat-label {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--ink-faint);
-  margin-top: 0.85rem;
+  gap: 48px;
 }
 
-/* ================ SECTIONS ================ */
-section { padding: 7rem 0 5rem; }
-
-.section-head {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 3rem;
-  margin-bottom: 4rem;
-  align-items: baseline;
-}
-@media (max-width: 900px) {
-  .section-head { grid-template-columns: 1fr; gap: 1rem; }
-}
-.section-num {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--slate);
-  padding-top: 0.4rem;
+.stat-item {
   position: relative;
+  padding-left: 20px;
 }
-.section-num::before {
+
+.stat-item::before {
   content: '';
   position: absolute;
-  top: 0.85rem;
   left: 0;
-  width: 1.75rem;
-  height: 1px;
-  background: var(--slate);
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--brand-grad-v);
 }
-.section-num { padding-left: 2.5rem; }
-@media (max-width: 900px) { .section-num { padding-left: 0; } .section-num::before { display: none; } }
 
-.section-title {
-  font-family: var(--display);
+.stat-value {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 500;
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 1;
   color: var(--navy);
-  max-width: 22ch;
-}
-.section-title em {
-  font-style: italic;
-  color: var(--slate);
-  font-weight: 500;
-}
-.section-intro {
-  max-width: 62ch;
-  margin-top: 1.75rem;
-  font-size: 1.08rem;
-  color: var(--ink-soft);
-  line-height: 1.65;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
 }
 
-/* ================ PILLARS / WHAT I DO ================ */
+.stat-label {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+}
+
+/* ===================================================================
+   SECTION HEADERS
+   =================================================================== */
+.section-head {
+  max-width: 900px;
+  margin-bottom: 80px;
+}
+
+.section-head .eyebrow { margin-bottom: 24px; }
+
+.section-head p {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  margin-top: 24px;
+  max-width: 68ch;
+  line-height: 1.6;
+}
+
+/* ===================================================================
+   PILLARS (services)
+   =================================================================== */
 .pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
+  gap: 32px;
 }
-@media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
 
 .pillar {
-  padding: 3rem 2.25rem;
-  border-right: 1px solid var(--rule);
   position: relative;
-  background: var(--paper);
-  transition: background 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  padding: 40px 36px 44px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  transition: transform 0.5s var(--ease), border-color 0.4s var(--ease), box-shadow 0.5s var(--ease);
+  overflow: hidden;
 }
-@media (max-width: 900px) {
-  .pillar { border-right: none; border-bottom: 1px solid var(--rule); }
-  .pillar:last-child { border-bottom: none; }
-}
-.pillar:last-child { border-right: none; }
-.pillar:hover { background: var(--paper-warm); }
 
-.pillar-num {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--slate);
-  letter-spacing: 0.12em;
-  margin-bottom: 1.75rem;
-  text-transform: uppercase;
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-grad);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease);
 }
-.pillar h3 {
-  font-family: var(--display);
+
+.pillar:hover {
+  transform: translateY(-4px);
+  border-color: transparent;
+  box-shadow: 0 20px 50px -20px rgba(19, 36, 80, 0.18);
+}
+
+.pillar:hover::before { transform: scaleX(1); }
+
+.pillar-tag {
+  font-family: var(--sans);
+  font-size: 11px;
   font-weight: 600;
-  font-size: 1.45rem;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-  margin-bottom: 1.1rem;
-  color: var(--navy);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 24px;
 }
+
+.pillar h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
 .pillar p {
   color: var(--ink-soft);
-  font-size: 0.96rem;
+  font-size: 0.9375rem;
   line-height: 1.65;
+  margin-bottom: 24px;
 }
-.pillar-list {
-  margin-top: auto;
-  padding-top: 1.75rem;
-  list-style: none;
-  font-family: var(--mono);
-  font-size: 0.76rem;
-  color: var(--ink-faint);
-  letter-spacing: 0.02em;
-}
-.pillar-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed var(--rule);
-}
-.pillar-list li:last-child { border-bottom: none; }
 
-/* ================ CASE STUDIES ================ */
-.cases-wrap { margin-top: 1rem; }
+.pillar ul {
+  list-style: none;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.pillar li {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  padding: 6px 0 6px 18px;
+  position: relative;
+}
+
+.pillar li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 8px;
+  height: 1px;
+  background: var(--teal);
+}
+
+@media (max-width: 900px) {
+  .pillars { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ===================================================================
+   CASE STUDIES
+   =================================================================== */
+.cases-section {
+  background: var(--paper-warm);
+}
 
 .case {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 4rem;
-  padding: 4rem 0;
-  border-top: 1px solid var(--rule);
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  padding: 72px 0;
+  border-bottom: 1px solid var(--rule);
   align-items: start;
 }
-@media (max-width: 900px) { .case { grid-template-columns: 1fr; gap: 1.5rem; } }
-.case:last-child { border-bottom: 1px solid var(--rule); }
 
-.case-meta {
-  position: sticky;
-  top: 7rem;
-  font-family: var(--mono);
-  font-size: 0.76rem;
-}
-@media (max-width: 900px) { .case-meta { position: static; } }
+.case:last-child { border-bottom: 0; }
 
-.case-label {
-  color: var(--slate);
+.case-meta { position: sticky; top: 120px; }
+
+.case-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  background: var(--navy);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 1rem;
-  font-size: 0.7rem;
+  margin-bottom: 20px;
+  border-radius: 2px;
 }
-.case-client {
-  font-family: var(--display);
-  font-size: 1.05rem;
-  color: var(--navy);
+
+.case-sector {
+  font-family: var(--serif);
+  font-size: 1.375rem;
   font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.4rem;
-
-}
-.case-context {
-  color: var(--ink-faint);
-  font-size: 0.78rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+  font-style: italic;
 }
 
-.case-tags {
-  display: flex; flex-wrap: wrap; gap: 0.4rem;
-}
-.tag {
-  padding: 0.35rem 0.7rem;
-  background: var(--paper-warm);
-  border: 1px solid var(--rule);
-  border-radius: 1px;
-  font-family: var(--mono);
-  font-size: 0.68rem;
+.case-desc {
+  font-size: 0.9375rem;
   color: var(--ink-soft);
-  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+  line-height: 1.65;
+}
+
+.case-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.case-tech span {
+  font-size: 11px;
+  padding: 4px 10px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  letter-spacing: 0.05em;
+  border-radius: 2px;
 }
 
 .case-body h3 {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(1.65rem, 2.8vw, 2.25rem);
-  line-height: 1.15;
+  font-size: clamp(1.5rem, 2.8vw, 2.125rem);
+  line-height: 1.2;
+  margin-bottom: 28px;
   letter-spacing: -0.02em;
-  margin-bottom: 1.75rem;
-  color: var(--navy);
 }
-.case-body h3 em {
-  font-style: italic;
-  font-weight: 500;
-  color: var(--slate);
-}
+
 .case-body p {
   color: var(--ink-soft);
-  margin-bottom: 1.25rem;
-  font-size: 1.02rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
 }
-.case-body p strong { color: var(--ink); font-weight: 500; }
 
-.case-outcomes {
-  margin-top: 2.25rem;
-  padding: 2rem 2.25rem;
-  background: var(--paper-warm);
-  border-left: 3px solid var(--slate);
-}
-.case-outcomes-label {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--slate);
-  margin-bottom: 1.25rem;
-}
-.case-outcomes ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.25rem 2rem;
-}
-.case-outcomes li {
-  padding: 0;
-}
-.case-outcomes li strong {
-  display: block;
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.7rem;
+.case-body p strong {
   color: var(--navy);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 0.4rem;
-}
-.case-outcomes li span {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
-  line-height: 1.4;
-  display: block;
+  font-weight: 600;
 }
 
-/* ================ SERVICES ================ */
-.services-section { background: var(--paper-warm); }
-.services {
+.outcomes-label {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+}
+
+.outcomes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem 4rem;
-  margin-top: 1rem;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
 }
-@media (max-width: 900px) { .services { grid-template-columns: 1fr; gap: 2.5rem; } }
 
-.service {
-  border-top: 1px solid var(--rule);
-  padding-top: 2rem;
+.outcome {
+  padding: 24px;
+  background: var(--surface);
 }
-.service-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-.service-name {
-  font-family: var(--display);
-  font-size: 1.45rem;
+
+.outcome strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.75rem;
   font-weight: 500;
-  letter-spacing: -0.015em;
   color: var(--navy);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
 
+.outcome span {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
 }
-.service-price {
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  color: var(--slate);
+
+@media (max-width: 900px) {
+  .case { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+  .case-meta { position: static; }
+}
+
+/* ===================================================================
+   QUOTE BLOCK
+   =================================================================== */
+.quote-block {
+  padding: 100px 0;
+  background: var(--navy);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-grad);
+}
+
+.quote-block::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(82, 183, 160, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.quote-block blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 500;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
+  font-style: italic;
+  line-height: 1.35;
+  max-width: 30ch;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
 }
-.service-desc {
-  color: var(--ink-soft);
-  font-size: 0.98rem;
-  margin-bottom: 1.25rem;
+
+.quote-block blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: var(--teal);
+  line-height: 0;
+  position: absolute;
+  top: 20px;
+  left: -40px;
+  font-family: var(--serif);
+}
+
+/* ===================================================================
+   ENGAGEMENTS (pricing)
+   =================================================================== */
+.engagements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.engagement {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: 44px 36px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.4s var(--ease);
+}
+
+.engagement.featured {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.engagement.featured::before {
+  content: 'Most common';
+  position: absolute;
+  top: -12px;
+  left: 36px;
+  padding: 4px 12px;
+  background: var(--brand-grad);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.engagement:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px -20px rgba(19, 36, 80, 0.25);
+}
+
+.engagement-name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: inherit;
+}
+
+.engagement.featured .engagement-name { color: white; }
+
+.engagement-price {
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--teal-deep);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.engagement.featured .engagement-price { color: var(--teal-light); }
+
+.engagement-desc {
+  font-size: 0.9375rem;
   line-height: 1.65;
-}
-.service-includes {
-  list-style: none;
-  font-size: 0.9rem;
   color: var(--ink-soft);
+  margin-bottom: 28px;
 }
-.service-includes li {
-  padding: 0.35rem 0 0.35rem 1.4rem;
+
+.engagement.featured .engagement-desc { color: rgba(255, 255, 255, 0.75); }
+
+.engagement ul {
+  list-style: none;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.engagement.featured ul { border-top-color: rgba(255, 255, 255, 0.15); }
+
+.engagement li {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  padding: 6px 0 6px 24px;
   position: relative;
   line-height: 1.5;
 }
-.service-includes li::before {
-  content: '—';
+
+.engagement.featured li { color: rgba(255, 255, 255, 0.8); }
+
+.engagement li::before {
+  content: '';
   position: absolute;
   left: 0;
-  color: var(--slate);
-  font-weight: 500;
+  top: 12px;
+  width: 12px;
+  height: 1px;
+  background: var(--teal);
 }
 
-/* ================ TOOLS / STACK ================ */
-.tools-section {
-  background: var(--navy);
-  color: var(--paper);
-  padding: 7rem 0;
-}
-.tools-section .section-num { color: var(--slate-soft); }
-.tools-section .section-num::before { background: var(--slate-soft); }
-.tools-section .section-title { color: var(--paper); }
-.tools-section .section-title em { color: var(--slate-soft); }
-.tools-section .section-intro { color: #B8BFC6; }
+.engagement.featured li::before { background: var(--teal-light); }
 
-.tools-grid {
+@media (max-width: 900px) {
+  .engagements { grid-template-columns: 1fr; }
+  .engagement.featured::before { left: 28px; }
+}
+
+/* ===================================================================
+   STACK (tools)
+   =================================================================== */
+.stack-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin-top: 3rem;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  border-left: 1px solid rgba(255,255,255,0.12);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
 }
-@media (max-width: 720px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
 
-.tool {
-  padding: 1.9rem 1.5rem;
-  border-right: 1px solid rgba(255,255,255,0.12);
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-  transition: background 0.25s ease;
+.stack-item {
+  padding: 32px 28px;
+  background: var(--surface);
+  transition: background 0.3s var(--ease);
 }
-.tool:hover { background: rgba(255,255,255,0.04); }
-.tool-cat {
-  font-family: var(--mono);
-  font-size: 0.65rem;
+
+.stack-item:hover { background: var(--paper-warm); }
+
+.stack-cat {
+  font-size: 11px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--slate-soft);
-  margin-bottom: 0.7rem;
-}
-.tool-name {
-  font-family: var(--display);
-  font-size: 1.1rem;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
   font-weight: 500;
-  color: var(--paper);
+}
+
+.stack-name {
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--navy);
   letter-spacing: -0.01em;
 }
 
-/* ================ APPROACH ================ */
-.approach-steps {
+@media (max-width: 900px) {
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===================================================================
+   APPROACH
+   =================================================================== */
+.approach {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 0;
   position: relative;
 }
-@media (max-width: 900px) { .approach-steps { grid-template-columns: 1fr; gap: 2.5rem; } }
 
-.approach-steps::before {
+.approach::before {
   content: '';
   position: absolute;
-  top: 1.4rem;
-  left: 1.4rem;
-  right: 1.4rem;
+  top: 36px;
+  left: 5%;
+  right: 5%;
   height: 1px;
-  background: var(--rule);
-  z-index: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--rule-strong) 20%, var(--rule-strong) 80%, transparent 100%);
 }
-@media (max-width: 900px) { .approach-steps::before { display: none; } }
 
 .step {
+  text-align: center;
+  padding: 0 20px;
   position: relative;
-  z-index: 1;
-  padding-right: 1rem;
 }
+
 .step-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.8rem;
-  height: 2.8rem;
-  border: 1px solid var(--navy);
-  border-radius: 50%;
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: 1rem;
-  color: var(--navy);
+  width: 72px;
+  height: 72px;
   background: var(--paper);
-  margin-bottom: 1.5rem;
-}
-.step h4 {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: -0.01em;
+  border: 1px solid var(--rule-strong);
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
   color: var(--navy);
-  margin-bottom: 0.7rem;
-}
-.step p {
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-  line-height: 1.6;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s var(--ease);
 }
 
-/* ================ QUOTE ================ */
-.quote-block {
-  max-width: 52ch;
-  margin: 5rem auto 2rem;
-  text-align: center;
-  padding: 3rem 0;
-}
-.quote-mark {
-  font-family: var(--display);
-  font-size: 4.5rem;
-  line-height: 0.5;
-  color: var(--slate);
-  font-weight: 500;
-  font-style: italic;
-  display: inline-block;
-  margin-bottom: 1.25rem;
-}
-.quote-block p {
-  font-family: var(--display);
-  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
-  font-weight: 500;
-  line-height: 1.35;
-  letter-spacing: -0.015em;
-  color: var(--navy);
-  margin: 1.5rem 0;
-}
-.quote-attribution {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--ink-faint);
-}
-
-/* ================ CTA FOOTER ================ */
-.cta-section {
+.step:hover .step-num {
   background: var(--navy);
-  color: var(--paper);
-  padding: 7rem 0;
+  color: white;
+  border-color: var(--navy);
+  transform: scale(1.05);
+}
+
+.step h4 {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.step p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .approach { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
+  .approach::before { display: none; }
+}
+
+@media (max-width: 520px) {
+  .approach { grid-template-columns: 1fr; }
+}
+
+/* ===================================================================
+   CONTACT / FOOTER
+   =================================================================== */
+.contact-section {
+  background: var(--navy);
+  color: white;
+  padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
 }
-.cta-section::before {
+
+.contact-section::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 80%;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(103, 156, 172, 0.18) 0%, transparent 60%);
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-grad);
+}
+
+.contact-section::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(82, 183, 160, 0.12) 0%, transparent 55%);
   pointer-events: none;
 }
-.cta-inner {
+
+.contact-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
   align-items: end;
+  margin-bottom: 100px;
   position: relative;
   z-index: 1;
 }
-@media (max-width: 900px) { .cta-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
 
-.cta-section h2 {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--paper);
+.contact-grid h2 {
+  color: white;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
 }
-.cta-section h2 em {
+
+.contact-grid h2 em {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: var(--teal);
   font-style: italic;
-  font-weight: 500;
-  color: var(--slate-soft);
+  font-weight: 700;
 }
 
-.cta-contact {
-  font-family: var(--sans);
-  font-size: 0.95rem;
+.contact-card {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  backdrop-filter: blur(10px);
 }
-.cta-contact-label {
-  font-family: var(--mono);
-  font-size: 0.68rem;
+
+.contact-card .label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--slate-soft);
-  margin-bottom: 0.5rem;
-}
-.contact-name {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: 1.1rem;
-  color: var(--paper);
-  letter-spacing: -0.01em;
-  margin-bottom: 1.25rem;
-}
-.cta-contact a {
-  color: var(--paper);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-  transition: border-color 0.2s;
-  word-break: break-all;
-  display: inline-block;
-  padding-bottom: 1px;
-}
-.cta-contact a:hover { border-bottom-color: var(--paper); }
-.cta-contact .line { display: block; margin: 0.75rem 0; }
-.cta-contact .muted {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.78rem;
-  margin-top: 1.75rem;
-  line-height: 1.55;
-  font-family: var(--sans);
+  color: var(--teal-light);
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-/* ================ FOOTER ================ */
-footer {
-  padding: 2.5rem 0;
-  border-top: 1px solid var(--rule);
-  background: var(--paper);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--ink-faint);
-  letter-spacing: 0.06em;
+.contact-card .name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 16px;
+  font-weight: 500;
 }
-.footer-inner {
+
+.contact-card a {
+  display: block;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9375rem;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.2s var(--ease);
+}
+
+.contact-card a:hover { color: var(--teal-light); }
+.contact-card a:last-of-type { border-bottom: 0; }
+
+.calendar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 24px;
+  background: var(--teal);
+  color: var(--navy) !important;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 2px;
+  border-bottom: none !important;
+  transition: all 0.3s var(--ease);
+}
+
+.calendar-link:hover {
+  background: var(--teal-light);
+  color: var(--navy) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -6px rgba(82, 183, 160, 0.5);
+}
+
+.contact-footer-note {
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+.footer-bottom {
+  padding-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
 }
-.footer-brand { display: flex; align-items: center; gap: 0.6rem; }
-.footer-brand svg { width: 20px; height: 20px; }
-.footer-brand span { color: var(--ink-soft); letter-spacing: 0.08em; }
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-brand .footer-lockup {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.footer-est {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding-left: 16px;
+  margin-left: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.copyright {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ===================================================================
+   ANIMATIONS
+   =================================================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Reveal on scroll — only hides content when JS is available and sets .js-reveal */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.js-reveal .reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js-reveal .reveal { opacity: 1; transform: none; }
+}
+
+/* ===================================================================
+   SECTION DIVIDERS & NUMBERS
+   =================================================================== */
+.section-number {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 16px;
+  display: block;
+}
+
 </style>
 </head>
 <body>
 
-<!-- ======================================================= -->
-<!--  REUSABLE SVG LOGO MARK (4-triangle Campbell diamond)  -->
-<!-- ======================================================= -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <symbol id="campbell-mark" viewBox="0 0 100 100">
-    <!-- Top-left triangle (navy) -->
-    <polygon points="50,8 50,48 10,48" fill="#082E43"/>
-    <!-- Top-right triangle (slate) -->
-    <polygon points="50,8 90,48 50,48" fill="#679CAC"/>
-    <!-- Bottom-left triangle (grey) -->
-    <polygon points="10,52 50,52 50,92" fill="#9B9B9B"/>
-    <!-- Bottom-right triangle (navy) -->
-    <polygon points="50,52 90,52 50,92" fill="#082E43"/>
-  </symbol>
-</svg>
-
-<!-- ================ TOP BAR ================ -->
-<div class="topbar" id="topbar">
-  <a href="#" class="brand-lockup" aria-label="Campbell Consultancy home">
-    <svg class="brand-mark" aria-hidden="true"><use href="#campbell-mark"/></svg>
-    <span class="brand-text">
-      <span class="line1">Campbell</span>
-      <span class="line2">Consultancy</span>
-    </span>
-  </a>
-  <nav class="nav" aria-label="Primary">
-    <a href="#work">Work</a>
-    <a href="#services">Services</a>
-    <a href="#stack">Stack</a>
-    <a href="#approach">Approach</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</div>
-
-<!-- ================ HERO ================ -->
-<header class="hero">
-  <svg class="hero-decoration" aria-hidden="true"><use href="#campbell-mark"/></svg>
+<!-- ====================== HEADER ====================== -->
+<header class="header" id="header">
   <div class="container">
-    <div class="hero-eyebrow">OPERATIONAL AI &amp; AUTOMATION — UNITED KINGDOM</div>
-    <h1>Stop firefighting admin.<br><em>Start running</em> the business.</h1>
-    <p class="hero-sub">
-      Campbell Consultancy is a boutique practice for UK business owners and operations directors. We use AI and automation to solve expensive, repetitive problems inside HR, sales ops, client reporting and multi-system data sprawl. No hype, no half-built prototypes — real systems, shipped, running in production.
-    </p>
-    <div class="hero-cta-row">
-      <a href="#work" class="btn btn-primary">See the work <span class="arrow">→</span></a>
-      <a href="#contact" class="btn btn-ghost">Book a 20-minute call</a>
-    </div>
-
-    <div class="stats reveal">
-      <div class="stat">
-        <div class="stat-n">40<span class="unit">+</span></div>
-        <div class="stat-label">Automations live in production</div>
+    <nav class="nav">
+      <a href="#" class="nav-brand" aria-label="Campbell Consultancy — home">
+        <svg class="nav-lockup" viewBox="0 0 1500 510" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+    <linearGradient id="brandGradH" x1="0" y1="0.5" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#081F4C"/>
+      <stop offset="100%" stop-color="#52B7A0"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#brandGradH)">
+    <g transform="translate(0.000000,510.000000) scale(0.100000,-0.100000)"
+ stroke="none">
+<path d="M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180
+-1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518
+818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203
+283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0
+-198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23
+-38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17
+c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285
+-26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173
+280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308
+-88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534
+-531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940
+939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70
+-64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308
+-494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61
+-78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162
+1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z"/>
+</g>
+  </g>
+  <g transform="translate(660, 100) scale(1.069)" fill="#132450">
+    <g transform="translate(0.000000,290.000000) scale(0.100000,-0.100000)"
+ stroke="none">
+<path d="M618 2654 c-220 -53 -346 -222 -336 -448 5 -117 41 -201 122 -282
+170 -169 482 -178 649 -18 l39 37 -60 60 -61 60 -37 -33 c-21 -18 -54 -39 -73
+-48 -52 -21 -166 -21 -223 1 -53 20 -121 89 -146 145 -23 54 -21 166 4 222 71
+156 267 205 415 103 59 -41 70 -38 135 28 l38 39 -33 34 c-94 97 -274 139
+-433 100z"/>
+<path d="M1494 2652 c-7 -4 -24 -36 -39 -72 -15 -36 -88 -200 -162 -365 -154
+-341 -176 -395 -168 -404 4 -3 47 -6 96 -6 l90 0 37 92 37 93 200 0 200 0 36
+-93 36 -92 101 -3 c56 -1 102 1 102 6 0 8 -80 187 -284 637 -47 105 -94 196
+-103 203 -18 13 -160 17 -179 4z m156 -342 c34 -80 64 -151 67 -157 4 -10 -25
+-13 -126 -13 -72 0 -131 2 -131 5 0 6 111 298 117 308 7 12 4 17 73 -143z"/>
+<path d="M2165 2647 c-3 -6 -4 -199 -3 -427 l3 -415 85 0 85 0 5 249 5 249
+115 -187 c63 -103 123 -196 133 -207 13 -14 29 -19 50 -17 28 3 40 18 149 197
+65 107 122 199 128 205 7 7 10 -70 10 -237 l0 -246 33 -6 c17 -4 57 -5 87 -3
+l55 3 3 414 c1 297 -1 418 -9 427 -7 9 -33 14 -73 14 -52 0 -66 -4 -83 -22
+-11 -13 -69 -106 -128 -208 -59 -102 -122 -209 -139 -237 -17 -29 -33 -53 -37
+-53 -3 0 -57 84 -119 188 -123 203 -180 291 -205 316 -21 20 -143 23 -150 3z"/>
+<path d="M3332 2647 c-9 -11 -12 -114 -10 -428 l3 -414 97 -3 97 -3 3 118 3
+118 145 6 c131 4 151 8 206 33 136 62 204 193 174 337 -24 110 -96 191 -204
+226 -74 23 -496 32 -514 10z m445 -167 c106 -48 113 -202 11 -257 -25 -13 -63
+-18 -150 -21 l-118 -4 0 151 0 151 108 0 c84 0 116 -5 149 -20z"/>
+<path d="M4196 2588 c-3 -40 -5 -233 -3 -428 l2 -355 225 -3 c253 -3 359 7
+435 42 87 40 133 124 121 219 -11 81 -49 134 -124 172 l-34 16 34 25 c54 40
+78 89 78 162 0 73 -14 106 -64 150 -65 57 -112 65 -403 70 l-261 4 -6 -74z
+m487 -91 c48 -31 62 -62 48 -107 -19 -64 -44 -74 -196 -78 l-132 -4 -8 95 c-4
+53 -4 101 0 107 5 8 46 11 134 8 100 -2 133 -7 154 -21z m44 -350 c40 -21 53
+-44 53 -95 0 -32 -6 -45 -30 -66 -38 -31 -83 -38 -235 -34 l-120 3 -3 94 c-1
+52 0 101 3 109 8 22 288 13 332 -11z"/>
+<path d="M5126 2644 c-3 -8 -6 -199 -6 -424 0 -363 2 -409 16 -414 20 -8 602
+-8 632 0 20 6 22 13 22 64 0 97 19 90 -241 90 l-229 0 0 100 0 100 198 2 197
+3 3 63 c2 38 -2 69 -9 78 -9 11 -50 14 -200 14 l-189 0 0 89 0 89 63 6 c34 4
+131 5 215 4 177 -3 174 -5 170 87 l-3 60 -316 3 c-282 2 -317 1 -323 -14z"/>
+<path d="M5953 2648 c-11 -18 -16 -820 -5 -836 8 -11 64 -12 310 -6 l300 7 4
+71 c3 39 3 73 1 76 -3 3 -99 6 -214 8 l-209 3 0 329 c0 285 -2 331 -16 344
+-20 20 -158 23 -171 4z"/>
+<path d="M6687 2654 c-4 -4 -7 -195 -7 -425 l0 -417 53 -6 c57 -7 521 -6 550
+1 14 4 17 16 17 79 0 41 -1 75 -2 75 -2 1 -97 5 -211 8 l-209 6 0 290 c1 160
+-2 313 -6 340 l-7 50 -85 3 c-47 1 -89 0 -93 -4z"/>
+<path d="M1395 1455 c-49 -17 -102 -76 -111 -122 -29 -157 116 -270 262 -204
+53 24 61 37 33 59 -21 18 -23 17 -60 -1 -46 -22 -99 -17 -129 13 -23 23 -39
+79 -33 114 13 65 93 102 154 72 41 -20 52 -20 73 2 15 18 15 20 -3 36 -24 22
+-87 45 -121 45 -14 0 -43 -6 -65 -14z"/>
+<path d="M1855 1456 c-78 -29 -135 -123 -121 -198 8 -43 64 -110 110 -132 91
+-43 221 6 255 97 28 72 -2 166 -68 211 -47 33 -120 42 -176 22z m113 -67 c69
+-24 87 -120 34 -180 -24 -27 -36 -32 -75 -33 -39 -1 -51 4 -78 30 -35 35 -49
+97 -29 133 14 27 68 61 96 61 12 0 35 -5 52 -11z"/>
+<path d="M2833 1457 c-52 -19 -78 -51 -78 -98 0 -52 23 -71 113 -99 92 -29
+107 -43 76 -74 -20 -21 -93 -21 -141 -1 -42 18 -43 17 -46 -21 -2 -24 3 -30
+33 -41 77 -26 193 -9 226 35 7 9 14 36 14 59 0 53 -26 75 -121 103 -70 21 -83
+33 -67 63 10 19 88 24 131 8 21 -8 26 -6 36 15 15 33 10 39 -43 53 -55 14 -91
+13 -133 -2z"/>
+<path d="M5530 1458 c-46 -13 -96 -52 -116 -90 -20 -38 -20 -117 -1 -155 45
+-86 155 -125 244 -88 61 26 67 34 42 61 l-21 23 -39 -21 c-49 -25 -101 -18
+-135 19 -53 57 -37 150 31 179 44 18 66 18 109 -3 34 -16 37 -16 56 2 27 24
+26 28 -17 52 -48 26 -108 35 -153 21z"/>
+<path d="M2270 1358 c0 -57 3 -133 7 -170 l6 -68 33 0 34 0 0 95 c0 52 3 95 8
+94 4 0 45 -45 91 -100 71 -86 87 -100 110 -97 l26 3 3 173 2 172 -39 0 -40 0
+-3 -102 -3 -101 -84 101 c-76 93 -87 102 -117 102 l-34 0 0 -102z"/>
+<path d="M3190 1343 c0 -92 4 -126 18 -153 54 -108 215 -108 270 0 19 38 22
+60 22 157 l0 113 -40 0 -40 0 0 -118 c0 -143 -9 -162 -74 -162 -68 0 -77 17
+-83 159 l-6 121 -33 0 -34 0 0 -117z"/>
+<path d="M3676 1368 c-3 -51 -2 -129 2 -173 l7 -80 120 0 120 0 0 30 0 30 -86
+3 -87 3 1 47 c1 26 1 89 -1 140 l-2 92 -34 0 -34 0 -6 -92z"/>
+<path d="M4010 1440 c0 -11 -1 -23 -2 -27 -2 -5 22 -10 52 -13 l55 -5 3 -137
+3 -138 39 0 40 0 0 139 0 140 53 3 c48 3 52 5 52 28 l0 25 -147 3 c-143 2
+-148 2 -148 -18z"/>
+<path d="M4515 1388 c-18 -40 -51 -116 -73 -170 l-40 -96 26 -5 c37 -7 47 -1
+61 38 l12 35 85 0 85 0 11 -30 c5 -17 18 -35 28 -40 24 -13 60 -13 60 0 0 6
+-24 63 -53 128 -30 64 -62 138 -73 164 -18 45 -21 48 -57 48 -38 0 -39 -1 -72
+-72z m94 -64 c34 -75 32 -79 -21 -81 -26 -1 -49 1 -52 6 -6 10 36 121 46 121
+4 0 16 -21 27 -46z"/>
+<path d="M4920 1291 c0 -180 0 -181 51 -181 17 0 19 8 19 88 0 48 4 93 9 100
+6 10 29 -12 87 -82 69 -85 81 -96 109 -96 32 0 32 0 39 61 3 34 6 111 6 170
+l0 109 -40 0 -40 0 0 -102 -1 -103 -32 36 c-17 19 -56 65 -86 102 -48 58 -59
+67 -88 67 l-33 0 0 -169z"/>
+<path d="M5840 1447 c0 -7 26 -53 57 -103 51 -79 58 -96 63 -154 l5 -65 35 0
+35 0 3 63 c3 57 9 73 57 152 73 117 74 120 38 120 -34 0 -48 -13 -92 -93 -18
+-31 -37 -55 -42 -52 -5 3 -27 37 -50 75 -38 65 -44 70 -75 70 -21 0 -34 -5
+-34 -13z"/>
+</g>
+  </g>
+        </svg>
+      </a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#stack">Stack</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
       </div>
-      <div class="stat">
-        <div class="stat-n">2<span class="unit">co.</span></div>
-        <div class="stat-label">Operational roles, day-to-day delivery</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">£500<span class="unit">k+</span></div>
-        <div class="stat-label">Client pipeline managed across CRMs</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">20–30<span class="unit">hrs/wk</span></div>
-        <div class="stat-label">Typical admin recovered per client</div>
-      </div>
-    </div>
+    </nav>
   </div>
 </header>
 
-<!-- ================ WHAT I DO ================ -->
-<section id="what">
+<!-- ====================== HERO ====================== -->
+<section class="hero">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num">01 — Focus</div>
-      <div>
-        <h2 class="section-title">Three places AI and automation <em>actually</em> pay back.</h2>
-        <p class="section-intro">
-          No general-purpose "AI transformation". Three focus areas where the tooling has matured, the ROI is measurable within weeks, and the risk of getting it wrong is low enough to ship safely. Work delivered day-to-day, not case studies from slides.
-        </p>
+    <span class="hero-eyebrow eyebrow">Operational AI & Automation — United Kingdom</span>
+    <h1>Stop firefighting admin. <em>Start running</em> the business.</h1>
+    <p class="lead">
+      Campbell Consultancy is a boutique practice for UK business owners and operations
+      directors. We use AI and automation to solve expensive, repetitive problems inside
+      HR, sales ops, client reporting and multi-system data sprawl.
+      No hype, no half-built prototypes — real systems, shipped, running in production.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary"><span>See the work</span> <span class="arrow">→</span></a>
+      <a href="#contact" class="btn btn-ghost">Book a 20-minute call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== STATS ====================== -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">40+</div>
+        <div class="stat-label">Automations live in production</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">2co.</div>
+        <div class="stat-label">Operational roles, day-to-day delivery</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">£500k+</div>
+        <div class="stat-label">Client pipeline managed across CRMs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">20–30hrs</div>
+        <div class="stat-label">Typical weekly admin recovered per client</div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ====================== SERVICES / PILLARS ====================== -->
+<section id="services">
   <div class="container">
-    <div class="pillars reveal">
-      <div class="pillar">
-        <div class="pillar-num">PILLAR · 01</div>
-        <h3>HR, onboarding &amp; labour-cost automation</h3>
+    <div class="section-head reveal">
+      <span class="section-number">01 — Focus</span>
+      <span class="eyebrow">What we actually do</span>
+      <h2 style="margin-top: 24px;">Three places AI and automation <em>actually</em> pay back.</h2>
+      <p>
+        No general-purpose "AI transformation". Three focus areas where the tooling has
+        matured, the ROI is measurable within weeks, and the risk of getting it wrong is
+        low enough to ship safely. Work delivered day-to-day, not case studies from slides.
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-tag">Pillar · 01</div>
+        <h3>HR, onboarding & labour-cost automation</h3>
         <p>
-          Multi-site operators bleed 20–30 hours a week on staff admin. HR platforms, payroll and rota tools orchestrated into a working whole — with AI staff assistants and weekly labour-cost snapshots before the month closes.
+          Multi-site operators bleed 20–30 hours a week on staff admin. HR platforms,
+          payroll and rota tools orchestrated into a working whole — with AI staff
+          assistants and weekly labour-cost snapshots before the month closes.
         </p>
-        <ul class="pillar-list">
+        <ul>
           <li>BreatheHR + Xero Payroll stacks</li>
           <li>WhatsApp AI staff assistants</li>
           <li>Self-serve onboarding flows</li>
           <li>Weekly labour % reporting</li>
         </ul>
       </div>
-      <div class="pillar">
-        <div class="pillar-num">PILLAR · 02</div>
-        <h3>CRM, sales ops &amp; proposal systems</h3>
+
+      <div class="pillar reveal">
+        <div class="pillar-tag">Pillar · 02</div>
+        <h3>CRM, sales ops & proposal systems</h3>
         <p>
-          Sales teams lose deals in the gap between quote and close. Branded proposal generators, automated CRM sync, and pipeline visibility that removes the admin tax — without forcing anyone to change how they work.
+          Sales teams lose deals in the gap between quote and close. Branded proposal
+          generators, automated CRM sync, and pipeline visibility that removes the admin
+          tax — without forcing anyone to change how they work.
         </p>
-        <ul class="pillar-list">
-          <li>Monday.com architecture &amp; automation</li>
+        <ul>
+          <li>Monday.com architecture & automation</li>
           <li>Branded PDF proposal generators</li>
           <li>Xero–CRM two-way sync</li>
           <li>Outreach campaign orchestration</li>
         </ul>
       </div>
-      <div class="pillar">
-        <div class="pillar-num">PILLAR · 03</div>
-        <h3>Client reporting &amp; agency operations</h3>
+
+      <div class="pillar reveal">
+        <div class="pillar-tag">Pillar · 03</div>
+        <h3>Client reporting & agency operations</h3>
         <p>
-          Agencies spend a day a month per client compiling reports nobody reads. Analysis pipelines turn raw data from ad platforms, analytics and CRMs into something clients actually open — using AI for the narrative, not the numbers.
+          Agencies spend a day a month per client compiling reports nobody reads. Analysis
+          pipelines turn raw data from ad platforms, analytics and CRMs into something
+          clients actually open — using AI for the narrative, not the numbers.
         </p>
-        <ul class="pillar-list">
+        <ul>
           <li>Discovery transcript analysis</li>
           <li>Automated monthly client reports</li>
           <li>Looker Studio dashboards</li>
-          <li>Google Ads rebuilds &amp; QA</li>
+          <li>Google Ads rebuilds & QA</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================ CASE STUDIES ================ -->
-<section id="work">
+<!-- ====================== WORK / CASES ====================== -->
+<section id="work" class="cases-section">
   <div class="container">
     <div class="section-head reveal">
-      <div class="section-num">02 — Selected work</div>
-      <div>
-        <h2 class="section-title">Real systems, <em>shipped.</em></h2>
-        <p class="section-intro">
-          Three projects from the last 18 months representing the types of problems solved and how. Each one is running in production today. Client names are illustrative of sector rather than disclosure.
+      <span class="section-number">02 — Selected work</span>
+      <span class="eyebrow">Case studies</span>
+      <h2 style="margin-top: 24px;">Real systems, <em>shipped.</em></h2>
+      <p>
+        Three projects from the last 18 months representing the types of problems solved
+        and how. Each one is running in production today. Client names are illustrative
+        of sector rather than disclosure.
+      </p>
+    </div>
+
+    <!-- CASE 01 -->
+    <div class="case reveal">
+      <div class="case-meta">
+        <span class="case-tag">Case 01</span>
+        <div class="case-sector">Commercial kitchen extraction & HVAC installer</div>
+        <p class="case-desc">
+          BESA-certified specialist serving London hospitality. 20-year operator,
+          complex multi-stakeholder proposals, CRM and outreach sprawl.
         </p>
+        <div class="case-tech">
+          <span>Monday.com</span><span>Make.com</span><span>Cloudflare Pages</span>
+          <span>Claude API</span><span>Google Ads</span><span>Looker Studio</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <h3>From spreadsheet chaos to a <em>proposal factory</em> — and a sales pipeline that tells the truth.</h3>
+        <p>
+          Proposals in Word. Deals tracked across four separate Monday boards that didn't
+          talk to each other. Google Ads burning cash against mismatched keywords. Nothing
+          was broken enough to stop the business — but the cost of running it was quietly
+          eating owner time and margin.
+        </p>
+        <p>
+          The rebuild came in layers: a <strong>three-template HTML proposal generator</strong>
+          on Cloudflare Pages producing branded PDFs in under two minutes, a
+          <strong>restructured Monday.com architecture</strong> across five boards with
+          standardised statuses and automations, a <strong>Make.com scenario</strong>
+          syncing Gmail quotes into Google Sheets and Xero, and <strong>three rebuilt
+          Google Ads campaigns</strong> with Looker Studio dashboards feeding weekly owner
+          reports. Service agreements now sign in a day instead of a week, with weekly
+          pipeline truth instead of monthly surprises.
+        </p>
+        <div class="outcomes-label">Outcomes</div>
+        <div class="outcomes">
+          <div class="outcome"><strong>&lt;2 min</strong><span>Quote to branded PDF, from weeks</span></div>
+          <div class="outcome"><strong>4→1</strong><span>CRM systems consolidated into Monday</span></div>
+          <div class="outcome"><strong>496</strong><span>Hospitality contacts segmented & outreach-ready</span></div>
+          <div class="outcome"><strong>3</strong><span>Ads campaigns rebuilt, negatives applied, monitored</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="cases-wrap">
-
-      <!-- CASE 1 -->
-      <article class="case reveal">
-        <div class="case-meta">
-          <div class="case-label">Case 01</div>
-          <div class="case-client">Commercial kitchen extraction &amp; HVAC installer</div>
-          <div class="case-context">BESA-certified specialist serving London hospitality. 20-year operator, complex multi-stakeholder proposals, CRM and outreach sprawl.</div>
-          <div class="case-tags">
-            <span class="tag">Monday.com</span>
-            <span class="tag">Make.com</span>
-            <span class="tag">Cloudflare Pages</span>
-            <span class="tag">Claude API</span>
-            <span class="tag">Google Ads</span>
-            <span class="tag">Looker Studio</span>
-          </div>
+    <!-- CASE 02 -->
+    <div class="case reveal">
+      <div class="case-meta">
+        <span class="case-tag">Case 02</span>
+        <div class="case-sector">Multi-site London restaurant group onboarding</div>
+        <p class="case-desc">
+          Four-site hospitality group onboarded onto a bi-annual cleaning service agreement.
+          Signed service agreement, branded quote, CRM setup, calendar automation.
+        </p>
+        <div class="case-tech">
+          <span>Monday.com</span><span>WeasyPrint</span><span>Google Calendar API</span>
+          <span>Xero</span><span>Docx automation</span>
         </div>
-        <div class="case-body">
-          <h3>From spreadsheet chaos to a <em>proposal factory</em> — and a sales pipeline that tells the truth.</h3>
-          <p>
-            Proposals in Word. Deals tracked across four separate Monday boards that didn't talk to each other. Google Ads burning cash against mismatched keywords. Nothing was broken enough to stop the business — but the cost of running it was quietly eating owner time and margin.
-          </p>
-          <p>
-            The rebuild came in layers: a <strong>three-template HTML proposal generator</strong> on Cloudflare Pages producing branded PDFs in under two minutes, a <strong>restructured Monday.com architecture</strong> across five boards with standardised statuses and automations, a <strong>Make.com scenario</strong> syncing Gmail quotes into Google Sheets and Xero, and <strong>three rebuilt Google Ads campaigns</strong> with Looker Studio dashboards feeding weekly owner reports. Service agreements now sign in a day instead of a week, with weekly pipeline truth instead of monthly surprises.
-          </p>
-
-          <div class="case-outcomes">
-            <div class="case-outcomes-label">Outcomes</div>
-            <ul>
-              <li>
-                <strong>&lt;2 min</strong>
-                <span>Quote to branded PDF, from weeks</span>
-              </li>
-              <li>
-                <strong>4→1</strong>
-                <span>CRM systems consolidated into Monday</span>
-              </li>
-              <li>
-                <strong>496</strong>
-                <span>Hospitality contacts segmented &amp; outreach-ready</span>
-              </li>
-              <li>
-                <strong>3</strong>
-                <span>Ads campaigns rebuilt, negatives applied, monitored</span>
-              </li>
-            </ul>
-          </div>
+      </div>
+      <div class="case-body">
+        <h3>Signed, scheduled and invoiced — <em>end-to-end, inside 48 hours.</em></h3>
+        <p>
+          A new four-site restaurant client came in with tight timelines and a single
+          operations director as primary contact. Traditionally this means a week of
+          back-and-forth on quotes, agreement drafting, calendar coordination, and manual
+          CRM entries across multiple boards.
+        </p>
+        <p>
+          Instead, the full onboarding ran through a <strong>templated quote generator</strong>
+          producing branded DOCX and PDF service agreements, <strong>automated Monday.com
+          entries</strong> across four boards, and <strong>Google Calendar events</strong>
+          with per-site scheduling pushed into the correct operations calendar — all from
+          one structured intake. The account manager picked up a complete handover: signed,
+          scheduled, bi-annual recurrence built in. Client saw one clean email thread.
+        </p>
+        <div class="outcomes-label">Outcomes</div>
+        <div class="outcomes">
+          <div class="outcome"><strong>48h</strong><span>Initial contact to signed &amp; scheduled</span></div>
+          <div class="outcome"><strong>4 sites</strong><span>Coordinated without scheduling conflicts</span></div>
+          <div class="outcome"><strong>0</strong><span>Manual CRM entries required from account manager</span></div>
+          <div class="outcome"><strong>Template</strong><span>Flow reusable for every subsequent multi-site client</span></div>
         </div>
-      </article>
+      </div>
+    </div>
 
-      <!-- CASE 2 -->
-      <article class="case reveal">
-        <div class="case-meta">
-          <div class="case-label">Case 02</div>
-          <div class="case-client">Multi-site London restaurant group onboarding</div>
-          <div class="case-context">Four-site hospitality group onboarded onto a bi-annual cleaning service agreement. Signed service agreement, branded quote, CRM setup, calendar automation.</div>
-          <div class="case-tags">
-            <span class="tag">Monday.com</span>
-            <span class="tag">WeasyPrint</span>
-            <span class="tag">Google Calendar API</span>
-            <span class="tag">Xero</span>
-            <span class="tag">Docx automation</span>
-          </div>
+    <!-- CASE 03 -->
+    <div class="case reveal">
+      <div class="case-meta">
+        <span class="case-tag">Case 03</span>
+        <div class="case-sector">Digital marketing agency · client reporting pipeline</div>
+        <p class="case-desc">
+          AU/UK-based digital agency serving financial advisors, immigration firms, video
+          production houses and trade businesses. Strategy, reporting, onboarding.
+        </p>
+        <div class="case-tech">
+          <span>Claude API</span><span>Discovery analysis</span><span>CRM notes</span>
+          <span>Google Ads</span><span>SEO reporting</span>
         </div>
-        <div class="case-body">
-          <h3>Signed, scheduled and invoiced — <em>end-to-end, inside 48 hours.</em></h3>
-          <p>
-            A new four-site restaurant client came in with tight timelines and a single operations director as primary contact. Traditionally this means a week of back-and-forth on quotes, agreement drafting, calendar coordination, and manual CRM entries across multiple boards.
-          </p>
-          <p>
-            Instead, the full onboarding ran through a <strong>templated quote generator</strong> producing branded DOCX and PDF service agreements, <strong>automated Monday.com entries</strong> across four boards, and <strong>Google Calendar events</strong> with per-site scheduling pushed into the correct operations calendar — all from one structured intake. The account manager picked up a complete handover: signed, scheduled, bi-annual recurrence built in. Client saw one clean email thread.
-          </p>
-
-          <div class="case-outcomes">
-            <div class="case-outcomes-label">Outcomes</div>
-            <ul>
-              <li>
-                <strong>48h</strong>
-                <span>Initial contact to signed &amp; scheduled</span>
-              </li>
-              <li>
-                <strong>4 sites</strong>
-                <span>Coordinated without scheduling conflicts</span>
-              </li>
-              <li>
-                <strong>0</strong>
-                <span>Manual CRM entries required from account manager</span>
-              </li>
-              <li>
-                <strong>Template</strong>
-                <span>Flow reusable for every subsequent multi-site client</span>
-              </li>
-            </ul>
-          </div>
+      </div>
+      <div class="case-body">
+        <h3>Turning discovery-call noise into <em>client-ready strategy,</em> monthly.</h3>
+        <p>
+          Every agency has the same problem: a rich discovery call that then evaporates
+          into a Zoom recording nobody re-watches. By the time delivery starts, nuance is
+          lost, briefs are generic, and the client wonders why you didn't hear them.
+        </p>
+        <p>
+          A <strong>discovery-transcript analysis pipeline</strong> takes a raw call
+          transcript and produces three deliverables in one pass — a &lt;2,500-character
+          structured CRM note, a client summary email written in the agency's voice, and
+          an internal strategy brief. The same pattern runs for monthly performance
+          reports: raw analytics in, narrative client-ready report out, drafted by AI,
+          reviewed by humans. Across a 10+ client portfolio, monthly reporting admin
+          dropped from a day per client to twenty minutes of review.
+        </p>
+        <div class="outcomes-label">Outcomes</div>
+        <div class="outcomes">
+          <div class="outcome"><strong>~20 min</strong><span>Per monthly report, from a full day</span></div>
+          <div class="outcome"><strong>3-in-1</strong><span>CRM note, client email, internal brief from one transcript</span></div>
+          <div class="outcome"><strong>Voice-matched</strong><span>Every draft tuned to the agency's house style</span></div>
+          <div class="outcome"><strong>Repeatable</strong><span>Same pattern applied across 10+ active accounts</span></div>
         </div>
-      </article>
-
-      <!-- CASE 3 -->
-      <article class="case reveal">
-        <div class="case-meta">
-          <div class="case-label">Case 03</div>
-          <div class="case-client">Digital marketing agency · client reporting pipeline</div>
-          <div class="case-context">AU/UK-based digital agency serving financial advisors, immigration firms, video production houses and trade businesses. Strategy, reporting, onboarding.</div>
-          <div class="case-tags">
-            <span class="tag">Claude API</span>
-            <span class="tag">Discovery analysis</span>
-            <span class="tag">CRM notes</span>
-            <span class="tag">Google Ads</span>
-            <span class="tag">SEO reporting</span>
-          </div>
-        </div>
-        <div class="case-body">
-          <h3>Turning discovery-call noise into <em>client-ready strategy,</em> monthly.</h3>
-          <p>
-            Every agency has the same problem: a rich discovery call that then evaporates into a Zoom recording nobody re-watches. By the time delivery starts, nuance is lost, briefs are generic, and the client wonders why you didn't hear them.
-          </p>
-          <p>
-            A <strong>discovery-transcript analysis pipeline</strong> takes a raw call transcript and produces three deliverables in one pass — a &lt;2,500-character structured CRM note, a client summary email written in the agency's voice, and an internal strategy brief. The same pattern runs for monthly performance reports: raw analytics in, narrative client-ready report out, drafted by AI, reviewed by humans. Across a 10+ client portfolio, monthly reporting admin dropped from a day per client to twenty minutes of review.
-          </p>
-
-          <div class="case-outcomes">
-            <div class="case-outcomes-label">Outcomes</div>
-            <ul>
-              <li>
-                <strong>~20 min</strong>
-                <span>Per monthly report, from a full day</span>
-              </li>
-              <li>
-                <strong>3-in-1</strong>
-                <span>CRM note, client email, internal brief from one transcript</span>
-              </li>
-              <li>
-                <strong>Voice-matched</strong>
-                <span>Every draft tuned to the agency's house style</span>
-              </li>
-              <li>
-                <strong>Repeatable</strong>
-                <span>Same pattern applied across 10+ active accounts</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================ QUOTE ================ -->
-<div class="container">
-  <div class="quote-block reveal">
-    <div class="quote-mark">"</div>
-    <p>The value isn't in building more AI. It's in taking what already works and making it actually arrive at someone's desk on a Monday morning.</p>
+<!-- ====================== QUOTE ====================== -->
+<section class="quote-block">
+  <div class="container-narrow">
+    <blockquote>
+      The value isn't in building more AI. It's in taking what already works and
+      making it actually arrive at someone's desk on a Monday morning.
+    </blockquote>
   </div>
-</div>
+</section>
 
-<!-- ================ SERVICES ================ -->
-<section id="services" class="services-section">
+<!-- ====================== ENGAGEMENTS ====================== -->
+<section id="engage">
   <div class="container">
     <div class="section-head reveal">
-      <div class="section-num">03 — Engagements</div>
-      <div>
-        <h2 class="section-title">How we might <em>work together.</em></h2>
-        <p class="section-intro">
-          Three ways to engage. Every piece of work has a defined scope, a fixed outcome, and a point at which you can walk away having gained value — whether or not you choose to continue.
-        </p>
-      </div>
+      <span class="section-number">03 — Engagements</span>
+      <span class="eyebrow">How we work</span>
+      <h2 style="margin-top: 24px;">How we might <em>work together.</em></h2>
+      <p>
+        Three ways to engage. Every piece of work has a defined scope, a fixed outcome,
+        and a point at which you can walk away having gained value — whether or not you
+        choose to continue.
+      </p>
     </div>
 
-    <div class="services reveal">
-
-      <div class="service">
-        <div class="service-head">
-          <div class="service-name">Audit &amp; Opportunity Map</div>
-          <div class="service-price">from £450</div>
-        </div>
-        <p class="service-desc">
-          A one-week deep dive into your current workflow. Every repeated task, system integration, and manual hand-off gets mapped — then a prioritised plan of what to automate, what to leave alone, and where AI genuinely pays back.
+    <div class="engagements">
+      <div class="engagement reveal">
+        <div class="engagement-name">Audit & Opportunity Map</div>
+        <div class="engagement-price">from £450</div>
+        <p class="engagement-desc">
+          A one-week deep dive into your current workflow. Every repeated task, system
+          integration, and manual hand-off gets mapped — then a prioritised plan of what
+          to automate, what to leave alone, and where AI genuinely pays back.
         </p>
-        <ul class="service-includes">
+        <ul>
           <li>Discovery workshop</li>
-          <li>Full process &amp; systems audit</li>
+          <li>Full process & systems audit</li>
           <li>ROI-ranked opportunity map</li>
-          <li>Walkthrough call &amp; written report</li>
+          <li>Walkthrough call & written report</li>
         </ul>
       </div>
 
-      <div class="service">
-        <div class="service-head">
-          <div class="service-name">Phased Build Project</div>
-          <div class="service-price">from £1,500</div>
-        </div>
-        <p class="service-desc">
-          Scoped implementation delivered in stages. Each stage produces a working, valuable piece you can use — then you decide whether to proceed. Typical projects include AI staff assistants, onboarding automation, proposal generators, or CRM orchestration.
+      <div class="engagement featured reveal">
+        <div class="engagement-name">Phased Build Project</div>
+        <div class="engagement-price">from £1,500</div>
+        <p class="engagement-desc">
+          Scoped implementation delivered in stages. Each stage produces a working,
+          valuable piece you can use — then you decide whether to proceed. Typical
+          projects include AI staff assistants, onboarding automation, proposal
+          generators, or CRM orchestration.
         </p>
-        <ul class="service-includes">
+        <ul>
           <li>Stage-gated delivery, no upfront retainer</li>
-          <li>All platform setup &amp; configuration included</li>
-          <li>Documentation &amp; handover to your team</li>
+          <li>All platform setup & configuration included</li>
+          <li>Documentation & handover to your team</li>
           <li>30 days of post-launch support</li>
         </ul>
       </div>
 
-      <div class="service">
-        <div class="service-head">
-          <div class="service-name">Fractional Ops Partner</div>
-          <div class="service-price">from £800/mo</div>
-        </div>
-        <p class="service-desc">
-          Ongoing operational partnership. An embedded ops and automation lead handling day-to-day orchestration, incremental improvements, and new project kickoffs. For businesses past the pilot stage who need a trusted ops hand.
+      <div class="engagement reveal">
+        <div class="engagement-name">Fractional Ops Partner</div>
+        <div class="engagement-price">from £800/mo</div>
+        <p class="engagement-desc">
+          Ongoing operational partnership. An embedded ops and automation lead handling
+          day-to-day orchestration, incremental improvements, and new project kickoffs.
+          For businesses past the pilot stage who need a trusted ops hand.
         </p>
-        <ul class="service-includes">
+        <ul>
           <li>Monthly rolling agreement</li>
-          <li>Defined monthly hours &amp; priorities</li>
+          <li>Defined monthly hours & priorities</li>
           <li>Weekly standup, monthly strategy review</li>
           <li>Direct Slack/Teams access</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ================ STACK / TOOLS ================ -->
-<section id="stack" class="tools-section">
+<!-- ====================== STACK ====================== -->
+<section id="stack" style="background: var(--paper-warm);">
   <div class="container">
     <div class="section-head reveal">
-      <div class="section-num" style="color: var(--slate-soft);">04 — Stack</div>
-      <div>
-        <h2 class="section-title">The tools used — <em>daily.</em></h2>
-        <p class="section-intro">
-          No affiliations, no partner commissions, no reseller bias. These tools make the list because they work, because their APIs are honest, and because the people who build with them know what they're doing. Your stack may differ; the principles don't.
-        </p>
-      </div>
+      <span class="section-number">04 — Stack</span>
+      <span class="eyebrow">Tools in daily use</span>
+      <h2 style="margin-top: 24px;">The tools used — <em>daily.</em></h2>
+      <p>
+        No affiliations, no partner commissions, no reseller bias. These tools make the
+        list because they work, because their APIs are honest, and because the people who
+        build with them know what they're doing. Your stack may differ; the principles don't.
+      </p>
     </div>
 
-    <div class="tools-grid reveal">
-      <div class="tool">
-        <div class="tool-cat">AI &amp; Language</div>
-        <div class="tool-name">Anthropic Claude</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">AI &amp; Language</div>
-        <div class="tool-name">OpenAI GPT</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">Automation</div>
-        <div class="tool-name">Make.com</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">Automation</div>
-        <div class="tool-name">n8n</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">CRM / Ops</div>
-        <div class="tool-name">Monday.com</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">HR / People</div>
-        <div class="tool-name">BreatheHR</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">Finance</div>
-        <div class="tool-name">Xero + Payroll</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">Analytics</div>
-        <div class="tool-name">Looker Studio</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">Messaging</div>
-        <div class="tool-name">Twilio / WhatsApp API</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">Hosting</div>
-        <div class="tool-name">Cloudflare Pages</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">Documents</div>
-        <div class="tool-name">WeasyPrint / DOCX</div>
-      </div>
-      <div class="tool">
-        <div class="tool-cat">Intake</div>
-        <div class="tool-name">Typeform / Tally</div>
-      </div>
+    <div class="stack-grid reveal">
+      <div class="stack-item"><div class="stack-cat">AI & Language</div><div class="stack-name">Anthropic Claude</div></div>
+      <div class="stack-item"><div class="stack-cat">AI & Language</div><div class="stack-name">OpenAI GPT</div></div>
+      <div class="stack-item"><div class="stack-cat">Automation</div><div class="stack-name">Make.com</div></div>
+      <div class="stack-item"><div class="stack-cat">Automation</div><div class="stack-name">n8n</div></div>
+      <div class="stack-item"><div class="stack-cat">CRM / Ops</div><div class="stack-name">Monday.com</div></div>
+      <div class="stack-item"><div class="stack-cat">HR / People</div><div class="stack-name">BreatheHR</div></div>
+      <div class="stack-item"><div class="stack-cat">Finance</div><div class="stack-name">Xero + Payroll</div></div>
+      <div class="stack-item"><div class="stack-cat">Analytics</div><div class="stack-name">Looker Studio</div></div>
+      <div class="stack-item"><div class="stack-cat">Messaging</div><div class="stack-name">Twilio / WhatsApp API</div></div>
+      <div class="stack-item"><div class="stack-cat">Hosting</div><div class="stack-name">Cloudflare Pages</div></div>
+      <div class="stack-item"><div class="stack-cat">Documents</div><div class="stack-name">WeasyPrint / DOCX</div></div>
+      <div class="stack-item"><div class="stack-cat">Intake</div><div class="stack-name">Typeform / Tally</div></div>
     </div>
   </div>
 </section>
 
-<!-- ================ APPROACH ================ -->
+<!-- ====================== APPROACH ====================== -->
 <section id="approach">
   <div class="container">
     <div class="section-head reveal">
-      <div class="section-num">05 — Approach</div>
-      <div>
-        <h2 class="section-title">How engagements <em>actually run.</em></h2>
-        <p class="section-intro">
-          Four phases, no surprises. Every project follows the same discipline — whether it's a two-week audit or a three-month phased build. Transparency about process is as important as transparency about price.
-        </p>
-      </div>
+      <span class="section-number">05 — Approach</span>
+      <span class="eyebrow">Process</span>
+      <h2 style="margin-top: 24px;">How engagements <em>actually run.</em></h2>
+      <p>
+        Four phases, no surprises. Every project follows the same discipline — whether
+        it's a two-week audit or a three-month phased build. Transparency about process
+        is as important as transparency about price.
+      </p>
     </div>
 
-    <div class="approach-steps reveal">
+    <div class="approach reveal">
       <div class="step">
         <div class="step-num">I</div>
         <h4>Listen</h4>
@@ -1327,63 +1700,187 @@ footer {
   </div>
 </section>
 
-<!-- ================ CTA / CONTACT ================ -->
-<section id="contact" class="cta-section">
+<!-- ====================== CONTACT ====================== -->
+<section id="contact" class="contact-section">
   <div class="container">
-    <div class="cta-inner">
-      <div>
-        <h2>Let's work out <em>what's worth</em><br>automating first.</h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="eyebrow" style="color: var(--teal-light); margin-bottom: 28px; display: inline-flex;">Get in touch</span>
+        <h2 style="margin-top: 16px;">Let's work out <em>what's worth</em> automating first.</h2>
+        <p class="contact-footer-note">
+          British owned &amp; operated. Flexible working hours to fit your schedule.
+          No rigid retainers, no lock-in contracts. A 20-minute call is enough to know
+          whether there's something worth building — and whether we're the right people
+          to build it.
+        </p>
       </div>
-      <div class="cta-contact">
-        <div class="cta-contact-label">Direct contact</div>
-        <div class="contact-name">Ben Harrison</div>
-        <div class="line">
-          <a href="mailto:campbellconsultancyuk@gmail.com">campbellconsultancyuk@gmail.com</a>
-        </div>
-        <div class="line">
-          <a href="https://calendar.app.google/YVJsfwiR3rhSZPMe9" target="_blank" rel="noopener">Book a 20-minute intro call →</a>
-        </div>
-        <div class="muted">
-          British owned &amp; operated. Flexible working hours to fit your schedule. No rigid retainers, no lock-in contracts.
-        </div>
+
+      <div class="contact-card reveal">
+        <div class="label">Direct contact</div>
+        <div class="name">Ben Harrison</div>
+        <a href="mailto:campbellconsultancyuk@gmail.com">campbellconsultancyuk@gmail.com</a>
+        <a href="https://calendar.app.google/YVJsfwiR3rhSZPMe9" class="calendar-link" target="_blank" rel="noopener">
+          <span>Book a 20-minute intro call</span>
+          <span class="arrow">→</span>
+        </a>
       </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <svg class="footer-lockup" viewBox="0 0 1500 510" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="#FFFFFF">
+    <g transform="translate(0.000000,510.000000) scale(0.100000,-0.100000)"
+ stroke="none">
+<path d="M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180
+-1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518
+818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203
+283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0
+-198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23
+-38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17
+c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285
+-26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173
+280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308
+-88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534
+-531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940
+939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70
+-64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308
+-494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61
+-78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162
+1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z"/>
+</g>
+  </g>
+  <g transform="translate(660, 100) scale(1.069)" fill="#FFFFFF">
+    <g transform="translate(0.000000,290.000000) scale(0.100000,-0.100000)"
+ stroke="none">
+<path d="M618 2654 c-220 -53 -346 -222 -336 -448 5 -117 41 -201 122 -282
+170 -169 482 -178 649 -18 l39 37 -60 60 -61 60 -37 -33 c-21 -18 -54 -39 -73
+-48 -52 -21 -166 -21 -223 1 -53 20 -121 89 -146 145 -23 54 -21 166 4 222 71
+156 267 205 415 103 59 -41 70 -38 135 28 l38 39 -33 34 c-94 97 -274 139
+-433 100z"/>
+<path d="M1494 2652 c-7 -4 -24 -36 -39 -72 -15 -36 -88 -200 -162 -365 -154
+-341 -176 -395 -168 -404 4 -3 47 -6 96 -6 l90 0 37 92 37 93 200 0 200 0 36
+-93 36 -92 101 -3 c56 -1 102 1 102 6 0 8 -80 187 -284 637 -47 105 -94 196
+-103 203 -18 13 -160 17 -179 4z m156 -342 c34 -80 64 -151 67 -157 4 -10 -25
+-13 -126 -13 -72 0 -131 2 -131 5 0 6 111 298 117 308 7 12 4 17 73 -143z"/>
+<path d="M2165 2647 c-3 -6 -4 -199 -3 -427 l3 -415 85 0 85 0 5 249 5 249
+115 -187 c63 -103 123 -196 133 -207 13 -14 29 -19 50 -17 28 3 40 18 149 197
+65 107 122 199 128 205 7 7 10 -70 10 -237 l0 -246 33 -6 c17 -4 57 -5 87 -3
+l55 3 3 414 c1 297 -1 418 -9 427 -7 9 -33 14 -73 14 -52 0 -66 -4 -83 -22
+-11 -13 -69 -106 -128 -208 -59 -102 -122 -209 -139 -237 -17 -29 -33 -53 -37
+-53 -3 0 -57 84 -119 188 -123 203 -180 291 -205 316 -21 20 -143 23 -150 3z"/>
+<path d="M3332 2647 c-9 -11 -12 -114 -10 -428 l3 -414 97 -3 97 -3 3 118 3
+118 145 6 c131 4 151 8 206 33 136 62 204 193 174 337 -24 110 -96 191 -204
+226 -74 23 -496 32 -514 10z m445 -167 c106 -48 113 -202 11 -257 -25 -13 -63
+-18 -150 -21 l-118 -4 0 151 0 151 108 0 c84 0 116 -5 149 -20z"/>
+<path d="M4196 2588 c-3 -40 -5 -233 -3 -428 l2 -355 225 -3 c253 -3 359 7
+435 42 87 40 133 124 121 219 -11 81 -49 134 -124 172 l-34 16 34 25 c54 40
+78 89 78 162 0 73 -14 106 -64 150 -65 57 -112 65 -403 70 l-261 4 -6 -74z
+m487 -91 c48 -31 62 -62 48 -107 -19 -64 -44 -74 -196 -78 l-132 -4 -8 95 c-4
+53 -4 101 0 107 5 8 46 11 134 8 100 -2 133 -7 154 -21z m44 -350 c40 -21 53
+-44 53 -95 0 -32 -6 -45 -30 -66 -38 -31 -83 -38 -235 -34 l-120 3 -3 94 c-1
+52 0 101 3 109 8 22 288 13 332 -11z"/>
+<path d="M5126 2644 c-3 -8 -6 -199 -6 -424 0 -363 2 -409 16 -414 20 -8 602
+-8 632 0 20 6 22 13 22 64 0 97 19 90 -241 90 l-229 0 0 100 0 100 198 2 197
+3 3 63 c2 38 -2 69 -9 78 -9 11 -50 14 -200 14 l-189 0 0 89 0 89 63 6 c34 4
+131 5 215 4 177 -3 174 -5 170 87 l-3 60 -316 3 c-282 2 -317 1 -323 -14z"/>
+<path d="M5953 2648 c-11 -18 -16 -820 -5 -836 8 -11 64 -12 310 -6 l300 7 4
+71 c3 39 3 73 1 76 -3 3 -99 6 -214 8 l-209 3 0 329 c0 285 -2 331 -16 344
+-20 20 -158 23 -171 4z"/>
+<path d="M6687 2654 c-4 -4 -7 -195 -7 -425 l0 -417 53 -6 c57 -7 521 -6 550
+1 14 4 17 16 17 79 0 41 -1 75 -2 75 -2 1 -97 5 -211 8 l-209 6 0 290 c1 160
+-2 313 -6 340 l-7 50 -85 3 c-47 1 -89 0 -93 -4z"/>
+<path d="M1395 1455 c-49 -17 -102 -76 -111 -122 -29 -157 116 -270 262 -204
+53 24 61 37 33 59 -21 18 -23 17 -60 -1 -46 -22 -99 -17 -129 13 -23 23 -39
+79 -33 114 13 65 93 102 154 72 41 -20 52 -20 73 2 15 18 15 20 -3 36 -24 22
+-87 45 -121 45 -14 0 -43 -6 -65 -14z"/>
+<path d="M1855 1456 c-78 -29 -135 -123 -121 -198 8 -43 64 -110 110 -132 91
+-43 221 6 255 97 28 72 -2 166 -68 211 -47 33 -120 42 -176 22z m113 -67 c69
+-24 87 -120 34 -180 -24 -27 -36 -32 -75 -33 -39 -1 -51 4 -78 30 -35 35 -49
+97 -29 133 14 27 68 61 96 61 12 0 35 -5 52 -11z"/>
+<path d="M2833 1457 c-52 -19 -78 -51 -78 -98 0 -52 23 -71 113 -99 92 -29
+107 -43 76 -74 -20 -21 -93 -21 -141 -1 -42 18 -43 17 -46 -21 -2 -24 3 -30
+33 -41 77 -26 193 -9 226 35 7 9 14 36 14 59 0 53 -26 75 -121 103 -70 21 -83
+33 -67 63 10 19 88 24 131 8 21 -8 26 -6 36 15 15 33 10 39 -43 53 -55 14 -91
+13 -133 -2z"/>
+<path d="M5530 1458 c-46 -13 -96 -52 -116 -90 -20 -38 -20 -117 -1 -155 45
+-86 155 -125 244 -88 61 26 67 34 42 61 l-21 23 -39 -21 c-49 -25 -101 -18
+-135 19 -53 57 -37 150 31 179 44 18 66 18 109 -3 34 -16 37 -16 56 2 27 24
+26 28 -17 52 -48 26 -108 35 -153 21z"/>
+<path d="M2270 1358 c0 -57 3 -133 7 -170 l6 -68 33 0 34 0 0 95 c0 52 3 95 8
+94 4 0 45 -45 91 -100 71 -86 87 -100 110 -97 l26 3 3 173 2 172 -39 0 -40 0
+-3 -102 -3 -101 -84 101 c-76 93 -87 102 -117 102 l-34 0 0 -102z"/>
+<path d="M3190 1343 c0 -92 4 -126 18 -153 54 -108 215 -108 270 0 19 38 22
+60 22 157 l0 113 -40 0 -40 0 0 -118 c0 -143 -9 -162 -74 -162 -68 0 -77 17
+-83 159 l-6 121 -33 0 -34 0 0 -117z"/>
+<path d="M3676 1368 c-3 -51 -2 -129 2 -173 l7 -80 120 0 120 0 0 30 0 30 -86
+3 -87 3 1 47 c1 26 1 89 -1 140 l-2 92 -34 0 -34 0 -6 -92z"/>
+<path d="M4010 1440 c0 -11 -1 -23 -2 -27 -2 -5 22 -10 52 -13 l55 -5 3 -137
+3 -138 39 0 40 0 0 139 0 140 53 3 c48 3 52 5 52 28 l0 25 -147 3 c-143 2
+-148 2 -148 -18z"/>
+<path d="M4515 1388 c-18 -40 -51 -116 -73 -170 l-40 -96 26 -5 c37 -7 47 -1
+61 38 l12 35 85 0 85 0 11 -30 c5 -17 18 -35 28 -40 24 -13 60 -13 60 0 0 6
+-24 63 -53 128 -30 64 -62 138 -73 164 -18 45 -21 48 -57 48 -38 0 -39 -1 -72
+-72z m94 -64 c34 -75 32 -79 -21 -81 -26 -1 -49 1 -52 6 -6 10 36 121 46 121
+4 0 16 -21 27 -46z"/>
+<path d="M4920 1291 c0 -180 0 -181 51 -181 17 0 19 8 19 88 0 48 4 93 9 100
+6 10 29 -12 87 -82 69 -85 81 -96 109 -96 32 0 32 0 39 61 3 34 6 111 6 170
+l0 109 -40 0 -40 0 0 -102 -1 -103 -32 36 c-17 19 -56 65 -86 102 -48 58 -59
+67 -88 67 l-33 0 0 -169z"/>
+<path d="M5840 1447 c0 -7 26 -53 57 -103 51 -79 58 -96 63 -154 l5 -65 35 0
+35 0 3 63 c3 57 9 73 57 152 73 117 74 120 38 120 -34 0 -48 -13 -92 -93 -18
+-31 -37 -55 -42 -52 -5 3 -27 37 -50 75 -38 65 -44 70 -75 70 -21 0 -34 -5
+-34 -13z"/>
+</g>
+  </g>
+        </svg>
+        <span class="footer-est">Est. 2025</span>
+      </div>
+      <div class="copyright">© 2026 Campbell Consultancy. All rights reserved.</div>
     </div>
   </div>
 </section>
 
-<!-- ================ FOOTER ================ -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <svg aria-hidden="true"><use href="#campbell-mark"/></svg>
-        <span>CAMPBELL CONSULTANCY · EST. 2025</span>
-      </div>
-      <div>&copy; 2026 Campbell Consultancy. All rights reserved.</div>
-    </div>
-  </div>
-</footer>
-
 <script>
-// Scroll shadow on topbar
-const topbar = document.getElementById('topbar');
-const updateTopbar = () => {
-  topbar.classList.toggle('scrolled', window.scrollY > 20);
-};
-window.addEventListener('scroll', updateTopbar, { passive: true });
-updateTopbar();
+// Mark that JS is enabled so reveal animations apply (otherwise content is always visible)
+document.documentElement.classList.add('js-reveal');
 
-// Reveal-on-scroll
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
+// Header scroll state
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
     }
   });
-}, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
-reveals.forEach(el => observer.observe(el));
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Safety net: after 3s, reveal anything still hidden (handles edge cases)
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.in-view)').forEach(el => el.classList.add('in-view'));
+}, 3000);
+
+// Smooth scroll for anchor nav
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const id = link.getAttribute('href');
+    if (id === '#') return;
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 60;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
 </script>
 
 </body>

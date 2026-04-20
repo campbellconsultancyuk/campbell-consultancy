@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roots & Seeds — Automation Pitch · Campbell Consultancy</title>
+<meta name="description" content="HR, payroll and onboarding automation pitch for Roots & Seeds Kitchen Garden. A practical, phased plan to cut admin time across three sites.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Inline SVG favicon (brand gradient mark) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 510'><defs><linearGradient id='g' x1='0' y1='.5' x2='1' y2='.5'><stop offset='0%25' stop-color='%23081F4C'/><stop offset='100%25' stop-color='%2352B7A0'/></linearGradient></defs><g fill='url(%23g)'><g transform='translate(0,510) scale(.1,-.1)'><path d='M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180 -1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518 818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203 283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0 -198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23 -38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17 c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285 -26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173 280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308 -88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534 -531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940 939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70 -64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308 -494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61 -78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162 1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z'/></g></g></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:         #132450;
+  --navy-deep:    #081F4C;
+  --navy-ink:     #0A1638;
+  --teal:         #52B7A0;
+  --teal-deep:    #2E8B7E;
+  --teal-light:   #7DD1BD;
+  --paper:        #FAFBFC;
+  --paper-warm:   #F4F6F9;
+  --surface:      #FFFFFF;
+  --rule:         rgba(19, 36, 80, 0.12);
+  --rule-strong:  rgba(19, 36, 80, 0.24);
+  --ink:          #0A1638;
+  --ink-soft:     #3A4970;
+  --ink-muted:    #6B7A98;
+  --ink-faint:    #9BA5BC;
+  --brand-grad:   linear-gradient(90deg, #081F4C 0%, #52B7A0 100%);
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--teal); color: white; }
+
+/* ===================================================================
+   LAYOUT
+   =================================================================== */
+.container {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 600px) { .container { padding: 0 20px; } }
+
+/* ===================================================================
+   HEADER BAR (sticky, nav back to main site)
+   =================================================================== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 251, 252, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.topbar-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.topbar .brand svg {
+  height: 28px;
+  width: auto;
+}
+
+.topbar .brand-text {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.topbar .brand-text strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.back-link {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s var(--ease);
+}
+
+.back-link:hover { color: var(--navy); }
+
+@media (max-width: 600px) {
+  .topbar-inner { padding: 12px 20px; }
+  .topbar .brand-text { display: none; }
+}
+
+/* ===================================================================
+   COVER / HERO
+   =================================================================== */
+.cover {
+  padding: 80px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(ellipse at 70% 30%, rgba(82, 183, 160, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--teal-deep);
+}
+
+.cover h1 {
+  font-family: var(--sans);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  margin-bottom: 20px;
+  max-width: 20ch;
+}
+
+.cover h1 em {
+  font-style: italic;
+  font-weight: 700;
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cover .subtitle {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 60ch;
+  margin-bottom: 40px;
+}
+
+.meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+}
+
+.meta-item .label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+}
+
+.meta-item .value {
+  font-size: 0.9375rem;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ===================================================================
+   CONTENT TYPOGRAPHY
+   =================================================================== */
+main {
+  padding: 48px 0 80px;
+}
+
+h2 {
+  font-family: var(--sans);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 80px 0 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--navy);
+  position: relative;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--brand-grad);
+}
+
+h2:first-child { margin-top: 0; }
+
+h3 {
+  font-family: var(--sans);
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin: 40px 0 16px;
+}
+
+h4 {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--navy);
+  margin: 28px 0 12px;
+}
+
+p { margin: 0 0 18px; color: var(--ink); }
+p + p { margin-top: 0; }
+
+strong { font-weight: 600; color: var(--navy); }
+em { font-style: italic; color: var(--teal-deep); font-weight: 500; }
+
+a {
+  color: var(--teal-deep);
+  text-decoration: underline;
+  text-decoration-color: rgba(46, 139, 126, 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s var(--ease);
+}
+a:hover { text-decoration-color: var(--teal-deep); }
+
+/* ===================================================================
+   LISTS
+   =================================================================== */
+ul, ol {
+  margin: 0 0 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li, ol li {
+  position: relative;
+  padding: 8px 0 8px 28px;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 14px;
+  height: 1px;
+  background: var(--teal);
+}
+
+ol { counter-reset: list-counter; }
+ol li { counter-increment: list-counter; }
+ol li::before {
+  content: counter(list-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--teal-deep);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+/* ===================================================================
+   TABLES
+   =================================================================== */
+.table-wrap {
+  margin: 28px 0 32px;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--surface);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+thead th {
+  background: var(--navy);
+  color: white;
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+}
+
+tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  vertical-align: top;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+tbody tr:hover { background: var(--paper-warm); }
+
+/* Highlight total / summary rows */
+tbody tr.total td {
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--paper-warm);
+  border-top: 2px solid var(--navy);
+}
+
+/* ===================================================================
+   CALLOUT (e.g. bottom line, recommendation)
+   =================================================================== */
+.callout {
+  margin: 32px 0;
+  padding: 28px 32px;
+  background: var(--paper-warm);
+  border-left: 3px solid var(--teal);
+  border-radius: 2px;
+}
+
+.callout.navy {
+  background: var(--navy);
+  color: white;
+  border-left-color: var(--teal);
+  position: relative;
+  overflow: hidden;
+}
+
+.callout.navy::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--brand-grad);
+}
+
+.callout.navy p { color: rgba(255, 255, 255, 0.92); }
+.callout.navy strong { color: white; }
+.callout.navy em { color: var(--teal-light); }
+
+.callout p:last-child { margin-bottom: 0; }
+
+.callout-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.callout.navy .callout-label { color: var(--teal-light); }
+
+/* ===================================================================
+   OPTION CARDS
+   =================================================================== */
+.option-block {
+  margin: 48px 0;
+  padding: 36px 40px 40px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.option-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--brand-grad);
+  opacity: 0.5;
+}
+
+.option-block.recommended {
+  border-color: var(--navy);
+  box-shadow: 0 8px 40px -12px rgba(19, 36, 80, 0.15);
+}
+
+.option-block.recommended::before { opacity: 1; }
+
+.option-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: var(--navy);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.option-block.recommended .option-tag {
+  background: var(--brand-grad);
+}
+
+.option-block h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.option-block p:first-of-type {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+  .option-block { padding: 28px 24px; }
+}
+
+/* ===================================================================
+   FOOTER / SIGN-OFF
+   =================================================================== */
+.signoff {
+  margin-top: 96px;
+  padding: 64px 40px;
+  background: var(--navy);
+  color: white;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.signoff::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--brand-grad);
+}
+
+.signoff::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(82, 183, 160, 0.15) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.signoff h2 {
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+}
+
+.signoff h2::before { display: none; }
+
+.signoff p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 14px;
+}
+
+.signoff strong { color: white; }
+
+.signoff a { 
+  color: var(--teal-light);
+  text-decoration-color: rgba(125, 209, 189, 0.5);
+}
+.signoff a:hover { text-decoration-color: var(--teal-light); }
+
+.signoff-actions {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 2px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  line-height: 1;
+}
+
+/* Reset for button element — inherit font, remove default border */
+button.btn {
+  font: inherit;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--navy) !important;
+  text-decoration: none !important;
+}
+
+.btn-primary:hover {
+  background: var(--teal-light);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -6px rgba(82, 183, 160, 0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: white !important;
+  text-decoration: none !important;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-ghost:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 600px) {
+  .signoff { padding: 44px 28px; }
+}
+
+/* ===================================================================
+   PAGE FOOTER
+   =================================================================== */
+.page-footer {
+  padding: 40px 0 60px;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+}
+
+.page-footer .sep { margin: 0 10px; opacity: 0.5; }
+
+/* ===================================================================
+   PRINT
+   =================================================================== */
+@media print {
+  body { background: white; font-size: 11pt; }
+  .topbar, .signoff-actions, .page-footer { display: none; }
+  .container { max-width: none; padding: 0; }
+  a { color: var(--navy); text-decoration: none; }
+  .option-block { page-break-inside: avoid; }
+  h2, h3 { page-break-after: avoid; }
+  .signoff { background: white; color: var(--ink); padding: 20px 0; }
+  .signoff::before, .signoff::after { display: none; }
+  .signoff h2 { color: var(--navy); }
+  .signoff p { color: var(--ink); }
+  .signoff strong { color: var(--navy); }
+  .signoff a { color: var(--navy); }
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="https://campbellconsultancyuk.github.io/campbell-consultancy/" class="brand" aria-label="Campbell Consultancy — home">
+      <svg viewBox="0 0 600 510" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="bMark" x1="0" y1="0.5" x2="1" y2="0.5">
+            <stop offset="0%" stop-color="#081F4C"/>
+            <stop offset="100%" stop-color="#52B7A0"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#bMark)" transform="translate(0,510) scale(0.1,-0.1)">
+          <path d="M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180 -1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518 818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203 283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0 -198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23 -38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17 c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285 -26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173 280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308 -88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534 -531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940 939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70 -64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308 -494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61 -78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162 1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z"/>
+        </g>
+      </svg>
+      <span class="brand-text"><strong>Campbell Consultancy</strong></span>
+    </a>
+    <a href="https://campbellconsultancyuk.github.io/campbell-consultancy/" class="back-link">← Back to main site</a>
+  </div>
+</header>
+
+<!-- Cover -->
+<section class="cover">
+  <div class="container">
+    <span class="eyebrow">Proposal — Confidential</span>
+    <h1>Roots &amp; Seeds — <em>Automation Pitch</em></h1>
+    <p class="subtitle">
+      HR, Payroll &amp; Onboarding Automation. A practical, phased plan to cut admin time and tighten labour cost visibility across three sites.
+    </p>
+    <div class="meta">
+      <div class="meta-item">
+        <div class="label">Prepared for</div>
+        <div class="value">Roots &amp; Seeds Kitchen Garden</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Prepared by</div>
+        <div class="value">Ben Harrison · Campbell Consultancy</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Date</div>
+        <div class="value">April 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main content -->
+<main>
+  <div class="container">
+
+    <h2>Executive summary</h2>
+
+    <p>
+      The aim is simple: reduce the time you and your managers spend on HR, onboarding and payroll admin, and give you weekly visibility over labour cost as a percentage of revenue — all without ripping out tools that already work.
+    </p>
+
+    <p>
+      The good news is that the two systems you use — <strong>BreatheHR</strong> and <strong>Xero Payroll</strong> — already talk to each other natively. Employee data syncs from Breathe to Xero automatically, and payslips pull back into staff Breathe profiles once payroll runs. That removes roughly 60% of the plumbing we would otherwise have to build.
+    </p>
+
+    <p>
+      The real opportunity is therefore not in replacing these systems but in the three gaps around them: (1) getting clean, approved timesheet hours into Xero without manual re-entry, (2) giving staff a self-service channel for the questions that currently interrupt managers, and (3) giving you a weekly labour snapshot per site so there are no end-of-month surprises.
+    </p>
+
+    <div class="callout navy">
+      <span class="callout-label">Bottom line</span>
+      <p>
+        A meaningful first version can go live in <strong>3–4 weeks</strong> for under <strong>£1,200</strong>. A full three-site build lands in the <em>£2,800–£5,800</em> range depending on scope. Most three-site operations then move onto an <strong>ongoing partnership at £500/month</strong> to keep the system tuned, monitored, and extending — 30-day rolling, no lock-in.
+      </p>
+    </div>
+
+    <h2>Where the time goes today</h2>
+
+    <p>
+      Before recommending anything, it's worth naming the specific admin patterns that eat the most time in a typical three-site hospitality operation. These are the targets.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 70%;">Admin task</th>
+            <th>Typical time per week</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>New starter onboarding (paperwork, right-to-work, bank details, handbook issue)</td>
+            <td>45–90 mins per starter</td>
+          </tr>
+          <tr>
+            <td>Fielding staff questions (payslip queries, holiday balance, rota clarification)</td>
+            <td>3–5 hours per manager</td>
+          </tr>
+          <tr>
+            <td>Collecting and approving timesheets before payroll runs</td>
+            <td>2–4 hours per site</td>
+          </tr>
+          <tr>
+            <td>Compiling labour cost reports after payroll has run (too late to act)</td>
+            <td>2–3 hours + frustration</td>
+          </tr>
+          <tr>
+            <td>Contract generation, signing and filing</td>
+            <td>30–60 mins per staff change</td>
+          </tr>
+          <tr>
+            <td>Chasing missing documents, policy acknowledgements, training records</td>
+            <td>1–2 hours per week</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Across three sites, that's realistically <strong>20–30 hours of manager and owner time per week</strong> that is not going into food, guests, or growth. The entire case for automation is recovering most of that time, predictably, with controls you trust.
+    </p>
+
+    <h2>How the automated system fits together</h2>
+
+    <p>
+      The target system has five layers. Only the middle layer — the orchestration and AI — is new work. Everything else is already in place or is a well-trodden off-the-shelf choice.
+    </p>
+
+    <h3>Layer 1 — Your existing systems (unchanged)</h3>
+    <ul>
+      <li><strong>BreatheHR</strong> — remains the single source of truth for employee records, contracts, holiday balances, sickness, and documents.</li>
+      <li><strong>Xero Payroll</strong> — continues to handle RTI submissions, pension auto-enrolment (NEST or similar), tax calculations, and HMRC compliance. We touch none of the compliance plumbing — that's Xero's job and they do it well.</li>
+      <li>The native Breathe ↔ Xero integration stays switched on. Employee data, pay changes and leaver information flow automatically between them at no cost.</li>
+    </ul>
+
+    <h3>Layer 2 — Rota and timesheet capture</h3>
+    <p>
+      This is the one area where a platform decision matters. Hours worked need to get from shift floor into Xero cleanly and accurately — it's the single biggest source of payroll error in hospitality.
+    </p>
+    <p>
+      If a rota system is already in place, we integrate with it. If not, my recommendation is <strong>RosterElf</strong> for a three-site operation — it's UK-built, purpose-designed for Xero Payroll UK, and applies Working Time Regulation rules before timesheets reach Xero. Realistic monthly cost: around £50–80 total across three sites.
+    </p>
+
+    <h3>Layer 3 — The automation &amp; AI layer (the new bit)</h3>
+    <p>
+      This is what I build. It sits above the existing tools and orchestrates them. The core engine is <strong>Make.com</strong> — a visual automation platform that runs scheduled and triggered workflows between systems. On top of that, specific AI capabilities are added where they earn their keep.
+    </p>
+    <ul>
+      <li><strong>Onboarding automation:</strong> new starter form → BreatheHR record → right-to-work docs filed in Drive → welcome pack sent → manager notified.</li>
+      <li><strong>AI staff assistant:</strong> WhatsApp bot using Claude or GPT that answers staff questions using real data pulled live from Breathe and Xero — never guessed.</li>
+      <li><strong>Weekly labour snapshot:</strong> every Monday morning, an email with total labour cost, labour % of revenue, overtime spend, and site-by-site variance vs budget.</li>
+      <li><strong>Exception alerts:</strong> missing timesheets, pending right-to-work expiry, holiday allowance anomalies, overtime thresholds breached.</li>
+    </ul>
+
+    <h3>Layer 4 — Staff interface</h3>
+    <p>
+      Staff interact through WhatsApp (for questions) and a simple branded onboarding web form (Typeform or Tally). No new app to download, no new login for them to remember. Managers get exception alerts and labour reports by email and optional WhatsApp.
+    </p>
+
+    <h3>Layer 5 — Your dashboard (optional, phase 2)</h3>
+    <p>
+      If useful, a simple owner dashboard can be built in Retool or a similar low-code tool showing labour cost per site in near real-time. This is not required for phase 1 — the weekly snapshot email covers most of the need.
+    </p>
+
+    <h2>Four delivery options</h2>
+
+    <p>
+      The right approach depends on how confident you want to feel before committing more money, and how much ongoing ownership you want to hand off. Options 1–3 are scoped builds — each self-contained, each producing a working system. Option 4 is the ongoing partnership that sits on top of any of them, and is how most three-site operators eventually settle.
+    </p>
+
+    <!-- OPTION 1 -->
+    <div class="option-block">
+      <span class="option-tag">Option 1 · Validation pilot</span>
+      <h3>One site, one module</h3>
+      <p>
+        We deploy the AI staff assistant on WhatsApp for <strong>one site only</strong> (suggest Cirencester Park as the flagship), loaded with your actual policies, holiday rules, and plumbed into Breathe for live holiday balances. Nothing else.
+      </p>
+      <p>
+        The point is to prove two things: (a) staff will actually use it, and (b) it genuinely reduces interruptions to the manager. We measure for 4 weeks, then decide whether to expand.
+      </p>
+
+      <h4>What's included</h4>
+      <ul>
+        <li>WhatsApp Business number setup via Twilio</li>
+        <li>AI assistant (Claude) with R&amp;S policy knowledge base</li>
+        <li>Live connection to BreatheHR for holiday balances</li>
+        <li>Escalation to manager when AI is uncertain</li>
+        <li>Weekly usage report for 4 weeks</li>
+      </ul>
+
+      <h4>Timeline &amp; investment</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th style="width: 30%;">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Build time — 20 hours @ £25/hr</td><td>£500</td></tr>
+            <tr><td>Twilio WhatsApp setup + test credit</td><td>£25</td></tr>
+            <tr><td>Claude API (4 weeks, light use)</td><td>£40</td></tr>
+            <tr><td>Make.com Core plan (1 month)</td><td>£9</td></tr>
+            <tr><td>Typeform/Tally (optional, free tier)</td><td>£0</td></tr>
+            <tr class="total"><td>Total — one-off</td><td>£574</td></tr>
+            <tr><td>Platform costs ongoing (passthrough)</td><td>~£80–120/month</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Timeline:</strong> 2 weeks to live, 4 weeks of pilot data, decision point at week 6.</p>
+    </div>
+
+    <!-- OPTION 2 RECOMMENDED -->
+    <!-- OPTION 2 PHASED BUILD -->
+    <div class="option-block">
+      <span class="option-tag">Option 2 · Phased build</span>
+      <h3>The sensible default</h3>
+      <p>
+        We build in three stages, each delivering standalone value. You only commit to the next stage once the previous is live and proven. This is how I'd do it <em>if it were my business</em>.
+      </p>
+
+      <h4>Stage A (weeks 1–3): onboarding + labour snapshot</h4>
+      <ul>
+        <li>Self-serve new starter onboarding form, feeding directly into BreatheHR for all three sites</li>
+        <li>Right-to-work document capture and filing</li>
+        <li>Welcome pack auto-sent with handbook, first-shift info and site-specific info</li>
+        <li>Weekly Monday labour snapshot email per site, pulling from Xero Payroll and rota data</li>
+      </ul>
+
+      <h4>Stage B (weeks 4–6): AI staff assistant rolled out across all sites</h4>
+      <ul>
+        <li>WhatsApp bot trained on R&amp;S policies, connected live to Breathe</li>
+        <li>Handles holiday balances, payslip questions, policy questions, contact info</li>
+        <li>Smart escalation routing to the correct manager by site</li>
+      </ul>
+
+      <h4>Stage C (weeks 7–9): exception alerts and timesheet integration</h4>
+      <ul>
+        <li>Timesheet flow into Xero Payroll streamlined (via Deputy or RosterElf, whichever is in place)</li>
+        <li>Missing timesheet alerts before payroll runs</li>
+        <li>Overtime threshold alerts</li>
+        <li>Right-to-work expiry and contract renewal reminders</li>
+      </ul>
+
+      <h4>Timeline &amp; investment</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th style="width: 30%;">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Stage A build — 28 hours @ £25/hr</td><td>£700</td></tr>
+            <tr><td>Stage B build — 32 hours @ £25/hr</td><td>£800</td></tr>
+            <tr><td>Stage C build — 20 hours @ £25/hr</td><td>£500</td></tr>
+            <tr><td>Twilio WhatsApp setup &amp; first 3 months</td><td>£80</td></tr>
+            <tr><td>Claude API (first 6 months, 3 sites)</td><td>£240</td></tr>
+            <tr><td>Make.com Core plan (first 6 months)</td><td>£54</td></tr>
+            <tr><td>Typeform Basic (first 6 months)</td><td>£150</td></tr>
+            <tr><td>Buffer for testing, iteration, integrations</td><td>£300</td></tr>
+            <tr class="total"><td>Total build + first 6 months running</td><td>£2,824</td></tr>
+            <tr><td>Platform costs ongoing (passthrough)</td><td>~£130–180/month</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Timeline:</strong> 9 weeks to full deployment, with Stage A producing value from week 3.</p>
+    </div>
+
+    <!-- OPTION 3 -->
+    <div class="option-block">
+      <span class="option-tag">Option 3 · End-to-end system</span>
+      <h3>The full build, delivered in one phase</h3>
+      <p>
+        Everything from Option 2, plus an owner dashboard, custom reporting, and deeper integrations. Suitable if you want everything live before the next seasonal push (bank holidays, summer, Christmas trading) and don't want to stagger the rollout.
+      </p>
+
+      <h4>What's included on top of Option 2</h4>
+      <ul>
+        <li>Owner dashboard built in Retool — live labour %, per-site, per-day, per-role</li>
+        <li>Historical trend reporting (labour vs revenue, 12-week moving average)</li>
+        <li>Contract generation automation (new starter → branded PDF contract via template)</li>
+        <li>Custom reporting to your specs (e.g. food cost vs labour, seasonal patterns)</li>
+        <li>Documentation pack for you and managers (run-books, how-to videos)</li>
+        <li>30 days of post-launch support, tuning, and iteration</li>
+      </ul>
+
+      <h4>Timeline &amp; investment</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th style="width: 30%;">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Full build — 180 hours @ £25/hr</td><td>£4,500</td></tr>
+            <tr><td>Platform costs (first 6 months, all tools)</td><td>£720</td></tr>
+            <tr><td>Retool Starter plan (first 6 months)</td><td>£0 (free tier)</td></tr>
+            <tr><td>Contingency (20%)</td><td>£900</td></tr>
+            <tr class="total"><td>Total build + first 6 months running</td><td>£6,120</td></tr>
+            <tr><td>Platform costs ongoing (passthrough)</td><td>~£140–200/month</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Timeline:</strong> 8–10 weeks, one continuous build.</p>
+    </div>
+
+    <!-- OPTION 4 — THE ONGOING PARTNERSHIP -->
+    <div class="option-block recommended">
+      <span class="option-tag">Option 4 · Ongoing partnership (recommended)</span>
+      <h3>Build it, then keep improving it</h3>
+      <p>
+        Any of Options 1–3, paired with a monthly partnership once the system is live. This is the option most suited to a three-site operation where the stakes are high and the cost of a silent failure (missed payroll, broken onboarding, compliance drift) is much greater than the cost of having someone actively looking after it.
+      </p>
+      <p>
+        The build doesn't stop being valuable on day one — it keeps compounding as we tune it, extend it, and adapt it to seasonal patterns. This option formalises that work and makes the outcomes predictable.
+      </p>
+
+      <h4>What's included every month</h4>
+      <ul>
+        <li><strong>System health monitoring</strong> — automations are actively watched. API changes, rate limits, authentication renewals, silent failures caught before they affect payroll or onboarding.</li>
+        <li><strong>Weekly labour review</strong> — beyond the automated Monday snapshot, a short written commentary identifying variance, overtime trends, and site-by-site outliers worth your attention.</li>
+        <li><strong>Month-end reporting pack</strong> — labour vs revenue trends, overtime patterns, recruitment cost visibility, and a plain-English summary of what the numbers say about each site.</li>
+        <li><strong>AI staff assistant tuning</strong> — new policy questions handled, edge cases added to the knowledge base, misrouted questions fixed, response quality reviewed weekly.</li>
+        <li><strong>New automation credit</strong> — a monthly allocation for small new builds, tweaks, or improvements you request. Things that would otherwise be a separate project.</li>
+        <li><strong>Compliance drift management</strong> — right-to-work renewals flagged, HR legislation changes reflected in the automation, contract templates kept current.</li>
+        <li><strong>First-line support</strong> — direct WhatsApp/email access for managers when something's confusing or not behaving as expected. 24-hour response weekdays.</li>
+        <li><strong>Quarterly strategy review</strong> — 60-minute call reviewing what's working, what's next, and where the next marginal hour of automation effort pays back.</li>
+      </ul>
+
+      <h4>Why this option matters for a three-site operator</h4>
+      <p>
+        A one-off build is a snapshot of today. Hospitality doesn't stand still — new starters arrive, policies change, platforms push updates, seasonal patterns shift. Without ongoing ownership, an automation system slowly degrades: the AI starts giving slightly wrong answers, the labour report stops matching the new rota software, and by month six someone in your team is back to doing it manually "just to be safe".
+      </p>
+      <p>
+        This option prevents that. The system stays current, and you have someone who knows the whole stack end-to-end on call when it matters. Think of it as the same relationship you have with your accountant — not a vendor you call when things break, but a partner who keeps things from breaking.
+      </p>
+
+      <h4>Investment</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th style="width: 35%;">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Build phase (as per Option 1, 2 or 3 above)</td><td>From £574</td></tr>
+            <tr class="total"><td>Ongoing partnership — all activities listed above</td><td>£500/month</td></tr>
+            <tr><td>Platform running costs (passthrough, no markup)</td><td>£110–200/month</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Priced by <em>outcome</em>, not by the hour. You don't pay me for time spent — you pay for a system that stays running, adapts to the business, and keeps recovering manager hours month after month. What this replaces in real terms: roughly one day of a senior manager's time per week across three sites, at a considerably lower rate.
+      </p>
+
+      <div class="callout">
+        <span class="callout-label">Commitment terms</span>
+        <p>
+          <strong>Monthly rolling agreement — 30 days' notice to cancel at any stage, no questions asked.</strong> No lock-in, no minimum term, no exit fees. If the partnership isn't working for you, you give notice and we document the handover properly so your team owns everything we've built.
+        </p>
+      </div>
+
+      <h4>How the first three months typically look</h4>
+      <ul>
+        <li><strong>Month 1:</strong> bedding-in period. Fine-tuning the automations post-launch, catching edge cases the pilot didn't surface, and establishing the weekly labour review rhythm.</li>
+        <li><strong>Month 2:</strong> first round of improvements based on what the data is telling us — often a new report, a new automation, or a refinement to the AI assistant's knowledge.</li>
+        <li><strong>Month 3:</strong> first quarterly strategy review. Reviewing wins, naming the next priority, and agreeing what the next quarter looks like.</li>
+      </ul>
+
+      <p><strong>Start date:</strong> the ongoing partnership begins the day the build phase goes live. Billed monthly in advance by direct debit or standing order.</p>
+    </div>
+
+    <h2>Platform cost breakdown</h2>
+
+    <p>
+      For transparency, here's what each tool actually costs and what it does. Prices verified April 2026. All prices exclude VAT.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Role</th>
+            <th>Monthly cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>BreatheHR</td><td>Your existing HR system — unchanged</td><td>Already paid</td></tr>
+          <tr><td>Xero Payroll</td><td>Your existing payroll — unchanged</td><td>Already paid</td></tr>
+          <tr><td>Breathe ↔ Xero integration</td><td>Native two-way sync</td><td>Free with Breathe</td></tr>
+          <tr><td>Make.com (Core plan)</td><td>Automation engine — scheduled workflows</td><td>~£9</td></tr>
+          <tr><td>Claude or OpenAI API</td><td>AI staff assistant — usage-based</td><td>£15–40 (3 sites)</td></tr>
+          <tr><td>Twilio WhatsApp Business API</td><td>Staff WhatsApp channel</td><td>£10–25 (usage)</td></tr>
+          <tr><td>Typeform Basic</td><td>Branded onboarding forms</td><td>£25</td></tr>
+          <tr><td>Google Workspace (existing)</td><td>Document storage</td><td>Already paid</td></tr>
+          <tr><td>RosterElf (if no rota tool yet)</td><td>Rota + timesheet → Xero</td><td>£50–80 (3 sites)</td></tr>
+          <tr><td>Retool (Option 3 only)</td><td>Owner dashboard</td><td>Free tier initially</td></tr>
+          <tr class="total"><td>Expected total running cost</td><td>Ongoing platform costs (3 sites)</td><td>£110–200/month</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Note on WhatsApp costs</span>
+      <p>
+        Since mid-2025, customer-initiated conversations (i.e. staff messaging the bot) are effectively free within a 24-hour window. This keeps running costs small — you're paying cents, not pounds, per staff question answered.
+      </p>
+    </div>
+
+    <h2>How we keep this safe</h2>
+
+    <p>
+      Automating HR and payroll adjacencies means handling sensitive data. These are the specific controls built into every option.
+    </p>
+
+    <h3>AI never invents numbers</h3>
+    <p>
+      This is non-negotiable. When a staff member asks "how much holiday do I have left?", the system retrieves their actual balance from BreatheHR via API and passes it to the AI as structured data. The AI's only job is to phrase the answer. It cannot guess, estimate, or make up numbers. If the data isn't available, it escalates to a human.
+    </p>
+
+    <h3>Payroll compliance stays with Xero</h3>
+    <p>
+      We do not touch RTI, HMRC submissions, tax codes, pension contributions, or statutory deductions. Xero handles all of that. Our automation feeds clean data in and reads clean data out — nothing in the compliance path is altered.
+    </p>
+
+    <h3>GDPR and data handling</h3>
+    <p>
+      All tools used (BreatheHR, Xero, Make.com, Claude, Twilio, Google Workspace) are GDPR-compliant with UK-legal data processing agreements. Staff data is never sent outside the EU/UK region. We document every data flow for your records.
+    </p>
+
+    <h3>Escalation paths</h3>
+    <p>
+      Every automation has a human fallback. The AI assistant escalates when unsure. Onboarding notifies a manager at each step. Labour alerts go to named individuals, not "the system". If anything breaks, you know immediately.
+    </p>
+
+    <h3>Off-switch</h3>
+    <p>
+      Every automation can be paused or disabled individually without taking down the whole system. Make.com gives per-scenario controls, and the AI assistant has a kill switch.
+    </p>
+
+    <h2>What I need from you to get started</h2>
+
+    <p>
+      None of this requires any action today other than deciding which option fits. When we proceed, here's what I'll need — nothing is particularly involved:
+    </p>
+
+    <ul>
+      <li>Admin access (or a named admin's help) to BreatheHR and Xero</li>
+      <li>Your current rota tool, if any — otherwise we'll pick one together</li>
+      <li>Your employee handbook, current policies, and any SOPs you want the AI to know</li>
+      <li>A 60-minute kick-off call to walk through how things currently work day-to-day</li>
+      <li>One nominated manager per site as the escalation contact</li>
+    </ul>
+
+    <h3>Decision points for you</h3>
+    <p>A few questions worth thinking about before we speak again:</p>
+    <ul>
+      <li>Which of the four options feels right for where you are now?</li>
+      <li>Do you already use a rota/scheduling tool, or is that part of the brief?</li>
+      <li>Who handles payroll — you, a bookkeeper, or an external accountant? (Affects how we integrate on the Xero side.)</li>
+      <li>Roughly how many new starters per quarter across the three sites? (Helps size the onboarding ROI case.)</li>
+      <li>Are there any existing pain points that aren't in this document? The system can flex.</li>
+    </ul>
+
+    <h2>Why this is a safer bet than building from scratch</h2>
+
+    <p>
+      You mentioned a friend is thinking of building a SaaS product for this. That's a separate, much more expensive conversation — and it shouldn't be confused with what you actually need right now, which is getting the admin off your plate as quickly and cleanly as possible.
+    </p>
+
+    <p>
+      What I'm proposing here is not a product. It's <em>plumbing</em>. It uses tools that already exist, are already supported, and have huge companies behind them keeping them secure and compliant. The risk profile is fundamentally different from a bespoke build.
+    </p>
+
+    <p>
+      I work day-to-day with this same stack — Make.com, BreatheHR API, CRM integrations, automation orchestration — across Fan Rescue and Entelech clients. This isn't experimental territory. It's how multi-site operators who value their time already run.
+    </p>
+
+    <div class="callout navy">
+      <span class="callout-label">Recommendation</span>
+      <p>
+        <strong>Start with Option 2 (phased build), then move to Option 4 (ongoing partnership) when the system goes live.</strong> Stage A alone — onboarding plus weekly labour snapshot — typically pays back in month one through recovered manager hours, so you'll know by week 3 whether the approach works for you, with a very small commitment.
+      </p>
+      <p>
+        Once the build is live, the partnership is what makes the value stick. Automations need ongoing ownership to keep earning their keep — this is the same principle as having an accountant on retainer rather than calling one when the taxman writes. 30-day rolling notice throughout, so you're never locked in.
+      </p>
+      <p>
+        If you want to trial the build alone first without committing to ongoing partnership, that's fine — we can review at month two and decide together whether it makes sense to formalise it. Either way, no surprises.
+      </p>
+    </div>
+
+    <!-- Sign-off -->
+    <section class="signoff">
+      <h2>Next step</h2>
+      <p>
+        A 15-minute call to walk through any questions, then if we're aligned I send a one-page scope of work for the first stage. <strong>Whatever we agree is on 30-day rolling terms — no lock-in, no minimum commitment, no exit fees.</strong>
+      </p>
+      <p style="margin-top: 20px;">
+        <strong>Ben Harrison</strong><br>
+        Campbell Consultancy<br>
+        <a href="mailto:campbellconsultancyuk@gmail.com">campbellconsultancyuk@gmail.com</a>
+      </p>
+      <div class="signoff-actions">
+        <button type="button" class="btn btn-primary" onclick="window.print()" aria-label="Download this proposal as PDF">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:2px;">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download as PDF
+        </button>
+        <a href="mailto:campbellconsultancyuk@gmail.com?subject=Roots%20%26%20Seeds%20proposal" class="btn btn-ghost">
+          Reply by email
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Page footer -->
+<footer class="page-footer">
+  <div class="container">
+    Campbell Consultancy
+    <span class="sep">·</span>
+    Proposal prepared April 2026
+    <span class="sep">·</span>
+    Confidential
+  </div>
+</footer>
+
+</body>
+</html>

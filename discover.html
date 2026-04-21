@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discovery — Campbell Consultancy</title>
+<meta name="description" content="A short discovery form so Campbell Consultancy can build a tailored demo and proposal for your business.">
+<meta name="author" content="Ben Harrison, Campbell Consultancy">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Discovery — Campbell Consultancy">
+<meta property="og:description" content="Tell us how your business runs. We'll build a tailored demo and proposal.">
+<meta property="og:type" content="website">
+
+<!-- Inline SVG favicon (brand gradient mark) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 510'><defs><linearGradient id='g' x1='0' y1='.5' x2='1' y2='.5'><stop offset='0%25' stop-color='%23081F4C'/><stop offset='100%25' stop-color='%2352B7A0'/></linearGradient></defs><g fill='url(%23g)'><g transform='translate(0,510) scale(.1,-.1)'><path d='M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180 -1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518 818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203 283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0 -198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23 -38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17 c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285 -26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173 280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308 -88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534 -531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940 939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70 -64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308 -494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61 -78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162 1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z'/></g></g></svg>">
+
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<!-- Plausible Analytics -->
+<script defer data-domain="campbellconsultancyuk.github.io" src="https://plausible.io/js/script.js"></script>
+
+<style>
+/* ===================================================================
+   BRAND TOKENS (matched to main site)
+   =================================================================== */
+:root {
+  --navy:         #132450;
+  --navy-deep:    #081F4C;
+  --navy-ink:     #0A1638;
+  --teal:         #52B7A0;
+  --teal-deep:    #2E8B7E;
+  --teal-light:   #7DD1BD;
+
+  --paper:        #FAFBFC;
+  --paper-warm:   #F4F6F9;
+  --surface:      #FFFFFF;
+  --rule:         rgba(19, 36, 80, 0.12);
+  --rule-strong:  rgba(19, 36, 80, 0.24);
+
+  --ink:          #0A1638;
+  --ink-soft:     #3A4970;
+  --ink-muted:    #6B7A98;
+  --ink-faint:    #9BA5BC;
+
+  --brand-grad:        linear-gradient(90deg, #081F4C 0%, #52B7A0 100%);
+  --brand-grad-soft:   linear-gradient(90deg, rgba(8,31,76,0.92) 0%, rgba(82,183,160,0.92) 100%);
+
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===================================================================
+   RESET & BASE
+   =================================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--teal); color: white; }
+
+/* ===================================================================
+   LAYOUT
+   =================================================================== */
+.container {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+  body { font-size: 16px; }
+}
+
+/* ===================================================================
+   HEADER (simple, brand presence)
+   =================================================================== */
+.header {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+}
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--navy-deep);
+}
+.brand-link svg {
+  height: 36px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+.back-link {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 500;
+  transition: color 0.2s var(--ease);
+}
+.back-link:hover { color: var(--teal-deep); }
+
+/* ===================================================================
+   HERO / INTRO
+   =================================================================== */
+.intro {
+  padding: 80px 0 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--rule);
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 20px;
+}
+.intro h1 {
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy-deep);
+  margin-bottom: 20px;
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.intro h1 em {
+  font-style: italic;
+  font-weight: 500;
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.intro-sub {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 55ch;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.intro-meta {
+  display: inline-flex;
+  gap: 24px;
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.intro-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.intro-meta svg {
+  width: 14px; height: 14px;
+  color: var(--teal-deep);
+}
+
+/* ===================================================================
+   FORM
+   =================================================================== */
+form {
+  padding: 60px 0 40px;
+}
+
+.section {
+  margin-bottom: 56px;
+  position: relative;
+}
+.section-header {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.section-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--navy-deep);
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+}
+.section-desc {
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.field {
+  margin-bottom: 32px;
+}
+.field:last-child { margin-bottom: 0; }
+
+label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy-deep);
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+.label-hint {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+.required-star {
+  color: var(--teal-deep);
+  margin-left: 2px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: 8px;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--teal-deep);
+  box-shadow: 0 0 0 3px rgba(82, 183, 160, 0.15);
+}
+textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.55;
+}
+
+/* Radio & checkbox groups */
+.options-group {
+  display: grid;
+  gap: 10px;
+}
+.option {
+  display: flex;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+.option:hover {
+  border-color: var(--teal);
+  background: var(--paper-warm);
+}
+.option input {
+  margin-right: 12px;
+  margin-top: 3px;
+  accent-color: var(--teal-deep);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.option-text {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.option input:checked + .option-text {
+  font-weight: 500;
+  color: var(--navy-deep);
+}
+.option:has(input:checked) {
+  border-color: var(--teal-deep);
+  background: rgba(82, 183, 160, 0.06);
+}
+
+/* Options in 2-column layout on wider screens */
+.options-group.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 600px) {
+  .options-group.two-col { grid-template-columns: 1fr; }
+}
+
+/* Ranking-style list (top 3) */
+.rank-instructions {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+/* Inline "other" text input */
+.other-input {
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+/* ===================================================================
+   SUBMIT
+   =================================================================== */
+.submit-section {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+.submit-section p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin-bottom: 20px;
+  line-height: 1.55;
+}
+button[type="submit"] {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: var(--brand-grad);
+  border: none;
+  padding: 16px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  letter-spacing: -0.01em;
+  box-shadow: 0 2px 8px rgba(8, 31, 76, 0.12);
+}
+button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(8, 31, 76, 0.18);
+}
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.privacy-note {
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 20px;
+  max-width: 50ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-top: 60px;
+}
+
+/* ===================================================================
+   SUCCESS STATE (shown after submission)
+   =================================================================== */
+.success-state {
+  padding: 120px 0 80px;
+  text-align: center;
+  display: none;
+}
+.success-state.active { display: block; }
+.success-icon {
+  width: 72px; height: 72px;
+  margin: 0 auto 28px;
+  background: var(--brand-grad);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success-icon svg {
+  width: 32px; height: 32px;
+  color: white;
+}
+.success-state h2 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 600;
+  color: var(--navy-deep);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.success-state p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 50ch;
+  margin: 0 auto 32px;
+}
+.success-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--teal-deep);
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 1px solid var(--teal-deep);
+  padding-bottom: 2px;
+  transition: opacity 0.2s var(--ease);
+}
+.success-link:hover { opacity: 0.75; }
+
+/* Utility to hide form after submission */
+.main-form.hidden { display: none; }
+</style>
+</head>
+
+<body>
+
+<!-- ================ HEADER ================ -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="brand-link" aria-label="Campbell Consultancy — home">
+      <svg viewBox="0 0 600 510" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="brandGradMark" x1="0" y1="0.5" x2="1" y2="0.5">
+            <stop offset="0%" stop-color="#081F4C"/>
+            <stop offset="100%" stop-color="#52B7A0"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#brandGradMark)">
+          <g transform="translate(0.000000,510.000000) scale(0.100000,-0.100000)" stroke="none">
+            <path d="M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180 -1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518 818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203 283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0 -198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23 -38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17 c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285 -26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173 280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308 -88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534 -531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940 939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70 -64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308 -494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61 -78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162 1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z"/>
+          </g>
+        </g>
+      </svg>
+      <span>Campbell Consultancy</span>
+    </a>
+    <a href="index.html" class="back-link">← Back to site</a>
+  </div>
+</header>
+
+<!-- ================ INTRO ================ -->
+<section class="intro">
+  <div class="container">
+    <div class="eyebrow">Discovery Form</div>
+    <h1>Let's work out what's worth <em>automating first.</em></h1>
+    <p class="intro-sub">
+      A short questionnaire so we can build a tailored demo and proposal for your business —
+      rather than a generic walkthrough. 10 minutes to complete. Everything you share stays private.
+    </p>
+    <div class="intro-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        10 min to complete
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Private &amp; secure
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        No commitment required
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ================ FORM ================ -->
+<div class="container">
+
+<!-- === MAIN FORM === -->
+<!-- Formspree endpoint connected — submissions go to campbellconsultancyuk@gmail.com -->
+<form id="discovery-form" class="main-form" action="https://formspree.io/f/xojynloz" method="POST">
+
+  <!-- Hidden field: Formspree subject line for email notifications -->
+  <input type="hidden" name="_subject" value="New discovery form submission — Campbell Consultancy">
+
+  <!-- ============================================
+       SECTION 1 — ABOUT YOU
+       ============================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">Section 01</div>
+      <div class="section-title">About you</div>
+      <div class="section-desc">So we know who's asking and how to follow up.</div>
+    </div>
+
+    <div class="field">
+      <label for="name">Your name <span class="required-star">*</span></label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="role">Your role</label>
+      <input type="text" id="role" name="role" placeholder="e.g. Owner / Operations Director / Co-Founder">
+    </div>
+
+    <div class="field">
+      <label for="email">Email <span class="required-star">*</span></label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="phone">Mobile (WhatsApp preferred, optional)</label>
+      <input type="tel" id="phone" name="phone" placeholder="+44...">
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION 2 — ABOUT THE BUSINESS
+       ============================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">Section 02</div>
+      <div class="section-title">About the business</div>
+      <div class="section-desc">Context that shapes the demo and the proposal.</div>
+    </div>
+
+    <div class="field">
+      <label for="business_name">Business name(s) <span class="required-star">*</span></label>
+      <span class="label-hint">If you run multiple brands or sites under different names, list all of them.</span>
+      <input type="text" id="business_name" name="business_name" required>
+    </div>
+
+    <div class="field">
+      <label for="sites">Number of sites / locations <span class="required-star">*</span></label>
+      <input type="number" id="sites" name="sites" min="1" required>
+    </div>
+
+    <div class="field">
+      <label>Roughly how many staff across all sites? <span class="required-star">*</span></label>
+      <div class="options-group two-col">
+        <label class="option"><input type="radio" name="staff_count" value="1-10" required><span class="option-text">1–10</span></label>
+        <label class="option"><input type="radio" name="staff_count" value="11-25"><span class="option-text">11–25</span></label>
+        <label class="option"><input type="radio" name="staff_count" value="26-50"><span class="option-text">26–50</span></label>
+        <label class="option"><input type="radio" name="staff_count" value="51-100"><span class="option-text">51–100</span></label>
+        <label class="option"><input type="radio" name="staff_count" value="101-250"><span class="option-text">101–250</span></label>
+        <label class="option"><input type="radio" name="staff_count" value="250+"><span class="option-text">250+</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>What type of business is it? <span class="required-star">*</span></label>
+      <span class="label-hint">Tick all that apply.</span>
+      <div class="options-group two-col">
+        <label class="option"><input type="checkbox" name="business_type[]" value="Restaurant"><span class="option-text">Restaurant</span></label>
+        <label class="option"><input type="checkbox" name="business_type[]" value="Café / coffee shop"><span class="option-text">Café / coffee shop</span></label>
+        <label class="option"><input type="checkbox" name="business_type[]" value="Bar / pub"><span class="option-text">Bar / pub</span></label>
+        <label class="option"><input type="checkbox" name="business_type[]" value="Fast-casual / QSR"><span class="option-text">Fast-casual / QSR</span></label>
+        <label class="option"><input type="checkbox" name="business_type[]" value="Hotel / accommodation"><span class="option-text">Hotel / accommodation</span></label>
+        <label class="option"><input type="checkbox" name="business_type[]" value="Retail"><span class="option-text">Retail</span></label>
+        <label class="option"><input type="checkbox" name="business_type[]" value="Professional services"><span class="option-text">Professional services</span></label>
+        <label class="option"><input type="checkbox" name="business_type[]" value="Other"><span class="option-text">Other</span></label>
+      </div>
+      <input type="text" name="business_type_other" class="other-input" placeholder="If 'other', describe briefly">
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION 3 — CURRENT TOOLS
+       ============================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">Section 03</div>
+      <div class="section-title">Your current setup</div>
+      <div class="section-desc">What's already in place. We work with what you've got, not against it.</div>
+    </div>
+
+    <div class="field">
+      <label>HR / people system (tick all that apply)</label>
+      <div class="options-group two-col">
+        <label class="option"><input type="checkbox" name="hr_system[]" value="BreatheHR"><span class="option-text">BreatheHR</span></label>
+        <label class="option"><input type="checkbox" name="hr_system[]" value="BambooHR"><span class="option-text">BambooHR</span></label>
+        <label class="option"><input type="checkbox" name="hr_system[]" value="PeopleHR"><span class="option-text">PeopleHR</span></label>
+        <label class="option"><input type="checkbox" name="hr_system[]" value="BrightHR"><span class="option-text">BrightHR</span></label>
+        <label class="option"><input type="checkbox" name="hr_system[]" value="HiBob"><span class="option-text">HiBob</span></label>
+        <label class="option"><input type="checkbox" name="hr_system[]" value="Spreadsheets"><span class="option-text">Spreadsheets</span></label>
+        <label class="option"><input type="checkbox" name="hr_system[]" value="Nothing formal"><span class="option-text">Nothing formal</span></label>
+        <label class="option"><input type="checkbox" name="hr_system[]" value="Other"><span class="option-text">Other</span></label>
+      </div>
+      <input type="text" name="hr_system_other" class="other-input" placeholder="If 'other', which?">
+    </div>
+
+    <div class="field">
+      <label>Rota &amp; timesheet tool (tick all that apply)</label>
+      <div class="options-group two-col">
+        <label class="option"><input type="checkbox" name="rota_tool[]" value="Rotaready"><span class="option-text">Rotaready</span></label>
+        <label class="option"><input type="checkbox" name="rota_tool[]" value="Planday"><span class="option-text">Planday</span></label>
+        <label class="option"><input type="checkbox" name="rota_tool[]" value="RotaCloud"><span class="option-text">RotaCloud</span></label>
+        <label class="option"><input type="checkbox" name="rota_tool[]" value="7shifts"><span class="option-text">7shifts</span></label>
+        <label class="option"><input type="checkbox" name="rota_tool[]" value="Deputy"><span class="option-text">Deputy</span></label>
+        <label class="option"><input type="checkbox" name="rota_tool[]" value="RosterElf"><span class="option-text">RosterElf</span></label>
+        <label class="option"><input type="checkbox" name="rota_tool[]" value="Spreadsheets / paper"><span class="option-text">Spreadsheets / paper</span></label>
+        <label class="option"><input type="checkbox" name="rota_tool[]" value="Other"><span class="option-text">Other</span></label>
+      </div>
+      <input type="text" name="rota_tool_other" class="other-input" placeholder="If 'other', which?">
+    </div>
+
+    <div class="field">
+      <label>Who handles payroll and the accounts? <span class="required-star">*</span></label>
+      <div class="options-group">
+        <label class="option"><input type="radio" name="payroll" value="In-house on Xero" required><span class="option-text">In-house, on Xero</span></label>
+        <label class="option"><input type="radio" name="payroll" value="External accountant on Xero"><span class="option-text">External accountant using Xero</span></label>
+        <label class="option"><input type="radio" name="payroll" value="External accountant on other tool"><span class="option-text">External accountant using something other than Xero</span></label>
+        <label class="option"><input type="radio" name="payroll" value="In-house bookkeeper"><span class="option-text">In-house bookkeeper</span></label>
+        <label class="option"><input type="radio" name="payroll" value="Not sure"><span class="option-text">Honestly not sure</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="other_tools">Any other tools we should know about?</label>
+      <span class="label-hint">Booking systems, POS, CRM, comms tools — anything that staff or managers touch daily.</span>
+      <textarea id="other_tools" name="other_tools" rows="3" placeholder="e.g. OpenTable, Square POS, Slack, Google Workspace..."></textarea>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION 4 — THE PAIN
+       ============================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">Section 04</div>
+      <div class="section-title">Where the time goes</div>
+      <div class="section-desc">The most important section. Be as honest as you can — this shapes everything we build.</div>
+    </div>
+
+    <div class="field">
+      <label>What eats the most manager / owner time each week? <span class="required-star">*</span></label>
+      <span class="label-hint">Tick your top 3–4. Don't over-think it — first instinct is usually right.</span>
+      <div class="options-group">
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Staff questions (holidays, payslips, sickness)"><span class="option-text">Staff questions — holidays, payslips, sickness, rota clarifications</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="New starter onboarding"><span class="option-text">New starter onboarding — paperwork, right-to-work, handbook</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Chasing timesheets"><span class="option-text">Chasing and approving timesheets before payroll</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Rota management and shift swaps"><span class="option-text">Rota management and shift swaps</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Performance &amp; disciplinary admin"><span class="option-text">Performance and disciplinary admin</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Compliance (right-to-work, training records)"><span class="option-text">Compliance — right-to-work expiries, training records, certifications</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Labour cost reporting and analysis"><span class="option-text">Labour cost reporting and analysis (usually too late to act)</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Payroll prep and queries"><span class="option-text">Payroll prep and queries</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Stock &amp; supplier admin"><span class="option-text">Stock and supplier admin</span></label>
+        <label class="option"><input type="checkbox" name="time_sinks[]" value="Something else"><span class="option-text">Something else (describe below)</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Current monthly spend on HR / admin support?</label>
+      <span class="label-hint">External accountants, HR consultants, ops assistants — whatever currently absorbs this workload. Helps us benchmark what savings are realistic.</span>
+      <div class="options-group two-col">
+        <label class="option"><input type="radio" name="current_spend" value="£0 - we absorb it"><span class="option-text">£0 — we absorb it</span></label>
+        <label class="option"><input type="radio" name="current_spend" value="Under £500"><span class="option-text">Under £500</span></label>
+        <label class="option"><input type="radio" name="current_spend" value="£500-£1,500"><span class="option-text">£500–£1,500</span></label>
+        <label class="option"><input type="radio" name="current_spend" value="£1,500-£3,000"><span class="option-text">£1,500–£3,000</span></label>
+        <label class="option"><input type="radio" name="current_spend" value="£3,000-£5,000"><span class="option-text">£3,000–£5,000</span></label>
+        <label class="option"><input type="radio" name="current_spend" value="£5,000+"><span class="option-text">£5,000+</span></label>
+        <label class="option"><input type="radio" name="current_spend" value="Prefer not to say"><span class="option-text">Prefer not to say</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="biggest_headache">Your single biggest admin headache right now? <span class="required-star">*</span></label>
+      <span class="label-hint">A paragraph in your own words. The more specific the better — "managers spending 2 hours a week answering holiday balance questions" beats "staff admin is a mess".</span>
+      <textarea id="biggest_headache" name="biggest_headache" rows="5" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="what_fails">What's tried to solve this before — and why didn't it stick?</label>
+      <span class="label-hint">Optional but really useful. Helps us avoid repeating approaches you've already ruled out.</span>
+      <textarea id="what_fails" name="what_fails" rows="4"></textarea>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION 5 — DESIRED OUTCOME
+       ============================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">Section 05</div>
+      <div class="section-title">What success looks like</div>
+      <div class="section-desc">If this worked perfectly, what changes?</div>
+    </div>
+
+    <div class="field">
+      <label for="three_month_vision">If this went perfectly, what would look different in 3 months? <span class="required-star">*</span></label>
+      <span class="label-hint">Think in concrete terms: "I'd have my Mondays back" / "My ops director wouldn't quit" / "I'd know labour cost by Tuesday instead of month-end".</span>
+      <textarea id="three_month_vision" name="three_month_vision" rows="4" required></textarea>
+    </div>
+
+    <div class="field">
+      <label for="must_preserve">Anything that must NOT be touched or changed?</label>
+      <span class="label-hint">Existing contracts, relationships with accountants, specific tools your team loves — anything where we'd need to work around rather than replace.</span>
+      <textarea id="must_preserve" name="must_preserve" rows="3"></textarea>
+    </div>
+
+    <div class="field">
+      <label>How urgent is this?</label>
+      <div class="options-group">
+        <label class="option"><input type="radio" name="urgency" value="ASAP - something's actively breaking"><span class="option-text">ASAP — something's actively breaking</span></label>
+        <label class="option"><input type="radio" name="urgency" value="Next 30-60 days"><span class="option-text">Next 30–60 days</span></label>
+        <label class="option"><input type="radio" name="urgency" value="Next quarter"><span class="option-text">Next quarter — planning-mode</span></label>
+        <label class="option"><input type="radio" name="urgency" value="Just exploring"><span class="option-text">Just exploring — no fixed timeline</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION 6 — ANYTHING ELSE
+       ============================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">Section 06</div>
+      <div class="section-title">Anything else</div>
+      <div class="section-desc">Often the most useful answers come here.</div>
+    </div>
+
+    <div class="field">
+      <label for="anything_else">Anything else you'd want us to know before we build the demo?</label>
+      <span class="label-hint">The thing that keeps you up at night, the weird quirk about your business, the unreasonable constraint — whatever. Write freely, nothing is off-topic.</span>
+      <textarea id="anything_else" name="anything_else" rows="5"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="heard_from">How did you hear about Campbell Consultancy?</label>
+      <input type="text" id="heard_from" name="heard_from" placeholder="Word of mouth, LinkedIn, a mate, etc.">
+    </div>
+  </div>
+
+  <!-- ============================================
+       SUBMIT
+       ============================================ -->
+  <div class="submit-section">
+    <p>
+      When you hit submit we'll get an email with your responses and come back within 24 hours with next steps.
+    </p>
+    <button type="submit">Send discovery →</button>
+    <p class="privacy-note">
+      Your responses are sent securely to Campbell Consultancy and are not shared with any third parties.
+      We process data in line with UK GDPR.
+    </p>
+  </div>
+
+</form>
+
+<!-- === SUCCESS STATE (shown after form submission) === -->
+<div id="success-state" class="success-state">
+  <div class="success-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  </div>
+  <h2>Got it — thanks.</h2>
+  <p>
+    Your responses are on their way. We'll come back within 24 hours with next steps —
+    usually a 20-minute call to walk through a tailored demo.
+  </p>
+  <a href="index.html" class="success-link">
+    Back to Campbell Consultancy →
+  </a>
+</div>
+
+</div>
+
+<!-- ================ FOOTER ================ -->
+<footer class="footer">
+  <div class="container">
+    <div>Campbell Consultancy · EST. 2025 · British owned &amp; operated</div>
+  </div>
+</footer>
+
+<!-- ================ SUBMIT HANDLING ================ -->
+<script>
+  const form = document.getElementById('discovery-form');
+  const successState = document.getElementById('success-state');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.classList.add('hidden');
+        successState.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Submit failed');
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send discovery →';
+      alert("Something went wrong sending your responses. Please email campbellconsultancyuk@gmail.com directly and we'll sort it.");
+    }
+  });
+</script>
+
+</body>
+</html>

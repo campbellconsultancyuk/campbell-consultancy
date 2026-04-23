@@ -1174,6 +1174,73 @@ h1 em, h2 em {
   display: block;
 }
 
+/* ====================== INDUSTRIES ====================== */
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.industry {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: 36px 32px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.4s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.industry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -16px rgba(19, 36, 80, 0.18);
+  border-color: var(--teal);
+}
+
+.industry-tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.industry-name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.industry-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.industry-pillar {
+  font-size: 12px;
+  color: var(--ink-muted);
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  margin-top: auto;
+}
+
+.industry-pillar strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .industries-grid { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -1301,6 +1368,7 @@ l0 109 -40 0 -40 0 0 -102 -1 -103 -32 36 c-17 19 -56 65 -86 102 -48 58 -59
         <a href="#services">Services</a>
         <a href="#stack">Stack</a>
         <a href="#approach">Approach</a>
+        <a href="#industries">Industries</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -1569,63 +1637,79 @@ l0 109 -40 0 -40 0 0 -102 -1 -103 -32 36 c-17 19 -56 65 -86 102 -48 58 -59
     <div class="section-head reveal">
       <span class="section-number">03 — Engagements</span>
       <span class="eyebrow">How we work</span>
-      <h2 style="margin-top: 24px;">How we might <em>work together.</em></h2>
+      <h2 style="margin-top: 24px;">A journey, not <em>a transaction.</em></h2>
       <p>
-        Three ways to engage. Every piece of work has a defined scope, a fixed outcome,
-        and a point at which you can walk away having gained value — whether or not you
-        choose to continue.
+        Most engagements follow the same arc: a short diagnostic, a phased build, then
+        an ongoing operational partnership. Each stage has a fixed outcome, a clear price,
+        and a point at which you can step away having gained value. But production AI and
+        automation aren't finished the day they launch — models change, APIs shift, your
+        business evolves. That's why the retainer exists: to keep what we built working,
+        current, and compounding.
       </p>
     </div>
 
     <div class="engagements">
       <div class="engagement reveal">
-        <div class="engagement-name">Audit & Opportunity Map</div>
+        <div class="engagement-name">Audit &amp; Opportunity Map</div>
         <div class="engagement-price">from £450</div>
         <p class="engagement-desc">
-          A one-week deep dive into your current workflow. Every repeated task, system
-          integration, and manual hand-off gets mapped — then a prioritised plan of what
-          to automate, what to leave alone, and where AI genuinely pays back.
+          Optional entry point. A one-week deep dive into your current workflow. Every
+          repeated task, system integration, and manual hand-off gets mapped — then a
+          prioritised plan of what to automate, what to leave alone, and where AI
+          genuinely pays back.
         </p>
         <ul>
           <li>Discovery workshop</li>
-          <li>Full process & systems audit</li>
+          <li>Full process &amp; systems audit</li>
           <li>ROI-ranked opportunity map</li>
-          <li>Walkthrough call & written report</li>
-        </ul>
-      </div>
-
-      <div class="engagement featured reveal">
-        <div class="engagement-name">Phased Build Project</div>
-        <div class="engagement-price">from £1,500</div>
-        <p class="engagement-desc">
-          Scoped implementation delivered in stages. Each stage produces a working,
-          valuable piece you can use — then you decide whether to proceed. Typical
-          projects include AI staff assistants, onboarding automation, proposal
-          generators, or CRM orchestration.
-        </p>
-        <ul>
-          <li>Stage-gated delivery, no upfront retainer</li>
-          <li>All platform setup & configuration included</li>
-          <li>Documentation & handover to your team</li>
-          <li>30 days of post-launch support</li>
+          <li>Walkthrough call &amp; written report</li>
         </ul>
       </div>
 
       <div class="engagement reveal">
+        <div class="engagement-name">Phased Build Project</div>
+        <div class="engagement-price">from £1,500</div>
+        <p class="engagement-desc">
+          The on-ramp. Scoped implementation delivered in stages. Each stage produces
+          a working, valuable piece you can use — then you decide whether to proceed.
+          Typical projects include AI staff assistants, onboarding automation, proposal
+          generators, or CRM orchestration.
+        </p>
+        <ul>
+          <li>Stage-gated delivery with working systems at each gate</li>
+          <li>All platform setup &amp; configuration included</li>
+          <li>Documentation &amp; handover to your team</li>
+          <li>30-day transitional support window</li>
+        </ul>
+      </div>
+
+      <div class="engagement featured reveal">
         <div class="engagement-name">Fractional Ops Partner</div>
         <div class="engagement-price">from £800/mo</div>
         <p class="engagement-desc">
-          Ongoing operational partnership. An embedded ops and automation lead handling
-          day-to-day orchestration, incremental improvements, and new project kickoffs.
-          For businesses past the pilot stage who need a trusted ops hand.
+          <strong>The expected next step.</strong> An embedded ops and automation lead
+          handling day-to-day orchestration, platform updates, new automations, and new
+          integrations as your business evolves. For clients who want their systems to
+          keep compounding, not decay.
         </p>
         <ul>
-          <li>Monthly rolling agreement</li>
-          <li>Defined monthly hours & priorities</li>
+          <li>Monitoring, updates, and platform maintenance</li>
+          <li>New automations &amp; integrations as needed</li>
           <li>Weekly standup, monthly strategy review</li>
-          <li>Direct Slack/Teams access</li>
+          <li>Direct Slack/Teams access, monthly rolling agreement</li>
         </ul>
       </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 48px; padding: 28px 32px; background: var(--paper-warm); border-left: 3px solid var(--teal); border-radius: 6px; max-width: 900px;">
+      <p style="margin: 0; font-size: 15px; line-height: 1.7; color: var(--ink-2);">
+        <strong style="color: var(--navy);">Why the retainer matters.</strong>
+        AI models get deprecated. Platform APIs change. Your business shifts — new
+        territories, new products, new people. Automations built for one shape don't
+        fit the next shape without modification. The retainer isn't an upsell — it's
+        how the category actually works. We build systems that ship, then we stay
+        alongside to keep them running, current, and growing with you.
+      </p>
     </div>
   </div>
 </section>
@@ -1700,6 +1784,72 @@ l0 109 -40 0 -40 0 0 -102 -1 -103 -32 36 c-17 19 -56 65 -86 102 -48 58 -59
   </div>
 </section>
 
+<!-- ====================== INDUSTRIES ====================== -->
+<section id="industries" style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-number">06 — Industries</span>
+      <span class="eyebrow">Where we fit</span>
+      <h2 style="margin-top: 24px;">Made for businesses with <em>repeated operational pain.</em></h2>
+      <p>
+        Our tools and patterns are most valuable in industries with high-volume repeat
+        admin, fragmented tool stacks, and margin lost to manual hand-offs. Four sectors
+        where the payback is most direct — though the patterns travel further than this list.
+      </p>
+    </div>
+
+    <div class="industries-grid">
+      <div class="industry reveal">
+        <span class="industry-tag">Industry · 01</span>
+        <div class="industry-name">Professional services</div>
+        <p class="industry-desc">
+          Accountants, financial advisors, solicitors, and management consultants. Teams
+          that live in the gap between client conversations and billable delivery — where
+          proposals, engagement letters, CRM notes, and client reports eat hours that
+          should be spent on actual work.
+        </p>
+        <div class="industry-pillar">Typical fit: <strong>CRM &amp; proposal systems · Client reporting pipelines</strong></div>
+      </div>
+
+      <div class="industry reveal">
+        <span class="industry-tag">Industry · 02</span>
+        <div class="industry-name">Multi-site hospitality &amp; restaurants</div>
+        <p class="industry-desc">
+          Restaurant groups, dark kitchens, and hospitality operators running multiple
+          sites. Where staff onboarding, rota coordination, labour-cost reporting, and
+          supplier management fragment across too many tools — and weekly numbers arrive
+          too late to act on.
+        </p>
+        <div class="industry-pillar">Typical fit: <strong>HR &amp; onboarding automation · Labour-cost reporting</strong></div>
+      </div>
+
+      <div class="industry reveal">
+        <span class="industry-tag">Industry · 03</span>
+        <div class="industry-name">Commercial trades</div>
+        <p class="industry-desc">
+          HVAC, cleaning, maintenance, and extraction specialists. Owner-operator
+          businesses where the quote-to-invoice pipeline is the bottleneck — and where
+          site scheduling, compliance documentation, and multi-stakeholder proposals
+          still live in spreadsheets or someone's head.
+        </p>
+        <div class="industry-pillar">Typical fit: <strong>CRM &amp; proposal systems · Field ops orchestration</strong></div>
+      </div>
+
+      <div class="industry reveal">
+        <span class="industry-tag">Industry · 04</span>
+        <div class="industry-name">Property &amp; estate agencies</div>
+        <p class="industry-desc">
+          Sales and lettings agencies handling high-volume enquiry flows, viewings,
+          referencing, and landlord communications. Where manual data entry between
+          portals, CRM, and accounting tools burns hours that should be spent on
+          relationships and closing deals.
+        </p>
+        <div class="industry-pillar">Typical fit: <strong>CRM orchestration · Client reporting automation</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ====================== CONTACT ====================== -->
 <section id="contact" class="contact-section">
   <div class="container">
@@ -1709,9 +1859,9 @@ l0 109 -40 0 -40 0 0 -102 -1 -103 -32 36 c-17 19 -56 65 -86 102 -48 58 -59
         <h2 style="margin-top: 16px;">Let's work out <em>what's worth</em> automating first.</h2>
         <p class="contact-footer-note">
           British owned &amp; operated. Flexible working hours to fit your schedule.
-          No rigid retainers, no lock-in contracts. A 20-minute call is enough to know
-          whether there's something worth building — and whether we're the right people
-          to build it.
+          Monthly-rolling retainers with 30 days' notice — no annual lock-ins,
+          no surprise invoices. A 20-minute call is enough to know whether there's
+          something worth building — and whether we're the right people to build it.
         </p>
       </div>
 

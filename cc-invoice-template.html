@@ -1114,6 +1114,7 @@ button.accept:disabled { opacity: .4; cursor: not-allowed; }
   background: var(--soft);
   border-radius: var(--radius);
 }
+.invoice-parties.single { grid-template-columns: 1fr; }
 .invoice-parties .label {
   font-size: 10px;
   font-weight: 600;
@@ -1386,25 +1387,23 @@ button.accept:disabled { opacity: .4; cursor: not-allowed; }
   border-top: 1px solid var(--line);
   text-align: center;
 }
-.invoice-footer .brand {
-  font-family: var(--font-body);
-  font-weight: 700;
+.invoice-footer .supplier-block {
   font-size: 11px;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 10px;
+  color: var(--grey-1);
+  line-height: 1.7;
+  margin-bottom: 14px;
 }
-.invoice-footer .address {
-  font-size: 12px;
+.invoice-footer .supplier-block strong {
   color: var(--ink-2);
-  margin-bottom: 12px;
-  line-height: 1.5;
+  font-weight: 600;
 }
 .invoice-footer .vat-note {
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--grey-2);
   font-style: italic;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 @media (max-width: 720px) {
@@ -1569,8 +1568,6 @@ button.accept:disabled { opacity: .4; cursor: not-allowed; }
     <div class="invoice-header-brand">
       <svg class="invoice-header-lockup" viewBox="0 0 1500 510" aria-label="Campbell Consultancy"><use href="#cc-horizontal-lockup"/></svg>
       <div class="invoice-header-address">
-        Office 420, 18 Young Street, Unit LGE<br>
-        Edinburgh EH2 4JB, Scotland<br>
         campbellconsultancyuk@gmail.com   ·   [PHONE]
       </div>
     </div>
@@ -1592,17 +1589,8 @@ button.accept:disabled { opacity: .4; cursor: not-allowed; }
     </div>
   </div>
 
-  <!-- PARTIES: from / to -->
-  <div class="invoice-parties">
-    <div>
-      <div class="label">From</div>
-      <div class="name">Campbell Consultancy</div>
-      <div class="detail">
-        Office 420, 18 Young Street, Unit LGE<br>
-        Edinburgh EH2 4JB, Scotland<br>
-        campbellconsultancyuk@gmail.com
-      </div>
-    </div>
+  <!-- BILLED TO: single full-width block -->
+  <div class="invoice-parties single">
     <div>
       <div class="label">Billed to</div>
       <div class="name">[CLIENT NAME]</div>
@@ -1654,8 +1642,12 @@ button.accept:disabled { opacity: .4; cursor: not-allowed; }
         <span class="label">Subtotal</span>
         <span class="amount">£[0.00]</span>
       </div>
+      <div class="row">
+        <span class="label">VAT (0% — see notes)</span>
+        <span class="amount">£0.00</span>
+      </div>
       <div class="row total">
-        <span class="label">Total due</span>
+        <span class="label">Total due (GBP)</span>
         <span class="amount">£[0.00]</span>
       </div>
     </div>
@@ -1677,13 +1669,15 @@ button.accept:disabled { opacity: .4; cursor: not-allowed; }
     <div class="block">
       <h3>Pay by bank transfer (Wise)</h3>
       <dl>
-        <dt>Account name</dt>  <dd>Campbell Consultancy</dd>
-        <dt>Account no.</dt>   <dd>[WISE ACCOUNT NUMBER]</dd>
+        <dt>Account name</dt>  <dd>Ben Harrison</dd>
+        <dt>Bank</dt>          <dd>Wise</dd>
         <dt>Sort code</dt>     <dd>[WISE SORT CODE]</dd>
+        <dt>Account no.</dt>   <dd>[WISE ACCOUNT NUMBER]</dd>
         <dt>Reference</dt>     <dd>[CC-XXXX-INV-01]</dd>
+        <dt>Currency</dt>      <dd>GBP (£)</dd>
       </dl>
       <div style="font-size: 11px; color: var(--grey-2); margin-top: 14px; line-height: 1.5;">
-        For international payments, please request IBAN &amp; SWIFT details by reply.
+        For non-GBP payments, please request IBAN &amp; SWIFT details by reply.
       </div>
     </div>
   </div>
@@ -1704,14 +1698,17 @@ button.accept:disabled { opacity: .4; cursor: not-allowed; }
     A confirmation has been sent to Campbell Consultancy and a receipt to your email.
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER — establishment details + legal note, visually quiet -->
   <footer class="invoice-footer">
-    <div class="brand">Campbell Consultancy</div>
-    <div class="address">
-      Office 420, 18 Young Street, Unit LGE, Edinburgh EH2 4JB, Scotland<br>
+    <div class="supplier-block">
+      <strong>Ben Harrison trading as Campbell Consultancy</strong> (Sole Trader)<br>
+      394/10 Moo 7, Hin Lek Fai, Hua Hin 77110, Thailand<br>
       campbellconsultancyuk@gmail.com
     </div>
-    <div class="vat-note">Campbell Consultancy is not VAT registered; VAT is not charged on this invoice.</div>
+    <div class="vat-note">
+      This invoice is issued by a non-UK established supplier. No VAT has been charged.
+      Reverse charge applies — customer to account for VAT to HMRC.
+    </div>
   </footer>
 
 </main>

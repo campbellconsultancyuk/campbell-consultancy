@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roots &amp; Seeds — Operations Preview · Campbell Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:wght@300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:      #132450;
+  --navy-deep: #081F4C;
+  --teal:      #52B7A0;
+  --teal-dark: #3A9B87;
+  --ink:       #1a1a2e;
+  --ink-soft:  #4a5568;
+  --ink-faint: #8a9ab0;
+  --white:     #ffffff;
+  --paper:     #f8f9fb;
+  --paper-warm:#f0f4f8;
+  --rule:      #e2e8f0;
+  --rule-soft: #edf2f7;
+  --grad: linear-gradient(135deg, #132450 0%, #52B7A0 100%);
+  --display: 'Instrument Sans', sans-serif;
+  --sans:    'Inter', sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+  --max: 1160px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(1.5rem,5vw,3.5rem)}
+
+/* TOPBAR */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  padding:0 clamp(1.5rem,5vw,3.5rem);
+  height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.cc-logo--dark{height:34px;width:auto;display:block}
+.topbar-tag{
+  font-family:var(--mono);font-size:0.65rem;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--ink-faint);
+}
+
+/* HERO */
+.hero{
+  padding:140px clamp(1.5rem,5vw,3.5rem) 80px;
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;
+}
+@media(max-width:900px){.hero{grid-template-columns:1fr;}}
+.hero-for{
+  display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;
+}
+.hero-for-label{
+  font-family:var(--mono);font-size:0.65rem;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--ink-faint);
+}
+.hero-for-pipe{width:1px;height:28px;background:var(--rule);}
+.hero-for img{height:32px;width:auto;}
+.hero-eyebrow{
+  font-family:var(--mono);font-size:0.7rem;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--teal);
+  display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;
+}
+.hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--teal);}
+.hero h1{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(2.8rem,6vw,5rem);
+  line-height:1.02;letter-spacing:-0.04em;
+  color:var(--navy);margin-bottom:1.5rem;
+}
+.hero h1 em{font-style:italic;color:var(--teal);}
+.hero-sub{
+  font-size:1.1rem;color:var(--ink-soft);
+  max-width:52ch;line-height:1.7;margin-bottom:3rem;
+}
+.hero-stats{
+  display:flex;gap:0;
+  border-top:1px solid var(--rule);
+  padding-top:2rem;
+}
+.hero-stat{
+  padding-right:2.5rem;margin-right:2.5rem;
+  border-right:1px solid var(--rule);
+}
+.hero-stat:last-child{border-right:none;padding-right:0;margin-right:0;}
+.hero-stat-label{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.4rem;}
+.hero-stat-value{font-family:var(--display);font-size:0.95rem;font-weight:600;color:var(--navy);}
+
+/* SECTION STRUCTURE */
+.section{padding:6rem 0;}
+.section-alt{background:var(--paper);}
+.section-dark{background:var(--navy);}
+
+.section-head{display:grid;grid-template-columns:220px 1fr;gap:3rem;margin-bottom:4rem;align-items:baseline;}
+@media(max-width:800px){.section-head{grid-template-columns:1fr;gap:1rem;}}
+.section-num{
+  font-family:var(--mono);font-size:0.68rem;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--teal);
+  padding-left:2.5rem;padding-top:0.5rem;position:relative;
+}
+.section-num::before{content:'';position:absolute;top:0.85rem;left:0;width:1.75rem;height:1px;background:var(--teal);}
+.section-dark .section-num{color:rgba(82,183,160,0.9);}
+.section-dark .section-num::before{background:rgba(82,183,160,0.9);}
+.section-h{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.05;letter-spacing:-0.03em;color:var(--navy);
+}
+.section-dark .section-h{color:#fff;}
+.section-h em{font-style:italic;color:var(--teal);}
+.section-p{margin-top:1.25rem;font-size:1rem;color:var(--ink-soft);line-height:1.7;max-width:58ch;}
+.section-dark .section-p{color:rgba(255,255,255,0.6);}
+
+/* PROBLEM — dark */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:0.5rem;}
+@media(max-width:800px){.problem-grid{grid-template-columns:1fr;}}
+
+.prob-table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+.prob-table thead th{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;
+  text-transform:uppercase;color:rgba(255,255,255,0.35);
+  text-align:left;padding:0 0 0.85rem;border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.prob-table tbody td{
+  padding:0.85rem 0;border-bottom:1px solid rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.62);line-height:1.45;vertical-align:top;
+}
+.prob-table tbody td:first-child{color:rgba(255,255,255,0.88);padding-right:1.5rem;}
+.prob-table tbody td:last-child{
+  font-family:var(--mono);font-size:0.75rem;color:var(--teal);
+  white-space:nowrap;text-align:right;
+}
+.prob-table tfoot td{
+  padding:1rem 0 0;font-family:var(--mono);font-size:0.7rem;
+  color:rgba(255,255,255,0.88);border-top:1px solid rgba(255,255,255,0.2);
+  font-weight:500;letter-spacing:0.04em;
+}
+.prob-table tfoot td:last-child{color:var(--teal);text-align:right;}
+
+.callout{padding:2.25rem;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);}
+.callout-n{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(2.8rem,4vw,3.8rem);
+  color:#fff;letter-spacing:-0.04em;line-height:1;margin-bottom:0.25rem;
+}
+.callout-n em{font-style:italic;color:var(--teal);font-size:0.45em;font-weight:400;letter-spacing:0;}
+.callout-sub{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.5rem;}
+.callout-body{font-size:0.88rem;color:rgba(255,255,255,0.58);line-height:1.65;margin-bottom:1.5rem;}
+.callout hr{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:1.5rem 0;}
+.callout-q{font-family:var(--display);font-style:italic;font-size:1.1rem;line-height:1.5;color:rgba(255,255,255,0.8);margin-bottom:0.75rem;}
+.callout-attr{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.28);}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);}
+@media(max-width:800px){.pillars{grid-template-columns:1fr;}}
+.pillar{padding:2.75rem 2.25rem;border-right:1px solid var(--rule);transition:background 0.2s;}
+.pillar:last-child{border-right:none;}
+.pillar:hover{background:var(--paper);}
+@media(max-width:800px){
+  .pillar{border-right:none;border-bottom:1px solid var(--rule);}
+  .pillar:last-child{border-bottom:none;}
+}
+.pillar-num{font-family:var(--mono);font-size:0.65rem;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.75rem;}
+.pillar-h{font-family:var(--display);font-weight:600;font-size:1.35rem;line-height:1.2;letter-spacing:-0.02em;color:var(--navy);margin-bottom:0.9rem;}
+.pillar-h em{font-style:italic;color:var(--teal);}
+.pillar-p{font-size:0.9rem;color:var(--ink-soft);line-height:1.65;margin-bottom:1.5rem;}
+.pillar-list{list-style:none;font-family:var(--mono);font-size:0.7rem;color:var(--ink-faint);}
+.pillar-list li{padding:0.45rem 0 0.45rem 1.1rem;border-bottom:1px dashed var(--rule);position:relative;line-height:1.4;}
+.pillar-list li::before{content:'—';position:absolute;left:0;color:var(--teal);}
+.pillar-list li:last-child{border-bottom:none;}
+
+/* TWO PHONES */
+.phones-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+@media(max-width:800px){.phones-grid{grid-template-columns:1fr;gap:3rem;}}
+.phone-col-label{
+  font-family:var(--mono);font-size:0.65rem;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem;
+  display:flex;align-items:center;gap:0.6rem;
+}
+.phone-col-label::before{content:'';display:block;width:1.5rem;height:1px;background:var(--teal);}
+.phone-col-h{font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.15;letter-spacing:-0.025em;color:var(--navy);margin-bottom:0.6rem;}
+.phone-col-h em{font-style:italic;color:var(--teal);}
+.phone-col-p{font-size:0.88rem;color:var(--ink-soft);line-height:1.6;margin-bottom:1.75rem;}
+
+.phone{
+  width:100%;max-width:300px;margin:0 auto;
+  background:#fff;border-radius:24px;overflow:hidden;
+  box-shadow:0 4px 6px rgba(0,0,0,0.04),0 12px 32px rgba(19,36,80,0.1),0 32px 60px rgba(19,36,80,0.08);
+  font-family:-apple-system,'SF Pro Text',sans-serif;
+}
+.phone-hdr{background:#075E54;padding:0.75rem 0.9rem;display:flex;align-items:center;gap:0.6rem;}
+.phone-back{color:rgba(255,255,255,0.75);font-size:1.1rem;}
+.phone-av{width:32px;height:32px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0;}
+.phone-name{font-size:0.82rem;font-weight:600;color:#fff;line-height:1.2;}
+.phone-status{font-size:0.68rem;color:rgba(255,255,255,0.58);}
+.phone-body{background:#ECE5DD;padding:0.75rem 0.65rem;display:flex;flex-direction:column;gap:0.5rem;min-height:340px;}
+.m{max-width:84%;padding:0.5rem 0.75rem;border-radius:7px;font-size:0.78rem;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,0.07);}
+.m-t{font-size:0.6rem;text-align:right;margin-top:0.2rem;opacity:0.5;}
+.m-in{background:#fff;align-self:flex-start;border-top-left-radius:2px;color:#111;}
+.m-out{background:#DCF8C6;align-self:flex-end;border-top-right-radius:2px;color:#111;}
+.m-sys{align-self:center;background:rgba(0,0,0,0.1);color:#555;font-size:0.65rem;padding:0.28rem 0.65rem;border-radius:6px;text-align:center;}
+.m-dots{background:#fff;align-self:flex-start;border-radius:7px;border-top-left-radius:2px;box-shadow:0 1px 1px rgba(0,0,0,0.07);padding:0.55rem 0.85rem;display:inline-flex;gap:3px;align-items:center;}
+.dot{width:6px;height:6px;border-radius:50%;background:#bbb;animation:bounce 1.2s infinite;}
+.dot:nth-child(2){animation-delay:0.2s;}
+.dot:nth-child(3){animation-delay:0.4s;}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.phone-body>*{opacity:0;transform:translateY(5px);animation:mIn 0.3s var(--ease) forwards;}
+.phone-body>*:nth-child(1){animation-delay:0.4s;}
+.phone-body>*:nth-child(2){animation-delay:1.1s;}
+.phone-body>*:nth-child(3){animation-delay:2.0s;}
+.phone-body>*:nth-child(4){animation-delay:3.0s;}
+.phone-body>*:nth-child(5){animation-delay:3.9s;}
+.phone-body>*:nth-child(6){animation-delay:4.8s;}
+.phone-body>*:nth-child(7){animation-delay:5.6s;}
+@keyframes mIn{to{opacity:1;transform:translateY(0)}}
+
+/* EMAIL MOCKUP */
+.email-shell{background:#fff;border:1px solid var(--rule);overflow:hidden;}
+.email-chrome{background:#f5f5f5;padding:0.65rem 1rem;border-bottom:1px solid #ddd;display:flex;align-items:center;gap:0.4rem;}
+.e-dot{width:9px;height:9px;border-radius:50%;}
+.e-dot:nth-child(1){background:#FF5F56;}
+.e-dot:nth-child(2){background:#FFBD2E;}
+.e-dot:nth-child(3){background:#27C93F;}
+.email-meta{padding:0.9rem 2rem;border-bottom:1px solid var(--rule-soft);font-size:0.82rem;color:#555;line-height:1.9;font-family:var(--sans);}
+.email-meta strong{color:#111;}
+.email-body{padding:2.25rem 2rem;font-family:var(--sans);font-size:0.88rem;color:var(--ink-soft);line-height:1.65;max-width:680px;}
+.email-h{font-family:var(--display);font-size:1.4rem;font-weight:600;letter-spacing:-0.025em;color:var(--navy);margin-bottom:0.2rem;}
+.email-week{font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink-faint);margin-bottom:2rem;}
+
+.site-block{margin-bottom:1rem;padding:1.1rem 1.25rem;background:var(--paper);border-left:3px solid var(--teal);}
+.site-block-name{font-family:var(--mono);font-size:0.62rem;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal-dark);margin-bottom:0.85rem;}
+.site-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
+@media(max-width:600px){.site-metrics{grid-template-columns:repeat(2,1fr);}}
+.met-n{font-family:var(--display);font-weight:600;font-size:1.4rem;color:var(--navy);letter-spacing:-0.03em;line-height:1;margin-bottom:0.15rem;}
+.met-n.alert{color:#C0392B;}
+.met-n.ok{color:#27AE60;}
+.met-l{font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);}
+
+.email-summary{background:var(--navy);padding:1.25rem 1.5rem;margin-bottom:1.25rem;}
+.esm-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.85rem;}
+.esm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
+@media(max-width:600px){.esm-grid{grid-template-columns:repeat(2,1fr);}}
+.esm-n{font-family:var(--display);font-weight:600;font-size:1.5rem;color:#fff;letter-spacing:-0.03em;line-height:1;margin-bottom:0.2rem;}
+.esm-l{font-family:var(--mono);font-size:0.58rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35);}
+
+.email-section-head{
+  font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.14em;color:var(--teal-dark);
+  padding:1.25rem 0 0.6rem;border-top:1px solid var(--rule);
+  margin-top:1.25rem;
+}
+.email-staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1rem;}
+.email-staff-item{background:var(--paper);padding:0.85rem 1rem;border-left:2px solid var(--teal);}
+.esi-n{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.15rem;}
+.esi-l{font-family:var(--mono);font-size:0.58rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);}
+
+.email-alert{
+  background:#FEF3F2;border-left:3px solid #C0392B;
+  padding:0.85rem 1rem;margin-bottom:0.6rem;
+  font-size:0.83rem;color:#7B241C;line-height:1.5;
+}
+.email-alert strong{color:#922B21;}
+.email-note{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:0.85rem;line-height:1.6;}
+.email-footer{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--rule-soft);font-family:var(--mono);font-size:0.6rem;color:var(--ink-faint);letter-spacing:0.02em;}
+
+/* CAMPBELL REPORTING ENGINE */
+.report-engine{
+  background:var(--navy);padding:2.5rem;margin-top:0.5rem;
+  border-top:3px solid var(--teal);
+}
+.re-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem;flex-wrap:wrap;gap:1rem;}
+.re-title{font-family:var(--display);font-weight:600;font-size:1.1rem;color:#fff;letter-spacing:-0.01em;}
+.re-badge{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);background:rgba(82,183,160,0.12);padding:0.3rem 0.75rem;border:1px solid rgba(82,183,160,0.25);}
+.re-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:1.75rem;}
+@media(max-width:600px){.re-grid{grid-template-columns:1fr;}}
+.re-card{background:rgba(255,255,255,0.05);padding:1.25rem;border:1px solid rgba(255,255,255,0.08);}
+.re-card-label{font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;}
+.re-card-n{font-family:var(--display);font-weight:600;font-size:1.6rem;color:#fff;letter-spacing:-0.03em;line-height:1;margin-bottom:0.2rem;}
+.re-card-n em{font-style:normal;color:var(--teal);font-size:0.65em;}
+.re-card-sub{font-size:0.78rem;color:rgba(255,255,255,0.45);line-height:1.5;}
+.re-trend{display:flex;align-items:center;gap:0.4rem;margin-top:0.5rem;font-family:var(--mono);font-size:0.65rem;}
+.re-trend.up{color:#27AE60;}
+.re-trend.down{color:#C0392B;}
+.re-divider{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:1.5rem 0;}
+.re-access{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.re-access{grid-template-columns:1fr;}}
+.re-access-item{padding:1rem 1.25rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:flex;gap:0.85rem;align-items:flex-start;}
+.re-icon{font-size:1.25rem;flex-shrink:0;margin-top:0.1rem;}
+.re-access-title{font-family:var(--display);font-weight:500;font-size:0.92rem;color:#fff;margin-bottom:0.25rem;}
+.re-access-desc{font-size:0.78rem;color:rgba(255,255,255,0.45);line-height:1.5;}
+
+/* JUSTIFY */
+.justify-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);margin-top:0.5rem;}
+@media(max-width:800px){.justify-grid{grid-template-columns:1fr;}}
+.justify-col{padding:2.5rem 2rem;border-right:1px solid var(--rule);}
+.justify-col:last-child{border-right:none;}
+@media(max-width:800px){.justify-col{border-right:none;border-bottom:1px solid var(--rule);}.justify-col:last-child{border-bottom:none;}}
+.justify-col-label{font-family:var(--mono);font-size:0.65rem;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.25rem;}
+.justify-col-p{font-size:0.9rem;color:var(--ink-soft);line-height:1.65;}
+
+.scope-callout{margin-top:2.5rem;padding:1.75rem 2.25rem;background:var(--paper);border-left:3px solid var(--teal);}
+.scope-callout-label{font-family:var(--mono);font-size:0.63rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;}
+.scope-callout-p{font-size:0.95rem;color:var(--ink);line-height:1.7;max-width:80ch;}
+
+/* INVESTMENT */
+.invest-grid{display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start;}
+@media(max-width:800px){.invest-grid{grid-template-columns:1fr;gap:2.5rem;}}
+.invest-table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+.invest-table thead th{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);text-align:left;padding:0 0 0.8rem;border-bottom:1px solid var(--rule);}
+.invest-table .stage-row td{font-family:var(--mono);font-size:0.63rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);padding:1.4rem 0 0.3rem;border-bottom:none;}
+.invest-table tbody tr{border-bottom:1px solid var(--rule-soft);}
+.invest-table tbody td{padding:0.8rem 0;color:var(--ink-soft);vertical-align:top;line-height:1.4;}
+.invest-table tbody td:first-child{color:var(--ink);padding-right:1.5rem;}
+.invest-table tbody td:last-child{font-family:var(--mono);font-size:0.78rem;color:var(--teal-dark);text-align:right;white-space:nowrap;font-weight:500;}
+.invest-table tfoot tr{border-top:2px solid var(--navy);}
+.invest-table tfoot td{padding:1.1rem 0 0;font-weight:600;font-size:0.92rem;color:var(--navy);}
+.invest-table tfoot td:last-child{font-family:var(--display);font-size:1.65rem;font-weight:600;color:var(--navy);letter-spacing:-0.03em;text-align:right;}
+.ongoing{font-family:var(--mono);font-size:0.65rem;color:var(--ink-faint);letter-spacing:0.04em;margin-top:0.85rem;}
+
+.roi-card{padding:1.75rem;border:1px solid var(--rule);margin-bottom:1rem;background:var(--white);}
+.roi-card-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.65rem;}
+.roi-card-n{font-family:var(--display);font-weight:600;font-size:2.2rem;color:var(--navy);letter-spacing:-0.04em;line-height:1;margin-bottom:0.3rem;}
+.roi-card-n em{font-style:italic;font-size:0.95rem;color:var(--teal);letter-spacing:0;font-weight:400;}
+.roi-card-desc{font-size:0.83rem;color:var(--ink-soft);line-height:1.55;}
+.roi-card.dark{background:var(--navy);border-color:var(--navy);}
+.roi-card.dark .roi-card-label{color:rgba(255,255,255,0.35);}
+.roi-card.dark .roi-card-n{color:#fff;}
+.roi-card.dark .roi-card-n em{color:var(--teal);}
+.roi-card.dark .roi-card-desc{color:rgba(255,255,255,0.5);}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem;position:relative;margin-top:0.5rem;}
+@media(max-width:800px){.steps{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.steps{grid-template-columns:1fr;}}
+.steps::before{content:'';position:absolute;top:1.25rem;left:1.25rem;right:1.25rem;height:1px;background:var(--rule);}
+@media(max-width:800px){.steps::before{display:none;}}
+.step{position:relative;z-index:1;}
+.step-num{
+  width:2.5rem;height:2.5rem;border-radius:50%;
+  border:1px solid var(--navy);background:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:0.8rem;font-weight:500;color:var(--navy);
+  margin-bottom:1.35rem;
+}
+.section-alt .step-num{background:var(--paper);}
+.step-h{font-family:var(--display);font-weight:600;font-size:1rem;color:var(--navy);letter-spacing:-0.01em;margin-bottom:0.5rem;}
+.step-p{font-size:0.85rem;color:var(--ink-soft);line-height:1.6;}
+
+/* CTA */
+.cta-section{background:var(--navy);padding:6rem 0;}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+@media(max-width:800px){.cta-grid{grid-template-columns:1fr;gap:3rem;}}
+.cta-h{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05;letter-spacing:-0.03em;color:#fff;}
+.cta-h em{font-style:italic;color:var(--teal);}
+.cta-label{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.65rem;}
+.cta-name{font-family:var(--display);font-weight:500;font-size:1.05rem;color:#fff;margin-bottom:1.25rem;letter-spacing:-0.01em;}
+.cta-hr{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:1.25rem 0;}
+.btns{display:flex;flex-direction:column;gap:0.75rem;}
+.btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.85rem 1.6rem;font-family:var(--sans);font-weight:500;font-size:0.88rem;
+  border:1px solid transparent;border-radius:2px;cursor:pointer;
+  transition:transform 0.18s var(--ease),background 0.18s ease,border-color 0.18s ease;
+}
+.btn-primary{background:#fff;color:var(--navy);}
+.btn-primary:hover{background:var(--teal);color:#fff;transform:translateY(-1px);}
+.btn-ghost{background:transparent;color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.2);}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.45);color:#fff;}
+.cta-muted{margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.3);line-height:1.55;}
+
+/* FOOTER */
+footer{
+  background:#081F4C;padding:2rem clamp(1.5rem,5vw,3.5rem);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,0.06);
+}
+.cc-logo--light{height:26px;width:auto;display:block}
+.footer-copy{font-family:var(--mono);font-size:0.6rem;color:rgba(255,255,255,0.22);letter-spacing:0.04em;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.75s var(--ease),transform 0.75s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:640px){
+  .problem-grid{grid-template-columns:1fr;}
+  .phones-grid{grid-template-columns:1fr;}
+  .site-metrics{grid-template-columns:repeat(2,1fr);}
+  .esm-grid{grid-template-columns:repeat(2,1fr);}
+  .invest-grid{grid-template-columns:1fr;}
+  .cta-grid{grid-template-columns:1fr;}
+  .re-grid{grid-template-columns:1fr;}
+  .email-staff-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <a href="https://campbellconsultancy.co" target="_blank" rel="noopener">
+    <svg class="cc-logo cc-logo--dark" aria-label="Campbell Consultancy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 510">
+  <defs>
+    <linearGradient id="brandGradH_top" x1="0" y1="0.5" x2="1" y2="0.5">
+      <stop offset="0%" stop-color="#081F4C"/>
+      <stop offset="100%" stop-color="#52B7A0"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#brandGradH_top)">
+    <g transform="translate(0.000000,510.000000) scale(0.100000,-0.100000)"
+ stroke="none">
+<path d="M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180
+-1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518
+818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203
+283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0
+-198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23
+-38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17
+c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285
+-26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173
+280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308
+-88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534
+-531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940
+939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70
+-64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308
+-494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61
+-78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162
+1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z"/>
+</g>
+  </g>
+  <g transform="translate(660, 100) scale(1.069)" fill="#132450">
+    <g transform="translate(0.000000,290.000000) scale(0.100000,-0.100000)"
+ stroke="none">
+<path d="M618 2654 c-220 -53 -346 -222 -336 -448 5 -117 41 -201 122 -282
+170 -169 482 -178 649 -18 l39 37 -60 60 -61 60 -37 -33 c-21 -18 -54 -39 -73
+-48 -52 -21 -166 -21 -223 1 -53 20 -121 89 -146 145 -23 54 -21 166 4 222 71
+156 267 205 415 103 59 -41 70 -38 135 28 l38 39 -33 34 c-94 97 -274 139
+-433 100z"/>
+<path d="M1494 2652 c-7 -4 -24 -36 -39 -72 -15 -36 -88 -200 -162 -365 -154
+-341 -176 -395 -168 -404 4 -3 47 -6 96 -6 l90 0 37 92 37 93 200 0 200 0 36
+-93 36 -92 101 -3 c56 -1 102 1 102 6 0 8 -80 187 -284 637 -47 105 -94 196
+-103 203 -18 13 -160 17 -179 4z m156 -342 c34 -80 64 -151 67 -157 4 -10 -25
+-13 -126 -13 -72 0 -131 2 -131 5 0 6 111 298 117 308 7 12 4 17 73 -143z"/>
+<path d="M2165 2647 c-3 -6 -4 -199 -3 -427 l3 -415 85 0 85 0 5 249 5 249
+115 -187 c63 -103 123 -196 133 -207 13 -14 29 -19 50 -17 28 3 40 18 149 197
+65 107 122 199 128 205 7 7 10 -70 10 -237 l0 -246 33 -6 c17 -4 57 -5 87 -3
+l55 3 3 414 c1 297 -1 418 -9 427 -7 9 -33 14 -73 14 -52 0 -66 -4 -83 -22
+-11 -13 -69 -106 -128 -208 -59 -102 -122 -209 -139 -237 -17 -29 -33 -53 -37
+-53 -3 0 -57 84 -119 188 -123 203 -180 291 -205 316 -21 20 -143 23 -150 3z"/>
+<path d="M3332 2647 c-9 -11 -12 -114 -10 -428 l3 -414 97 -3 97 -3 3 118 3
+118 145 6 c131 4 151 8 206 33 136 62 204 193 174 337 -24 110 -96 191 -204
+226 -74 23 -496 32 -514 10z m445 -167 c106 -48 113 -202 11 -257 -25 -13 -63
+-18 -150 -21 l-118 -4 0 151 0 151 108 0 c84 0 116 -5 149 -20z"/>
+<path d="M4196 2588 c-3 -40 -5 -233 -3 -428 l2 -355 225 -3 c253 -3 359 7
+435 42 87 40 133 124 121 219 -11 81 -49 134 -124 172 l-34 16 34 25 c54 40
+78 89 78 162 0 73 -14 106 -64 150 -65 57 -112 65 -403 70 l-261 4 -6 -74z
+m487 -91 c48 -31 62 -62 48 -107 -19 -64 -44 -74 -196 -78 l-132 -4 -8 95 c-4
+53 -4 101 0 107 5 8 46 11 134 8 100 -2 133 -7 154 -21z m44 -350 c40 -21 53
+-44 53 -95 0 -32 -6 -45 -30 -66 -38 -31 -83 -38 -235 -34 l-120 3 -3 94 c-1
+52 0 101 3 109 8 22 288 13 332 -11z"/>
+<path d="M5126 2644 c-3 -8 -6 -199 -6 -424 0 -363 2 -409 16 -414 20 -8 602
+-8 632 0 20 6 22 13 22 64 0 97 19 90 -241 90 l-229 0 0 100 0 100 198 2 197
+3 3 63 c2 38 -2 69 -9 78 -9 11 -50 14 -200 14 l-189 0 0 89 0 89 63 6 c34 4
+131 5 215 4 177 -3 174 -5 170 87 l-3 60 -316 3 c-282 2 -317 1 -323 -14z"/>
+<path d="M5953 2648 c-11 -18 -16 -820 -5 -836 8 -11 64 -12 310 -6 l300 7 4
+71 c3 39 3 73 1 76 -3 3 -99 6 -214 8 l-209 3 0 329 c0 285 -2 331 -16 344
+-20 20 -158 23 -171 4z"/>
+<path d="M6687 2654 c-4 -4 -7 -195 -7 -425 l0 -417 53 -6 c57 -7 521 -6 550
+1 14 4 17 16 17 79 0 41 -1 75 -2 75 -2 1 -97 5 -211 8 l-209 6 0 290 c1 160
+-2 313 -6 340 l-7 50 -85 3 c-47 1 -89 0 -93 -4z"/>
+<path d="M1395 1455 c-49 -17 -102 -76 -111 -122 -29 -157 116 -270 262 -204
+53 24 61 37 33 59 -21 18 -23 17 -60 -1 -46 -22 -99 -17 -129 13 -23 23 -39
+79 -33 114 13 65 93 102 154 72 41 -20 52 -20 73 2 15 18 15 20 -3 36 -24 22
+-87 45 -121 45 -14 0 -43 -6 -65 -14z"/>
+<path d="M1855 1456 c-78 -29 -135 -123 -121 -198 8 -43 64 -110 110 -132 91
+-43 221 6 255 97 28 72 -2 166 -68 211 -47 33 -120 42 -176 22z m113 -67 c69
+-24 87 -120 34 -180 -24 -27 -36 -32 -75 -33 -39 -1 -51 4 -78 30 -35 35 -49
+97 -29 133 14 27 68 61 96 61 12 0 35 -5 52 -11z"/>
+<path d="M2833 1457 c-52 -19 -78 -51 -78 -98 0 -52 23 -71 113 -99 92 -29
+107 -43 76 -74 -20 -21 -93 -21 -141 -1 -42 18 -43 17 -46 -21 -2 -24 3 -30
+33 -41 77 -26 193 -9 226 35 7 9 14 36 14 59 0 53 -26 75 -121 103 -70 21 -83
+33 -67 63 10 19 88 24 131 8 21 -8 26 -6 36 15 15 33 10 39 -43 53 -55 14 -91
+13 -133 -2z"/>
+<path d="M5530 1458 c-46 -13 -96 -52 -116 -90 -20 -38 -20 -117 -1 -155 45
+-86 155 -125 244 -88 61 26 67 34 42 61 l-21 23 -39 -21 c-49 -25 -101 -18
+-135 19 -53 57 -37 150 31 179 44 18 66 18 109 -3 34 -16 37 -16 56 2 27 24
+26 28 -17 52 -48 26 -108 35 -153 21z"/>
+<path d="M2270 1358 c0 -57 3 -133 7 -170 l6 -68 33 0 34 0 0 95 c0 52 3 95 8
+94 4 0 45 -45 91 -100 71 -86 87 -100 110 -97 l26 3 3 173 2 172 -39 0 -40 0
+-3 -102 -3 -101 -84 101 c-76 93 -87 102 -117 102 l-34 0 0 -102z"/>
+<path d="M3190 1343 c0 -92 4 -126 18 -153 54 -108 215 -108 270 0 19 38 22
+60 22 157 l0 113 -40 0 -40 0 0 -118 c0 -143 -9 -162 -74 -162 -68 0 -77 17
+-83 159 l-6 121 -33 0 -34 0 0 -117z"/>
+<path d="M3676 1368 c-3 -51 -2 -129 2 -173 l7 -80 120 0 120 0 0 30 0 30 -86
+3 -87 3 1 47 c1 26 1 89 -1 140 l-2 92 -34 0 -34 0 -6 -92z"/>
+<path d="M4010 1440 c0 -11 -1 -23 -2 -27 -2 -5 22 -10 52 -13 l55 -5 3 -137
+3 -138 39 0 40 0 0 139 0 140 53 3 c48 3 52 5 52 28 l0 25 -147 3 c-143 2
+-148 2 -148 -18z"/>
+<path d="M4515 1388 c-18 -40 -51 -116 -73 -170 l-40 -96 26 -5 c37 -7 47 -1
+61 38 l12 35 85 0 85 0 11 -30 c5 -17 18 -35 28 -40 24 -13 60 -13 60 0 0 6
+-24 63 -53 128 -30 64 -62 138 -73 164 -18 45 -21 48 -57 48 -38 0 -39 -1 -72
+-72z m94 -64 c34 -75 32 -79 -21 -81 -26 -1 -49 1 -52 6 -6 10 36 121 46 121
+4 0 16 -21 27 -46z"/>
+<path d="M4920 1291 c0 -180 0 -181 51 -181 17 0 19 8 19 88 0 48 4 93 9 100
+6 10 29 -12 87 -82 69 -85 81 -96 109 -96 32 0 32 0 39 61 3 34 6 111 6 170
+l0 109 -40 0 -40 0 0 -102 -1 -103 -32 36 c-17 19 -56 65 -86 102 -48 58 -59
+67 -88 67 l-33 0 0 -169z"/>
+<path d="M5840 1447 c0 -7 26 -53 57 -103 51 -79 58 -96 63 -154 l5 -65 35 0
+35 0 3 63 c3 57 9 73 57 152 73 117 74 120 38 120 -34 0 -48 -13 -92 -93 -18
+-31 -37 -55 -42 -52 -5 3 -27 37 -50 75 -38 65 -44 70 -75 70 -21 0 -34 -5
+-34 -13z"/>
+</g>
+  </g>
+</svg>
+
+  </a>
+  <span class="topbar-tag">Prepared for Roots &amp; Seeds · April 2026</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-for">
+      <span class="hero-for-label">Prepared for</span>
+      <div class="hero-for-pipe"></div>
+      <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCADfAwADASIAAhEBAxEB/8QAHQABAAIDAQEBAQAAAAAAAAAAAAYHBAUICQMCAf/EAFEQAAEDBAADBQQDCwgHBgcAAAEAAgMEBQYRBxIhCBMxQVEUImFxMoGRFRcjQlJWcnShsbI1YnN1gpKV0hYzNDeTw9MYNjizwuEnVWaipMHw/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAIDBAEF/8QALxEBAAICAQQBAwMEAAcAAAAAAAECAxExBBIhQRMiMlEFYfAUI4HBQkNEkaGx0f/aAAwDAQACEQMRAD8A7LREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQFrckv1mxy1vud9uVNbqNh5TLO8NBd1IaPMnoeg2ei2S1GX45aMrsFTZb3RxVVLO0jT2gmN2iA9p/FcN9CF2ut+eHJ3rwojiB2obdSl9LhVpNfIOgrK4FkXzbGNOcPmW/JdDW2d1VbqapeA100LJCB4AkArzRqIzDPJC7xY4tP1HS9KbB/IVv/AFaP+ELb1mGmKte1nwZLXmds1ERYWkREQEREBERAREQEREBERARFqMtyewYnajc8iulPb6Xm5WvlPV7tb5WtHVx0D0AJ6LsRMzqCZ026LmfO+1HEyU0uFWQTAO0ay47DSP5sbTv6y4fJXZxK4hY1gFnbX36qIklB9npYQHTTkePK309SdAevgrbdPkrrccq4y1nep4SxFyRkHamymeqf9wrBaaKm37vtXPPJr4kOaP2K0OzdxYyDiPNdaW92mjhNBGx4qqRrmsJcSAxzXE9ehOwfI9FO/SZKV7rOVzUtOoXOiIsy0REQEUWzLOrLjVbS2p/f3G91p1R2ujaH1E3x0SAxvQ7c4gaB9FiVZ4oV1OZaIYrZnOG2wVAmrHj4Oe0xtB+QcPiVOKTrc+Ee6E0Rc65vxZ4u8N7jFHmGL2GuoJXaiq6LvWRy/APLjyu+Dmg/NTjhZxxw/OqmO280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ERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB//Z" alt="roots + seeds cafe &amp; kitchen" style="height:30px;width:auto;" />
+    </div>
+    <div class="hero-eyebrow">Operational AI &amp; Automation Architecture</div>
+    <h1>Run four sites<br>as if they were <em>one.</em></h1>
+    <p class="hero-sub">A practical look at what automated HR, onboarding and labour-cost reporting would look like for Cirencester Park, Gloucester Food Dock, Far Peak Northleach — and any future sites — because adding a new location to this system takes minutes, not months.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-label">Prepared for</div>
+        <div class="hero-stat-value">Sam &amp; Toby</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">From</div>
+        <div class="hero-stat-value">Ben Harrison</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">Date</div>
+        <div class="hero-stat-value">April 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 01 PROBLEM -->
+<section class="section section-dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">01 — The cost of doing nothing</div>
+      <div>
+        <h2 class="section-h">Where the time goes<br><em>every single week.</em></h2>
+        <p class="section-p">Based on Toby's discovery form and what's typical across four-site hospitality groups running this kind of operation.</p>
+      </div>
+    </div>
+    <div class="problem-grid reveal">
+      <table class="prob-table">
+        <thead><tr><th>Task</th><th style="text-align:right">Time per week</th></tr></thead>
+        <tbody>
+          <tr><td>Staff questions — holidays, payslips, sickness</td><td>3–5 hrs / manager</td></tr>
+          <tr><td>New starter onboarding — paperwork, right-to-work, contracts</td><td>45–90 min / starter</td></tr>
+          <tr><td>Payroll prep, queries, chasing missing info</td><td>2–4 hrs / site</td></tr>
+          <tr><td>Paper trail — approvals, policy acknowledgements, filing</td><td>1–2 hrs / week</td></tr>
+          <tr><td>Labour cost visibility — usually too late to act</td><td>2–3 hrs + frustration</td></tr>
+        </tbody>
+        <tfoot><tr><td>Realistic total across 4 sites</td><td>25–40 hrs / week</td></tr></tfoot>
+      </table>
+      <div class="callout">
+        <div class="callout-n">£1,500<em>–£3k</em></div>
+        <div class="callout-sub">per month · current outsourced HR spend only</div>
+        <div class="callout-body">That's £18,000–£36,000 a year for HR support alone — before you count stock admin, supplier queries, rota management, and everything else that currently lands on Sam's desk.</div>
+        <hr>
+        <div class="callout-q">"Outsourcing HR is costly and doesn't seem to make it simpler — it just adds to the questions."</div>
+        <div class="callout-attr">Toby Baggott, Director — discovery form, April 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PILLARS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">02 — What gets built</div>
+      <div>
+        <h2 class="section-h">Three systems.<br><em>One coherent stack.</em></h2>
+        <p class="section-p">Built on BreatheHR and Xero — tools you're already paying for. No ripping anything out. No new logins for your team.</p>
+      </div>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <div class="pillar-num">Module · 01</div>
+        <div class="pillar-h">Self-serve <em>onboarding</em></div>
+        <p class="pillar-p">New starter fills in a branded form. BreatheHR record created automatically. Right-to-work filed. Manager notified. Accountant sees it in Xero. No one chases anything.</p>
+        <ul class="pillar-list">
+          <li>Works for all four sites simultaneously</li>
+          <li>Right-to-work document collection built in</li>
+          <li>Zero manual data entry for managers</li>
+          <li>Reusable for every future hire</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">Module · 02</div>
+        <div class="pillar-h">AI staff <em>helpdesk</em></div>
+        <p class="pillar-p">WhatsApp assistant connected live to BreatheHR. Answers holiday balances, payslip questions, policy queries using real data. Escalates to the right manager when needed.</p>
+        <ul class="pillar-list">
+          <li>No app for staff to download</li>
+          <li>Pulls live data from BreatheHR</li>
+          <li>Knows which manager is at which site</li>
+          <li>Free for staff-initiated conversations</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">Module · 03</div>
+        <div class="pillar-h">Weekly operations <em>snapshot</em></div>
+        <p class="pillar-p">Every Monday morning, one email. Labour cost, staff headcount, compliance flags, overtime, open shifts and exception alerts — before the week starts, not after the month closes.</p>
+        <ul class="pillar-list">
+          <li>All four sites in one view</li>
+          <li>Budget vs. actuals per site</li>
+          <li>HR compliance and overtime alerts</li>
+          <li>Replaces outsourced reporting lag entirely</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 TWO PHONES -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">03 — AI staff assistant</div>
+      <div>
+        <h2 class="section-h">Two views.<br><em>One system.</em></h2>
+        <p class="section-p">Staff get answers in WhatsApp. Sam and Toby get operations off their desk. No training required for either.</p>
+      </div>
+    </div>
+    <div class="phones-grid">
+
+      <div class="reveal">
+        <div class="phone-col-label">Staff view</div>
+        <div class="phone-col-h">An employee asking <em>the assistant</em></div>
+        <p class="phone-col-p">Holiday balance, leave requests, shift times — answered instantly from live BreatheHR data. No app. No login. Just WhatsApp.</p>
+        <div class="phone">
+          <div class="phone-hdr">
+            <div class="phone-back">‹</div>
+            <div class="phone-av">🌱</div>
+            <div><div class="phone-name">R&amp;S Staff Help</div><div class="phone-status">online</div></div>
+          </div>
+          <div class="phone-body">
+            <div class="m-sys">Today</div>
+            <div class="m m-out">Hi — how many holiday days do I have left?<div class="m-t">8:47</div></div>
+            <div class="m-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <div class="m m-in">Hi Priya 👋 You have <strong>8.5 days remaining</strong> this leave year (ends 31 March 2027).<div class="m-t">8:47</div></div>
+            <div class="m m-out">Can I book the 12th and 13th May off?<div class="m-t">8:48</div></div>
+            <div class="m m-in">Those dates are clear on the Gloucester rota. Leave request sent to your manager for approval — you'll get a confirmation once signed off 🌿<div class="m-t">8:48</div></div>
+            <div class="m m-out">What time does my shift start Thursday?<div class="m-t">8:49</div></div>
+            <div class="m m-in">Thursday at Gloucester Food Dock: <strong>10:00am–6:00pm</strong>.<div class="m-t">8:49</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="phone-col-label">Director view</div>
+        <div class="phone-col-h">Sam getting answers <em>in seconds</em></div>
+        <p class="phone-col-p">Things that used to land on Sam &amp; Toby's desk — handled, resolved, and off their plate before they've finished their coffee.</p>
+        <div class="phone">
+          <div class="phone-hdr">
+            <div class="phone-back">‹</div>
+            <div class="phone-av">🌱</div>
+            <div><div class="phone-name">R&amp;S Ops</div><div class="phone-status">online</div></div>
+          </div>
+          <div class="phone-body">
+            <div class="m-sys">Today</div>
+            <div class="m m-out">Who's on at Far Peak today — are we covered?<div class="m-t">7:52</div></div>
+            <div class="m-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <div class="m m-in">4 staff rostered at Far Peak, all confirmed. One open shift 11am–3pm — unassigned. Want me to flag to the available pool?<div class="m-t">7:52</div></div>
+            <div class="m m-out">Yes. Has Jake done his right-to-work check?<div class="m-t">7:53</div></div>
+            <div class="m m-in">Open shift flagged ✓<br><br>Jake — <strong>right-to-work not completed</strong>. Started 3 days ago. Reminder sent with document link. You'll be notified once uploaded.<div class="m-t">7:53</div></div>
+            <div class="m m-out">What's overtime looking like this week?<div class="m-t">7:54</div></div>
+            <div class="m m-in">Overtime Mon–today: <strong>£340</strong> across 3 sites. Gloucester highest at £280 — two bank holiday covers. Full snapshot in your inbox Monday 7am 📊<div class="m-t">7:54</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 04 EMAIL -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">04 — Weekly operations snapshot</div>
+      <div>
+        <h2 class="section-h">Monday morning.<br><em>Every site. One email.</em></h2>
+        <p class="section-p">Full operational picture across all four sites — labour cost, staffing levels, HR compliance, supplier flags and open actions. Lands at 7am before anyone's picked up a phone.</p>
+      </div>
+    </div>
+
+    <div class="email-shell reveal">
+      <div class="email-chrome">
+        <div class="e-dot"></div><div class="e-dot"></div><div class="e-dot"></div>
+      </div>
+      <div class="email-meta">
+        <div><strong>From:</strong> R&amp;S Operations &lt;ops@rootsandseeds.co.uk&gt;</div>
+        <div><strong>To:</strong> Sam Lawson-King, Toby Baggott</div>
+        <div><strong>Subject:</strong> &#128202; Weekly Operations Snapshot — w/c 28 April 2026</div>
+      </div>
+      <div class="email-body">
+        <div class="email-h">Roots &amp; Seeds — Weekly Operations Snapshot</div>
+        <div class="email-week">Week commencing 28 April 2026 · All sites · Generated 07:00 Monday</div>
+
+        <div class="site-block">
+          <div class="site-block-name">Cirencester Park — The Old Kennels</div>
+          <div class="site-metrics">
+            <div><div class="met-n">£3,240</div><div class="met-l">Labour cost</div></div>
+            <div><div class="met-n ok">28.4%</div><div class="met-l">Labour %</div></div>
+            <div><div class="met-n">14</div><div class="met-l">Staff on rota</div></div>
+            <div><div class="met-n">£180</div><div class="met-l">Overtime</div></div>
+          </div>
+        </div>
+
+        <div class="site-block">
+          <div class="site-block-name">Gloucester Food Dock</div>
+          <div class="site-metrics">
+            <div><div class="met-n">£4,810</div><div class="met-l">Labour cost</div></div>
+            <div><div class="met-n alert">34.1% ⚠️</div><div class="met-l">Labour % — above target</div></div>
+            <div><div class="met-n">18</div><div class="met-l">Staff on rota</div></div>
+            <div><div class="met-n alert">£420</div><div class="met-l">Overtime — high</div></div>
+          </div>
+        </div>
+
+        <div class="site-block">
+          <div class="site-block-name">Far Peak, Northleach</div>
+          <div class="site-metrics">
+            <div><div class="met-n">£2,190</div><div class="met-l">Labour cost</div></div>
+            <div><div class="met-n ok">26.8%</div><div class="met-l">Labour %</div></div>
+            <div><div class="met-n">9</div><div class="met-l">Staff on rota</div></div>
+            <div><div class="met-n ok">£0</div><div class="met-l">Overtime</div></div>
+          </div>
+        </div>
+
+        <div class="email-summary">
+          <div class="esm-label">Group total · this week</div>
+          <div class="esm-grid">
+            <div><div class="esm-n">£10,240</div><div class="esm-l">Total labour</div></div>
+            <div><div class="esm-n">29.8%</div><div class="esm-l">Group labour %</div></div>
+            <div><div class="esm-n">41</div><div class="esm-l">Total staff</div></div>
+            <div><div class="esm-n">£600</div><div class="esm-l">Overtime (all sites)</div></div>
+          </div>
+        </div>
+
+        <div class="email-section-head">HR &amp; Compliance</div>
+        <div class="email-staff-grid">
+          <div class="email-staff-item"><div class="esi-n">3</div><div class="esi-l">New starters this week</div></div>
+          <div class="email-staff-item"><div class="esi-n ok" style="color:#27AE60">2</div><div class="esi-l">Right-to-work complete</div></div>
+          <div class="email-staff-item"><div class="esi-n alert" style="color:#C0392B">1 ⚠️</div><div class="esi-l">Right-to-work outstanding</div></div>
+          <div class="email-staff-item"><div class="esi-n">4</div><div class="esi-l">Leave requests pending</div></div>
+          <div class="email-staff-item"><div class="esi-n">2</div><div class="esi-l">RTW expiring in 30 days</div></div>
+          <div class="email-staff-item"><div class="esi-n ok" style="color:#27AE60">0</div><div class="esi-l">Payroll queries outstanding</div></div>
+        </div>
+
+        <div class="email-section-head">Open Actions</div>
+        <div class="email-alert"><strong>Gloucester Food Dock — labour %:</strong> Tracking 5.1pp above target. Two bank holiday covers rostered at overtime rates Thursday–Sunday. Review before Thursday rota is finalised.</div>
+        <div class="email-alert"><strong>Jake T. — right-to-work:</strong> Started 3 days ago, document not yet uploaded. Reminder sent automatically. Escalation to Sam if not resolved by Wednesday.</div>
+        <div class="email-alert"><strong>Far Peak — open shift:</strong> Tuesday 11am–3pm unassigned. Available pool notified. Confirm cover by end of day Monday.</div>
+
+        <div class="email-note"><strong>This week's focus:</strong> Gloucester labour cost. Payroll runs Friday — all timesheets confirmed across Cirencester and Far Peak. Gloucester has two outstanding part-time confirmations — automated chase sent Sunday evening.</div>
+        <div class="email-footer">Roots &amp; Seeds Operations · Automated weekly snapshot · Powered by Campbell Consultancy<br>Data: BreatheHR + Xero Payroll · Next report: Monday 5 May, 07:00</div>
+      </div>
+
+      <!-- CAMPBELL REPORTING ENGINE -->
+      <div class="report-engine">
+        <div class="re-header">
+          <div class="re-title">Campbell Consultancy — Client Reporting Dashboard</div>
+          <div class="re-badge">Bi-weekly · Confidential</div>
+        </div>
+        <div class="re-grid">
+          <div class="re-card">
+            <div class="re-card-label">Automations running</div>
+            <div class="re-card-n">12 <em>active</em></div>
+            <div class="re-card-sub">Across all 3 live sites. 0 failures in last 14 days.</div>
+            <div class="re-trend up">↑ +2 since last report</div>
+          </div>
+          <div class="re-card">
+            <div class="re-card-label">Staff queries deflected</div>
+            <div class="re-card-n">87 <em>this fortnight</em></div>
+            <div class="re-card-sub">Questions answered by AI that would previously have reached Sam or a manager.</div>
+            <div class="re-trend up">↑ Up 23% on previous period</div>
+          </div>
+          <div class="re-card">
+            <div class="re-card-label">Estimated hours saved</div>
+            <div class="re-card-n">34hrs <em>/ fortnight</em></div>
+            <div class="re-card-sub">Management time recovered across HR, onboarding and comms.</div>
+            <div class="re-trend up">↑ On track vs. projection</div>
+          </div>
+        </div>
+        <hr class="re-divider">
+        <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;">How to reach Ben</div>
+        <div class="re-access">
+          <div class="re-access-item">
+            <div class="re-icon">📱</div>
+            <div>
+              <div class="re-access-title">WhatsApp — UK hours, emergencies</div>
+              <div class="re-access-desc">Direct line for anything urgent. Site goes down, automation fails, staff crisis — Ben picks up during UK business hours. No ticket system, no waiting.</div>
+            </div>
+          </div>
+          <div class="re-access-item">
+            <div class="re-icon">✉️</div>
+            <div>
+              <div class="re-access-title">Email — non-urgent, paper trail</div>
+              <div class="re-access-desc">All non-urgent requests, change approvals and scope discussions via ben@campbellconsultancy.co — keeps a clean record for accountability on both sides.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 05 HOW IT'S BUILT -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">05 — How it's built</div>
+      <div>
+        <h2 class="section-h">Same stack you already pay for.<br><em>Properly connected.</em></h2>
+        <p class="section-p">No new HR system. No new payroll. BreatheHR and Xero stay exactly as they are — we build the layer that makes them talk to each other, and to your staff.</p>
+      </div>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">I</div>
+        <div class="step-h">BreatheHR stays</div>
+        <p class="step-p">Single source of truth for all records, holiday balances, contracts, documents. Nothing changes for your accountant's Xero access.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">II</div>
+        <div class="step-h">Make.com connects</div>
+        <p class="step-p">The automation engine. Watches for triggers — new starter form, Monday 7am, staff WhatsApp — and runs the right workflow. Visual, auditable, kill-switch per automation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">III</div>
+        <div class="step-h">Claude answers</div>
+        <p class="step-p">The AI layer trained on your R&amp;S policies. Only answers using live data from Breathe. Never guesses. Escalates when uncertain.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">IV</div>
+        <div class="step-h">WhatsApp delivers</div>
+        <p class="step-p">Staff message a number they already have. No app, no login, no training. Labour snapshots, onboarding links, approvals — all where you already look.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 JUSTIFICATION -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">06 — What you're actually paying for</div>
+      <div>
+        <h2 class="section-h">The platforms are ready.<br><em>That's the point.</em></h2>
+        <p class="section-p">BreatheHR and Xero being live doesn't make this cheaper — it means what we build is production-ready infrastructure from day one, not a prototype that needs replacing in 12 months.</p>
+      </div>
+    </div>
+    <div class="justify-grid reveal">
+      <div class="justify-col">
+        <div class="justify-col-label">Architecture expertise</div>
+        <p class="justify-col-p">BreatheHR's API, Make.com multi-site logic, WhatsApp Cloud API compliance and Claude prompt engineering are four distinct technical disciplines. Getting them to work reliably together — not just in a demo, but at 7am on a Monday with 40 staff across 4 sites — is the work.</p>
+      </div>
+      <div class="justify-col">
+        <div class="justify-col-label">Hallucination-proofing</div>
+        <p class="justify-col-p">An AI that tells a staff member they have 12 days holiday when they have 4 is worse than no AI at all. Significant build time goes into constraining the assistant to only answer from live BreatheHR data — never from assumption, never from memory. That's not default behaviour. That's engineered.</p>
+      </div>
+      <div class="justify-col">
+        <div class="justify-col-label">Built to scale</div>
+        <p class="justify-col-p">Every automation is architected for Site 5, Site 6, and beyond. Adding a new location — staff onboarding, rota access, HR records, labour reporting — is configured in minutes, not days. And as supplier chain automation is built in future phases, opening a new site will follow the same pattern: new suppliers onboarded like new staff, new kitchens operational faster, less admin drag on the people who should be focused on the food. This isn't bespoke work that breaks when you grow. It's infrastructure designed so that a new revenue-generating site can open with more action and less hassle than the last one. The retainer means Ben is with you at every step when it does.</p>
+      </div>
+    </div>
+    <div class="scope-callout reveal">
+      <div class="scope-callout-label">Important context on scope</div>
+      <p class="scope-callout-p">The £1,500–£3,000/month you're currently spending is for <strong>HR support alone</strong>. This build covers HR, staff communications, onboarding, payroll preparation and labour-cost reporting across all four sites — and establishes the automation infrastructure for everything that follows. The same architecture that onboards a new staff member in minutes can onboard a new supplier. The same logic that tracks a new starter's right-to-work can track a supplier's seasonal availability, order history and invoice status. A custom supplier CRM — built on the same stack, speaking to the same systems — becomes a natural Phase 2. You're not buying a fix for one problem. You're buying an approach that compounds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HIRE COST CALLOUT -->
+<section style="background:var(--paper-warm);padding:3rem 0;">
+  <div class="wrap">
+    <div class="reveal" style="border-left:3px solid var(--teal);padding:2rem 2.25rem;background:var(--white);">
+      <div style="font-family:var(--mono);font-size:0.63rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;">The hidden cost nobody talks about</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+        <div>
+          <div style="font-family:var(--display);font-weight:600;font-size:1.6rem;line-height:1.1;letter-spacing:-0.025em;color:var(--navy);margin-bottom:1rem;">Every new starter costs <em style="font-style:italic;color:var(--teal);">far more than their first wage.</em></div>
+          <p style="font-size:0.92rem;color:var(--ink-soft);line-height:1.7;">Hospitality turnover runs at 60–80% annually. In a business growing across four sites, that means you're processing new starters constantly — and every single one carries a true cost well beyond what the outsourced HR invoice shows. When that person leaves after two or three weeks, every penny of that onboarding cost is gone.</p>
+        </div>
+        <div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem;">
+            <div style="background:var(--paper);padding:1rem;border-left:2px solid var(--rule);">
+              <div style="font-family:var(--display);font-weight:600;font-size:1.4rem;color:var(--navy);letter-spacing:-0.02em;line-height:1;margin-bottom:0.2rem;">4–8 hrs</div>
+              <div style="font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);">Manager time per starter</div>
+            </div>
+            <div style="background:var(--paper);padding:1rem;border-left:2px solid var(--rule);">
+              <div style="font-family:var(--display);font-weight:600;font-size:1.4rem;color:var(--navy);letter-spacing:-0.02em;line-height:1;margin-bottom:0.2rem;">2–4 wks</div>
+              <div style="font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);">Reduced productivity period</div>
+            </div>
+            <div style="background:var(--paper);padding:1rem;border-left:2px solid var(--rule);">
+              <div style="font-family:var(--display);font-weight:600;font-size:1.4rem;color:var(--navy);letter-spacing:-0.02em;line-height:1;margin-bottom:0.2rem;">£1–3k</div>
+              <div style="font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-faint);">True cost per hire, all-in</div>
+            </div>
+            <div style="background:var(--navy);padding:1rem;">
+              <div style="font-family:var(--display);font-weight:600;font-size:1.4rem;color:#fff;letter-spacing:-0.02em;line-height:1;margin-bottom:0.2rem;">60–80%</div>
+              <div style="font-family:var(--mono);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);">Annual hospitality turnover</div>
+            </div>
+          </div>
+          <p style="font-size:0.82rem;color:var(--ink-faint);line-height:1.6;font-family:var(--mono);">Automated onboarding compresses the 4–8 hour manager burden to under 20 minutes per hire — meaning the cost drops, the experience improves, and when turnover happens, the next hire costs a fraction of the last one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 INVESTMENT -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">07 — Investment</div>
+      <div>
+        <h2 class="section-h">Stage-gated. Value<br><em>before each commitment.</em></h2>
+        <p class="section-p">Three stages. Working output before you commit to the next. Stage A alone pays back in month one against current outsourced HR spend.</p>
+      </div>
+    </div>
+    <div class="invest-grid reveal">
+      <div>
+        <table class="invest-table">
+          <thead><tr><th>Item</th><th style="text-align:right">Investment</th></tr></thead>
+          <tbody>
+            <tr class="stage-row"><td colspan="2">Stage A — Onboarding + weekly snapshot (weeks 1–3)</td></tr>
+            <tr><td>Architecture &amp; configuration of BreatheHR ↔ Xero data layer</td><td>£400</td></tr>
+            <tr><td>Self-serve onboarding flow — all 4 sites, right-to-work included</td><td>£500</td></tr>
+            <tr><td>Weekly operations snapshot — multi-site logic, exception alerts</td><td>£500</td></tr>
+            <tr class="stage-row"><td colspan="2">Stage B — AI staff assistant, all sites (weeks 4–6)</td></tr>
+            <tr><td>WhatsApp Cloud API setup, verification &amp; compliance</td><td>£400</td></tr>
+            <tr><td>R&amp;S policy knowledge base — prompt engineering &amp; hallucination-proofing</td><td>£600</td></tr>
+            <tr><td>Live BreatheHR integration — holiday, payslip, rota queries</td><td>£500</td></tr>
+            <tr><td>Smart escalation routing per site manager</td><td>£300</td></tr>
+            <tr class="stage-row"><td colspan="2">Stage C — Alerts, payroll prep &amp; compliance (weeks 7–9)</td></tr>
+            <tr><td>Missing timesheet detection before payroll runs</td><td>£350</td></tr>
+            <tr><td>Right-to-work expiry and overtime threshold alerts</td><td>£400</td></tr>
+            <tr><td>End-to-end testing across all 4 sites</td><td>£350</td></tr>
+            <tr class="stage-row"><td colspan="2">Platform costs — first 6 months included</td></tr>
+            <tr><td>Make.com, Claude API, WhatsApp Business, Tally (all sites)</td><td>£480</td></tr>
+            <tr><td>Contingency — edge cases, iterations, integrations</td><td>£420</td></tr>
+          </tbody>
+          <tfoot><tr><td>Total — full build + first 6 months running</td><td>£5,200</td></tr></tfoot>
+        </table>
+        <div class="ongoing">Ongoing retainer from month 7: £595/month — monitoring, updates, policy changes, new site onboarding, continuous AI improvement, scalability builds, custom tool creation and priority access across all future automation across the business.</div>
+      </div>
+      <div>
+        <div class="roi-card">
+          <div class="roi-card-label">Current spend — HR alone</div>
+          <div class="roi-card-n">£1,500<em>–3k/mo</em></div>
+          <div class="roi-card-desc">On outsourced HR only. This build covers HR, onboarding, payroll prep, labour reporting and staff comms — plus lays the foundation for automation across every area of the business.</div>
+        </div>
+        <div class="roi-card dark">
+          <div class="roi-card-label">Payback period</div>
+          <div class="roi-card-n">6<em>–10 wks</em></div>
+          <div class="roi-card-desc">At current HR spend, the full £5,200 build is recovered in 6–10 weeks. Year one net saving: £12,000–£30,000. Every year after: £18,000–£33,000.</div>
+        </div>
+        <div class="roi-card">
+          <div class="roi-card-label">Stage A only — first commitment</div>
+          <div class="roi-card-n">£1,400</div>
+          <div class="roi-card-desc">Onboarding automation + Monday operations snapshot live in 3 weeks. Paying back against HR spend alone before Stage B begins.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div class="reveal">
+        <h2 class="cta-h">The system that lets you open Site 5 without hiring <em>Site 5's admin person.</em></h2>
+      </div>
+      <div class="reveal">
+        <div class="cta-label">Book the walkthrough</div>
+        <div class="cta-name">Ben Harrison · Campbell Consultancy</div>
+        <hr class="cta-hr">
+        <div class="btns">
+          <a href="https://calendar.app.google/YVJsfwiR3rhSZPMe9" target="_blank" rel="noopener" class="btn btn-primary">Book 30-minute walkthrough →</a>
+          <a href="mailto:ben@campbellconsultancy.co" class="btn btn-ghost">ben@campbellconsultancy.co</a>
+        </div>
+        <div class="cta-muted">30 minutes. Live demo — actual R&amp;S sites, actual pay bands, actual BreatheHR integration. No obligation beyond the conversation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="cc-logo cc-logo--light" aria-label="Campbell Consultancy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 510">
+  <g fill="#FFFFFF">
+    <g transform="translate(0.000000,510.000000) scale(0.100000,-0.100000)" stroke="none">
+<path d="M2895 5048 c-27 -29 -573 -581 -1214 -1227 -641 -645 -1170 -1180
+-1175 -1188 l-8 -15 588 -589 c324 -324 593 -588 598 -586 9 3 203 310 518
+818 113 182 334 530 353 557 l17 24 9 -9 c13 -13 207 -326 457 -738 124 -203
+283 -465 353 -582 71 -116 129 -216 129 -223 0 -15 -540 -560 -554 -560 -6 0
+-198 187 -426 415 -228 228 -420 415 -425 415 -9 0 -143 -197 -205 -303 l-23
+-38 534 -535 c294 -293 537 -534 540 -534 3 0 244 239 535 531 l529 531 -1 17
+c0 9 -68 127 -151 261 -83 135 -208 340 -278 455 -70 116 -149 244 -175 285
+-26 41 -141 226 -255 410 -114 184 -244 394 -289 465 -44 72 -122 198 -173
+280 -50 83 -101 161 -111 175 l-20 25 -33 -54 c-19 -30 -106 -168 -194 -308
+-88 -139 -205 -325 -260 -413 -93 -150 -461 -719 -472 -730 -8 -8 -533 534
+-531 548 2 7 421 433 931 947 l929 935 17 0 17 0 934 -935 c514 -514 937 -940
+939 -946 4 -14 -529 -550 -540 -543 -16 9 -665 1024 -905 1414 -22 36 -51 70
+-64 77 l-25 13 -202 0 -202 0 -5 -9 c-3 -4 7 -28 23 -52 29 -44 71 -113 308
+-494 137 -220 419 -669 543 -865 62 -99 147 -234 399 -640 26 -41 53 -76 61
+-78 l15 -2 584 584 583 584 -12 23 c-7 13 -518 530 -1134 1149 -617 619 -1162
+1167 -1211 1218 -49 50 -96 92 -105 92 -10 0 -39 -24 -65 -52z"/>
+</g>
+  </g>
+  <g transform="translate(660, 100) scale(1.069)" fill="#FFFFFF">
+    <g transform="translate(0.000000,290.000000) scale(0.100000,-0.100000)" stroke="none">
+<path d="M618 2654 c-220 -53 -346 -222 -336 -448 5 -117 41 -201 122 -282
+170 -169 482 -178 649 -18 l39 37 -60 60 -61 60 -37 -33 c-21 -18 -54 -39 -73
+-48 -52 -21 -166 -21 -223 1 -53 20 -121 89 -146 145 -23 54 -21 166 4 222 71
+156 267 205 415 103 59 -41 70 -38 135 28 l38 39 -33 34 c-94 97 -274 139
+-433 100z"/>
+<path d="M1494 2652 c-7 -4 -24 -36 -39 -72 -15 -36 -88 -200 -162 -365 -154
+-341 -176 -395 -168 -404 4 -3 47 -6 96 -6 l90 0 37 92 37 93 200 0 200 0 36
+-93 36 -92 101 -3 c56 -1 102 1 102 6 0 8 -80 187 -284 637 -47 105 -94 196
+-103 203 -18 13 -160 17 -179 4z m156 -342 c34 -80 64 -151 67 -157 4 -10 -25
+-13 -126 -13 -72 0 -131 2 -131 5 0 6 111 298 117 308 7 12 4 17 73 -143z"/>
+<path d="M2165 2647 c-3 -6 -4 -199 -3 -427 l3 -415 85 0 85 0 5 249 5 249
+115 -187 c63 -103 123 -196 133 -207 13 -14 29 -19 50 -17 28 3 40 18 149 197
+65 107 122 199 128 205 7 7 10 -70 10 -237 l0 -246 33 -6 c17 -4 57 -5 87 -3
+l55 3 3 414 c1 297 -1 418 -9 427 -7 9 -33 14 -73 14 -52 0 -66 -4 -83 -22
+-11 -13 -69 -106 -128 -208 -59 -102 -122 -209 -139 -237 -17 -29 -33 -53 -37
+-53 -3 0 -57 84 -119 188 -123 203 -180 291 -205 316 -21 20 -143 23 -150 3z"/>
+<path d="M3332 2647 c-9 -11 -12 -114 -10 -428 l3 -414 97 -3 97 -3 3 118 3
+118 145 6 c131 4 151 8 206 33 136 62 204 193 174 337 -24 110 -96 191 -204
+226 -74 23 -496 32 -514 10z m445 -167 c106 -48 113 -202 11 -257 -25 -13 -63
+-18 -150 -21 l-118 -4 0 151 0 151 108 0 c84 0 116 -5 149 -20z"/>
+<path d="M4196 2588 c-3 -40 -5 -233 -3 -428 l2 -355 225 -3 c253 -3 359 7
+435 42 87 40 133 124 121 219 -11 81 -49 134 -124 172 l-34 16 34 25 c54 40
+78 89 78 162 0 73 -14 106 -64 150 -65 57 -112 65 -403 70 l-261 4 -6 -74z
+m487 -91 c48 -31 62 -62 48 -107 -19 -64 -44 -74 -196 -78 l-132 -4 -8 95 c-4
+53 -4 101 0 107 5 8 46 11 134 8 100 -2 133 -7 154 -21z m44 -350 c40 -21 53
+-44 53 -95 0 -32 -6 -45 -30 -66 -38 -31 -83 -38 -235 -34 l-120 3 -3 94 c-1
+52 0 101 3 109 8 22 288 13 332 -11z"/>
+<path d="M5126 2644 c-3 -8 -6 -199 -6 -424 0 -363 2 -409 16 -414 20 -8 602
+-8 632 0 20 6 22 13 22 64 0 97 19 90 -241 90 l-229 0 0 100 0 100 198 2 197
+3 3 63 c2 38 -2 69 -9 78 -9 11 -50 14 -200 14 l-189 0 0 89 0 89 63 6 c34 4
+131 5 215 4 177 -3 174 -5 170 87 l-3 60 -316 3 c-282 2 -317 1 -323 -14z"/>
+<path d="M5953 2648 c-11 -18 -16 -820 -5 -836 8 -11 64 -12 310 -6 l300 7 4
+71 c3 39 3 73 1 76 -3 3 -99 6 -214 8 l-209 3 0 329 c0 285 -2 331 -16 344
+-20 20 -158 23 -171 4z"/>
+<path d="M6687 2654 c-4 -4 -7 -195 -7 -425 l0 -417 53 -6 c57 -7 521 -6 550
+1 14 4 17 16 17 79 0 41 -1 75 -2 75 -2 1 -97 5 -211 8 l-209 6 0 290 c1 160
+-2 313 -6 340 l-7 50 -85 3 c-47 1 -89 0 -93 -4z"/>
+</g>
+  </g>
+</svg>
+
+  </div>
+  <div class="footer-copy">© 2026 Campbell Consultancy · Prepared for Roots &amp; Seeds Ltd.</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, {rootMargin:'0px 0px -50px 0px',threshold:0.05});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
